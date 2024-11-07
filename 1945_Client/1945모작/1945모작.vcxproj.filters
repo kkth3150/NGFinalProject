@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="99.Define">
+      <UniqueIdentifier>{14bddd5a-cc88-4ecc-873c-edd6c5168577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00.MainGame">
+      <UniqueIdentifier>{dc518c49-4802-4ee3-8bc8-5ae734c0e161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Design">
+      <UniqueIdentifier>{032218df-bb80-4d36-acc9-8e40652cfc4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Bmp_Manager">
+      <UniqueIdentifier>{1139b80f-d20d-403e-b815-0dd01e318e6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Bmp_Manager\MyBmp">
+      <UniqueIdentifier>{2ccb1abd-fbbc-4fb6-acd1-2ba11e3a90b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager">
+      <UniqueIdentifier>{ded3de77-ebe5-449a-abd2-4cb7aeae2288}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects">
+      <UniqueIdentifier>{3024622d-fabb-48b9-9e28-da73e37c4f2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Level_Manager">
+      <UniqueIdentifier>{c59a4411-95a0-4ac3-9e6e-18d00f931923}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Level_Manager\Levels">
+      <UniqueIdentifier>{113b98ff-eee8-48cd-857c-7036838e3836}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05.Key_Manager">
+      <UniqueIdentifier>{6aca593c-c6b4-483c-9b69-4beee61232df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-01.Player">
+      <UniqueIdentifier>{e7ab55a4-dae9-490e-ab20-e142c69a1e1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-02.Player_Bullet">
+      <UniqueIdentifier>{6d64ce0e-642c-4193-aa58-be5666189c8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-10.Button">
+      <UniqueIdentifier>{14accb74-cb41-4d2e-8173-4eaf23d7f147}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-11.UI">
+      <UniqueIdentifier>{1a658eaa-619a-45e4-9be3-601d59f36705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Level_Manager\Levels\04-01.GamePlay_Level">
+      <UniqueIdentifier>{abae13a1-d0fd-4088-8f3e-b7fc985f2fdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Level_Manager\Levels\04-02.GameEnd_Level">
+      <UniqueIdentifier>{3226753f-03b2-4ed5-bf73-05cf989632f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Level_Manager\Levels\04-00.Menu_Level">
+      <UniqueIdentifier>{9292c3a6-e83b-4a95-a735-3879407357c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-03.Boss">
+      <UniqueIdentifier>{07943c1f-1a21-40cb-a36a-d2c955614be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-03.Boss\Posin">
+      <UniqueIdentifier>{6af56f25-4c2c-428d-a536-f8977be4c3a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-03.Boss\Gun">
+      <UniqueIdentifier>{fa25c216-1c38-4ff4-b464-a0f02494b9bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-04.Boss_Bullet">
+      <UniqueIdentifier>{fafe7fd7-4d60-4e29-8581-7d08a62aceca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06.Collision_Manager">
+      <UniqueIdentifier>{12202e04-a255-49b9-abdd-ff2efee00a1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-05.Explosion_Object">
+      <UniqueIdentifier>{f88d952b-ffc6-4c9b-a0cb-439beb111856}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="1945모작.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>99.Define</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>00.MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Bmp_Manager.h">
+      <Filter>02.Bmp_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MyBmp.h">
+      <Filter>02.Bmp_Manager\MyBmp</Filter>
+    </ClInclude>
+    <ClInclude Include="Object_Manager.h">
+      <Filter>03.Object_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>03.Object_Manager\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Level_Manager.h">
+      <Filter>04.Level_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>04.Level_Manager\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Level_GameEnd.h">
+      <Filter>04.Level_Manager\Levels\04-02.GameEnd_Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Level_Menu.h">
+      <Filter>04.Level_Manager\Levels\04-00.Menu_Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Level_GamePlay.h">
+      <Filter>04.Level_Manager\Levels\04-01.GamePlay_Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Key_Manager.h">
+      <Filter>05.Key_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>03.Object_Manager\GameObjects\03-01.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>01.Design</Filter>
+    </ClInclude>
+    <ClInclude Include="Player_Bullet.h">
+      <Filter>03.Object_Manager\GameObjects\03-02.Player_Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>03.Object_Manager\GameObjects\03-10.Button</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>03.Object_Manager\GameObjects\03-11.UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>03.Object_Manager\GameObjects\03-03.Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss_Posin.h">
+      <Filter>03.Object_Manager\GameObjects\03-03.Boss\Posin</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss_Gun.h">
+      <Filter>03.Object_Manager\GameObjects\03-03.Boss\Gun</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss_Bullet.h">
+      <Filter>03.Object_Manager\GameObjects\03-04.Boss_Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision_Manager.h">
+      <Filter>06.Collision_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_1.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_2.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_Bullet.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion_Object.h">
+      <Filter>03.Object_Manager\GameObjects\03-05.Explosion_Object</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="1945모작.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>00.MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Bmp_Manager.cpp">
+      <Filter>02.Bmp_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MyBmp.cpp">
+      <Filter>02.Bmp_Manager\MyBmp</Filter>
+    </ClCompile>
+    <ClCompile Include="Object_Manager.cpp">
+      <Filter>03.Object_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>03.Object_Manager\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_Manager.cpp">
+      <Filter>04.Level_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>04.Level_Manager\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_GameEnd.cpp">
+      <Filter>04.Level_Manager\Levels\04-02.GameEnd_Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_Menu.cpp">
+      <Filter>04.Level_Manager\Levels\04-00.Menu_Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_GamePlay.cpp">
+      <Filter>04.Level_Manager\Levels\04-01.GamePlay_Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Key_Manager.cpp">
+      <Filter>05.Key_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-01.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Player_Bullet.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-02.Player_Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-10.Button</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-11.UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-03.Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss_Posin.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-03.Boss\Posin</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss_Gun.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-03.Boss\Gun</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss_Bullet.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-04.Boss_Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision_Manager.cpp">
+      <Filter>06.Collision_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy_1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy_Bullet.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion_Object.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-05.Explosion_Object</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="1945모작.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="1945모작.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
