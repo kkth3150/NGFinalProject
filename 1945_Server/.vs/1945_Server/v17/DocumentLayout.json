@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NetworkGameProject\\Server\\1945_Server\\",
+  "WorkspaceRootPath": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8177178F-5DC7-4CA7-9339-D790BF4657E1}|1945_Server\\1945_Server.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NetworkGameProject\\Server\\1945_Server\\1945_Server\\MainServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{8177178F-5DC7-4CA7-9339-D790BF4657E1}|1945_Server\\1945_Server.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Server\\1945_Server\\MainServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8177178F-5DC7-4CA7-9339-D790BF4657E1}|1945_Server\\1945_Server.vcxproj|solutionrelative:1945_Server\\MainServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8177178F-5DC7-4CA7-9339-D790BF4657E1}|1945_Server\\1945_Server.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NetworkGameProject\\Server\\1945_Server\\1945_Server\\1945_Server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{8177178F-5DC7-4CA7-9339-D790BF4657E1}|1945_Server\\1945_Server.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Server\\1945_Server\\1945_Server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8177178F-5DC7-4CA7-9339-D790BF4657E1}|1945_Server\\1945_Server.vcxproj|solutionrelative:1945_Server\\1945_Server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainServer.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NetworkGameProject\\Server\\1945_Server\\1945_Server\\MainServer.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Server\\1945_Server\\MainServer.cpp",
               "RelativeDocumentMoniker": "1945_Server\\MainServer.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NetworkGameProject\\Server\\1945_Server\\1945_Server\\MainServer.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Server\\1945_Server\\MainServer.cpp",
               "RelativeToolTip": "1945_Server\\MainServer.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-07T01:12:27.28Z",
               "EditorCaption": ""
@@ -37,9 +37,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "1945_Server.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NetworkGameProject\\Server\\1945_Server\\1945_Server\\1945_Server.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Server\\1945_Server\\1945_Server.cpp",
               "RelativeDocumentMoniker": "1945_Server\\1945_Server.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NetworkGameProject\\Server\\1945_Server\\1945_Server\\1945_Server.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Server\\1945_Server\\1945_Server.cpp",
               "RelativeToolTip": "1945_Server\\1945_Server.cpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
