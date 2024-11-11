@@ -3,6 +3,7 @@
 #include "Bmp_Manager.h"
 #include "Object_Manager.h"
 #include "Player.h"
+#include "Key_Manager.h"
 
 CUI::CUI()
 {
@@ -23,6 +24,36 @@ int CUI::Update()
 		return OBJ_DEAD;
 
 	__super::Update_Rect();
+
+	if (m_pFrameKey == L"PLAYER_FINGER") {
+		if (CKey_Manager::Get_Instance()->Key_Down('A') && m_Choice == 1) {
+			--m_iScore;
+		}
+		if (CKey_Manager::Get_Instance()->Key_Down('D') && m_Choice == 1) {
+			++m_iScore;
+		}
+		if (CKey_Manager::Get_Instance()->Key_Down(VK_LEFT) && m_Choice == 0) {
+			--m_iScore;
+		}
+		if (CKey_Manager::Get_Instance()->Key_Down(VK_RIGHT) && m_Choice == 0) {
+			++m_iScore;
+		}
+		if (m_iScore < 0)
+			m_iScore = 2;
+		if (m_iScore > 2)
+			m_iScore = 0;
+
+		if (m_iScore == 0)
+			Set_Pos(175 + (int)m_Choice * 60, 150);
+
+		if (m_iScore == 1)
+			Set_Pos(500 + (int)m_Choice * 60, 150);
+
+		if (m_iScore == 2)
+			Set_Pos(350 + (int)m_Choice * 60, 250);
+	}
+
+	
 
 	return OBJ_NOEVENT;
 }
@@ -57,35 +88,105 @@ void CUI::Render(HDC hDC)
 	switch (m_eUIState) {
 	case UI_NONANIM:
 
-		GdiTransparentBlt(
-			hDC,
-			m_tRect.left,
-			m_tRect.top,
-			(int)m_tInfo.fCX,
-			(int)m_tInfo.fCY,
-			hMemDC,
-			0,
-			0,
-			(int)m_tInfo.fCX,
-			(int)m_tInfo.fCY,
-			RGB(255, 255, 255));
+		if (m_pFrameKey == L"PLAYER_FINGER") {
+			GdiTransparentBlt(
+				hDC,
+				m_tRect.left,
+				m_tRect.top,
+				60,
+				60,
+				hMemDC,
+				(int)m_Choice * m_tInfo.fCX,
+				0,
+				(int)m_tInfo.fCX,
+				(int)m_tInfo.fCY,
+				RGB(255, 255, 255));
+		}
+		else {
+			GdiTransparentBlt(
+				hDC,
+				m_tRect.left,
+				m_tRect.top,
+				(int)m_tInfo.fCX,
+				(int)m_tInfo.fCY,
+				hMemDC,
+				0,
+				0,
+				(int)m_tInfo.fCX,
+				(int)m_tInfo.fCY,
+				RGB(255, 255, 255));
+		}
+		
 
 		break;
 
 	case UI_ANIM:
 
-		GdiTransparentBlt(
-			hDC,
-			m_tRect.left,										// 복사받을 X위치
-			m_tRect.top,										// 복사받을 Y위치
-			(int)m_tInfo.fCX,									// 복사 받을 가로 길이
-			(int)m_tInfo.fCY,									// 복사 받을 세로 길이
-			hMemDC,											// 복사할 비트맵 DC
-			m_tFrame.iFrameStart * (int)m_tInfo.fCX,			// 비트맵 출력 X좌표
-			0,													// 비트맵 출력 Y좌표
-			(int)m_tInfo.fCX,									// 복사할 비트맵의 가로 길이
-			(int)m_tInfo.fCY,									// 복사할 비트맵의 세로 길이
-			RGB(255, 255, 255));
+		if (m_pFrameKey == L"MENU_FLIGHT_F_4") {
+			GdiTransparentBlt(
+				hDC,
+				m_tRect.left,										// 복사받을 X위치
+				m_tRect.top,										// 복사받을 Y위치
+				(int)m_tInfo.fCX/2.f,									// 복사 받을 가로 길이
+				(int)m_tInfo.fCY/2.f,									// 복사 받을 세로 길이
+				hMemDC,											// 복사할 비트맵 DC
+				m_tFrame.iFrameStart * (int)m_tInfo.fCX,			// 비트맵 출력 X좌표
+				0,													// 비트맵 출력 Y좌표
+				(int)m_tInfo.fCX,									// 복사할 비트맵의 가로 길이
+				(int)m_tInfo.fCY,									// 복사할 비트맵의 세로 길이
+				RGB(255, 255, 255));
+		}
+		else if(m_pFrameKey == L"MENU_FLIGHT_F_22"){
+			int y = int(m_tFrame.iFrameStart / 4);
+			int x = m_tFrame.iFrameStart % 4;
+
+			GdiTransparentBlt(
+				hDC,
+				m_tRect.left,										// 복사받을 X위치
+				m_tRect.top,										// 복사받을 Y위치
+				(int)m_tInfo.fCX*1.5f,									// 복사 받을 가로 길이
+				(int)m_tInfo.fCY * 1.5f,									// 복사 받을 세로 길이
+				hMemDC,											// 복사할 비트맵 DC
+				(x) * (int)m_tInfo.fCX,			// 비트맵 출력 X좌표
+				y * (int)m_tInfo.fCY,													// 비트맵 출력 Y좌표
+				(int)m_tInfo.fCX,									// 복사할 비트맵의 가로 길이
+				(int)m_tInfo.fCY,									// 복사할 비트맵의 세로 길이
+				RGB(255, 255, 255)); 
+		}
+		else if (m_pFrameKey == L"MENU_FLIGHT_S_F") {
+			int y = int(m_tFrame.iFrameStart / 3);
+			int x = m_tFrame.iFrameStart % 3;
+
+			GdiTransparentBlt(
+				hDC,
+				m_tRect.left,										// 복사받을 X위치
+				m_tRect.top,										// 복사받을 Y위치
+				(int)m_tInfo.fCX * 1.5f,									// 복사 받을 가로 길이
+				(int)m_tInfo.fCY * 1.5f,									// 복사 받을 세로 길이
+				hMemDC,											// 복사할 비트맵 DC
+				(x) * (int)m_tInfo.fCX,			// 비트맵 출력 X좌표
+				y * (int)m_tInfo.fCY,													// 비트맵 출력 Y좌표
+				(int)m_tInfo.fCX,									// 복사할 비트맵의 가로 길이
+				(int)m_tInfo.fCY,									// 복사할 비트맵의 세로 길이
+				RGB(255, 255, 255));
+		}
+		
+
+		else {
+			GdiTransparentBlt(
+				hDC,
+				m_tRect.left,										// 복사받을 X위치
+				m_tRect.top,										// 복사받을 Y위치
+				(int)m_tInfo.fCX,									// 복사 받을 가로 길이
+				(int)m_tInfo.fCY,									// 복사 받을 세로 길이
+				hMemDC,											// 복사할 비트맵 DC
+				m_tFrame.iFrameStart * (int)m_tInfo.fCX,			// 비트맵 출력 X좌표
+				0,													// 비트맵 출력 Y좌표
+				(int)m_tInfo.fCX,									// 복사할 비트맵의 가로 길이
+				(int)m_tInfo.fCY,									// 복사할 비트맵의 세로 길이
+				RGB(255, 255, 255));
+		}
+		
 
 		break;
 
