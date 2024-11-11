@@ -50,6 +50,10 @@ int CLevel_Menu::Update()
 {
 	if (m_bButton_Down&&!m_bDoOnce) {
 
+		
+		S_PlayerChoicePacket a = { 1 };
+		CServer_Connection::Get_Instance()->Send_Data(S_PLAYER_CHOICE, &a);
+
 		// ---------------------START BUTTON--------------------------
 		CGameObject* pButton = CAbstractFactory<CButton>::Create(300.f, 800.f);
 		pButton->Set_FrameKey(L"START_BUTTON");
@@ -136,8 +140,10 @@ void CLevel_Menu::Recv_Data()
 	ReceiveDataResult Data = CServer_Connection::Get_Instance()->Receive_Data();
 	switch (Data.eventType) {
 	case R_PLAYER_CHOICE:
-		switch (static_cast<R_PlayerChoicePacket*>(Data.data)->Choiced_Character) {
+		switch (static_cast<R_PlayerChoicePacket*>(Data.data)->Choiced_Character_P1) {
 		case 0:
+			//0번 플레이어 선택중이라면 손가락 이동시키기 
+			
 			break;
 		case 1:
 			break;
@@ -146,6 +152,21 @@ void CLevel_Menu::Recv_Data()
 		case 3:
 			break;
 		}
+
+		switch (static_cast<R_PlayerChoicePacket*>(Data.data)->Choiced_Character_P2) {
+		case 0:
+			//0번 플레이어 선택중이라면 손가락 이동시키기 
+
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		}
+
+
 
 		break;
 

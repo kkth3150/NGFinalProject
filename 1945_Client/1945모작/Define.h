@@ -131,7 +131,6 @@ struct SendHeaderPacket {
 struct S_PlayerChoicePacket {
 
 	uint8_t Choiced_Character;
-
 };
 
 struct S_KeyInputPacket {
@@ -165,8 +164,9 @@ struct  R_PlayerMovePacket {
 };
 
 struct R_PlayerChoicePacket {
-	uint8_t Choiced_Character;
 
+	uint8_t Choiced_Character_P1;
+	uint8_t Choiced_Character_P2;
 };
 
 struct ReceiveDataResult {

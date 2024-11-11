@@ -37,9 +37,6 @@
     <ClCompile Include="ServerFramework.cpp">
       <Filter>00.Main_Server</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Pch</Filter>
-    </ClCompile>
     <ClCompile Include="Level_Manager.cpp">
       <Filter>02.Level_Manager</Filter>
     </ClCompile>
@@ -57,9 +54,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Pch</Filter>
-    </ClInclude>
     <ClInclude Include="Level_Manager.h">
       <Filter>02.Level_Manager</Filter>
     </ClInclude>
@@ -71,6 +65,9 @@
     </ClInclude>
     <ClInclude Include="Level_GamePlay.h">
       <Filter>02.Level_Manager\Levels\01-01.GamePlay_Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Default</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
