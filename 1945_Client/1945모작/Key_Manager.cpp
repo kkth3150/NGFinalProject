@@ -27,10 +27,9 @@ bool CKey_Manager::Key_Down(int _iKey)
 		m_bKeyState[_iKey] = !m_bKeyState[_iKey];
 		return true;
 	}
-
 	for (int i = 0; i < VK_MAX; ++i)
 	{
-		if (m_bKeyState[i] && !(GetAsyncKeyState(_iKey) & 0x8000))
+		if (m_bKeyState[i] && !(GetAsyncKeyState(i) & 0x8000))
 			m_bKeyState[i] = !m_bKeyState[i];
 	}
 
