@@ -22,31 +22,28 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize(void)
 {
 
-	/*char* serverIP;*/
 	m_hDC = GetDC(g_hWnd);
-	//CServer_Connection::Get_Instance()->Initialize(serverIP);
-	
-	wchar_t* serverIP = nullptr;
-	if (DialogBoxParam(GetModuleHandle(NULL), MAKEINTRESOURCE(IDD_IP_DIALOG), g_hWnd, IPDialogProc, (LPARAM)&serverIP) == IDOK)
-	{
-		// 입력받은 IP 주소를 char*로 변환
-		char ipBuffer[16];
-		size_t convertedChars = 0;
+	//wchar_t* serverIP = new wchar_t[16]; // 16개의 wchar_t 크기로 메모리 할당
+	//if (DialogBoxParam(GetModuleHandle(NULL), MAKEINTRESOURCE(IDD_IP_DIALOG), g_hWnd, IPDialogProc, (LPARAM)serverIP) == IDOK)
+	//{
+	//	// 입력받은 IP 주소를 char*로 변환
+	//	char ipBuffer[16];
+	//	size_t convertedChars = 0;
 
-		// wcstombs_s 사용하여 IP 주소 변환
-		wcstombs_s(&convertedChars, ipBuffer, sizeof(ipBuffer), serverIP, _TRUNCATE);
+	//	// wcstombs_s 사용하여 IP 주소 변환
+	//	wcstombs_s(&convertedChars, ipBuffer, sizeof(ipBuffer), serverIP, _TRUNCATE);
 
-		// 서버 초기화
-		CServer_Connection::Get_Instance()->Initialize(ipBuffer);
+	//	// 서버 초기화
+	//	CServer_Connection::Get_Instance()->Initialize(ipBuffer);
+	//}
+	//else
+	//{
+	//	MessageBox(g_hWnd, L"Server IP was not provided.", L"Error", MB_OK | MB_ICONERROR);
+	//}
 
-		// 메모리 해제
-		free(serverIP);
-	}
-	else
-	{
-		MessageBox(g_hWnd, L"Server IP was not provided.", L"Error", MB_OK | MB_ICONERROR);
-
-	}
+	//// 메모리 해제
+	//delete[] serverIP;
+	CServer_Connection::Get_Instance()->Initialize("127.0.0.1");
 	CBmp_Manager::Get_Instance()->Insert_Bmp(L"../Image/Back.bmp", L"BackBuffer");
 	CLevel_Manager::Get_Instance()->Level_Change(LEVEL_MENU);
 }

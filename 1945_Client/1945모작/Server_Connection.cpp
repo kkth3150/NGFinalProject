@@ -18,10 +18,8 @@ void CServer_Connection::Initialize(const char* ServerIP)
 {
 
     int retval;
-    u_long mode = 1;
     WSADATA wsa;
     
-    ioctlsocket(sock, FIONBIO, &mode);
 
     if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
         return;
@@ -32,8 +30,6 @@ void CServer_Connection::Initialize(const char* ServerIP)
     sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock == INVALID_SOCKET)
         err_quit("socket()");
-
-    ioctlsocket(sock, FIONBIO, &mode);
 
     struct sockaddr_in serveraddr;
     memset(&serveraddr, 0, sizeof(serveraddr));
@@ -59,12 +55,12 @@ void CServer_Connection::Send_Data(SEND_EVENT_TYPE eEvent, void* Data)
         header.event = S_PLAYER_CHOICE;
 
         int retval = send(sock, reinterpret_cast<const char*>(&header), sizeof(SendHeaderPacket), 0);
-        if (retval == SOCKET_ERROR)
-            err_quit("send() - header");
+        //if (retval == SOCKET_ERROR)
+        //    err_quit("send() - header");
 
         retval = send(sock, reinterpret_cast<const char*>(eventData), sizeof(S_PlayerChoicePacket), 0);
-        if (retval == SOCKET_ERROR)
-            err_quit("send() - PlayerChoicePacket");
+        //if (retval == SOCKET_ERROR)
+        //    err_quit("send() - PlayerChoicePacket");
     }
         break;
 
@@ -78,12 +74,12 @@ void CServer_Connection::Send_Data(SEND_EVENT_TYPE eEvent, void* Data)
         header.event = S_PLAYER_CHOICE;
 
         int retval = send(sock, reinterpret_cast<const char*>(&header), sizeof(SendHeaderPacket), 0);
-        if (retval == SOCKET_ERROR)
-            err_quit("send() - header");
+        //if (retval == SOCKET_ERROR)
+        //    err_quit("send() - header");
 
         retval = send(sock, reinterpret_cast<const char*>(eventData), sizeof(S_KeyInputPacket), 0);
-        if (retval == SOCKET_ERROR)
-            err_quit("send() - KeyInputPacket");
+        //if (retval == SOCKET_ERROR)
+        //    err_quit("send() - KeyInputPacket");
     }
         break;
 
@@ -97,17 +93,17 @@ ReceiveDataResult CServer_Connection::Receive_Data()
 {
     RecvHeaderPacket header;
     int retval = recv(sock, reinterpret_cast<char*>(&header), sizeof(RecvHeaderPacket), 0);
-    if (retval == SOCKET_ERROR || retval == 0) {
-        err_quit("recv() failed or connection closed");
-    }
+    //if (retval == SOCKET_ERROR || retval == 0) {
+    //    err_quit("recv() failed or connection closed");
+    //}
 
     switch (header.event) {
     case R_PLAYER_CHOICE: {
         auto* eventData = new R_PlayerChoicePacket;
         retval = recv(sock, reinterpret_cast<char*>(eventData), sizeof(R_PlayerChoicePacket), 0);
-        if (retval == SOCKET_ERROR || retval == 0) {
-            err_quit("recv() failed - R_PlayerChoicePacket");
-        }
+        //if (retval == SOCKET_ERROR || retval == 0) {
+        //    err_quit("recv() failed - R_PlayerChoicePacket");
+        //}
         return { R_PLAYER_CHOICE, eventData };
     }
         break;
@@ -116,9 +112,9 @@ ReceiveDataResult CServer_Connection::Receive_Data()
     {
         auto* eventData = new R_LevelChangePacket;
         retval = recv(sock, reinterpret_cast<char*>(eventData), sizeof(R_LevelChangePacket), 0);
-        if (retval == SOCKET_ERROR || retval == 0) {
-            err_quit("recv() failed - R_LevelChangePacket");
-        }
+        //if (retval == SOCKET_ERROR || retval == 0) {
+        //    err_quit("recv() failed - R_LevelChangePacket");
+        //}
         return { R_LEVEL_CHANGE, eventData };
     }
 

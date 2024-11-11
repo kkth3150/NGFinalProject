@@ -1,0 +1,30 @@
+﻿  ServerFramework.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,1): error C2143: 구문 오류: ')'이(가) '*' 앞에 없습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,1): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,1): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,1): error C2059: 구문 오류: ')'
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,1): error C3551: 후행 반환 형식이 사용된 경우 선행 반환 형식은 단일 형식 지정자 'auto'('오버로드된 함수 형식' 아님)여야 합니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,1): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,1): error C2530: 'readfds': 참조를 초기화해야 합니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,1): error C2146: 구문 오류: ';'이(가) 'fd_count' 식별자 앞에 없습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(21,1): error C2059: 구문 오류: 'do'
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(21,1): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(21,1): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(21,1): error C2059: 구문 오류: 'while'
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(33,20): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(73,20): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'SOCKET'입니다.
+      C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(73,20):
+      서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
+      C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(73,20):
+      서식 문자열에서 '%Id'을(를) 사용하는 것이 좋습니다.
+      C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(73,20):
+      서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(78,20): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'SOCKET'입니다.
+      C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(78,20):
+      서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
+      C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(78,20):
+      서식 문자열에서 '%Id'을(를) 사용하는 것이 좋습니다.
+      C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(78,20):
+      서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
+  
