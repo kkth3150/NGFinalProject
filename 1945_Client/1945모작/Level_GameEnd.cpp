@@ -2,6 +2,7 @@
 #include "Level_GameEnd.h"
 #include "Bmp_Manager.h"
 #include "Level_Manager.h"
+#include "Server_Connection.h"
 
 CLevel_GameEnd::CLevel_GameEnd()
 {
@@ -20,6 +21,10 @@ void CLevel_GameEnd::Initialize()
 int CLevel_GameEnd::Update()
 {
 	return 0;
+}
+
+void CLevel_GameEnd::Recv_Data()
+{
 }
 
 void CLevel_GameEnd::Late_Update()

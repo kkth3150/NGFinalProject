@@ -4,6 +4,7 @@
 #include "Bmp_Manager.h"
 #include "Level_Manager.h"
 #include "Object_Manager.h"
+#include "Server_Connection.h"
 
 CMainGame::CMainGame() : m_dwTime(GetTickCount()), m_iFPS(0)
 {
@@ -17,8 +18,10 @@ CMainGame::~CMainGame()
 
 void CMainGame::Initialize(void)
 {
-	m_hDC = GetDC(g_hWnd);
 
+	char* serverIP;
+	m_hDC = GetDC(g_hWnd);
+	CServer_Connection::Get_Instance()->Initialize(serverIP);
 	CBmp_Manager::Get_Instance()->Insert_Bmp(L"../Image/Back.bmp", L"BackBuffer");
 	CLevel_Manager::Get_Instance()->Level_Change(LEVEL_MENU);
 }
@@ -26,6 +29,11 @@ void CMainGame::Initialize(void)
 void CMainGame::Update(void)
 {
 	CLevel_Manager::Get_Instance()->Update();
+}
+
+void CMainGame::Recv_Data(void)
+{
+	CLevel_Manager::Get_Instance()->Recv_Data();
 }
 
 void CMainGame::Late_Update(void)

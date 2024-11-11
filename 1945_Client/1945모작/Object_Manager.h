@@ -10,6 +10,7 @@ private:
 public:
 	void		Add_Object(OBJ_ID eID, CGameObject* pGameObject);
 	int			Update(void);
+	void		Recv_Data(void);
 	void		Late_Update(void);
 	void		Render(HDC hDC);
 	void		Release(void);

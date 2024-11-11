@@ -17,7 +17,7 @@ enum ENEMY_BULLET { E1, E2R, E2L, E3 };
 
 enum LEVEL_ID : uint8_t { LEVEL_MENU, LEVEL_GAMEPLAY, LEVEL_GAME_END, LEVEL_END };
 enum SEND_EVENT_TYPE : uint8_t { S_PLAYER_CHOICE, S_KEY_INPUT, S_EVENT_END };
-enum RECEIVE_EVENT_TYPE : uint8_t { R_LEVEL_CHANGE, R_EVENT_END };
+enum RECEIVE_EVENT_TYPE : uint8_t { R_PLAYER_CHOICE,R_LEVEL_CHANGE, R_EVENT_END };
 
 template<typename T>
 void Safe_Delete(T& Temp)
@@ -128,13 +128,13 @@ struct SendHeaderPacket {
 };
 
 
-struct PlayerChoicePacket {
+struct S_PlayerChoicePacket {
 
 	uint8_t Choiced_Character;
 
 };
 
-struct KeyInputPacket {
+struct S_KeyInputPacket {
 
 	bool Left;
 	bool Right;
@@ -151,16 +151,21 @@ struct RecvHeaderPacket {
 	SEND_EVENT_TYPE event; // 이벤트 타입
 };
 
-struct LevelChangePacket {
+struct R_LevelChangePacket {
 
-	LEVEL_ID Levle;
+	LEVEL_ID Level;
 };
 
-struct  PlayerMovePacket {
+struct  R_PlayerMovePacket {
 
 	bool Player_ID;
 	float X;
 	float Y;
+
+};
+
+struct R_PlayerChoicePacket {
+	uint8_t Choiced_Character;
 
 };
 
