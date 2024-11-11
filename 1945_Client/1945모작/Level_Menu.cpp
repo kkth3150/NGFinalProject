@@ -7,6 +7,7 @@
 #include "Level_Menu.h"
 #include "Level_GamePlay.h"
 #include "AbstractFactory.h"
+#include "Server_Connection.h"
 
 CLevel_Menu::CLevel_Menu()
 {
@@ -93,6 +94,36 @@ int CLevel_Menu::Update()
 
 	CObject_Manager::Get_Instance()->Update();
 	return 0;
+}
+
+void CLevel_Menu::Recv_Data()
+{
+	ReceiveDataResult Data = CServer_Connection::Get_Instance()->Receive_Data();
+	switch (Data.eventType) {
+	case R_PLAYER_CHOICE:
+		switch (static_cast<R_PlayerChoicePacket*>(Data.data)->Choiced_Character) {
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		}
+
+		break;
+
+	case R_LEVEL_CHANGE:
+		if (LEVEL_GAMEPLAY == static_cast<R_LevelChangePacket*>(Data.data)->Level) {
+			CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAMEPLAY);
+		}
+		break;
+
+	default:
+		break;
+
+	}
 }
 
 void CLevel_Menu::Late_Update()

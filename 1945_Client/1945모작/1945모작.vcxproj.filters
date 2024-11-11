@@ -212,9 +212,6 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>03.Object_Manager\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="Level_Manager.cpp">
-      <Filter>04.Level_Manager</Filter>
-    </ClCompile>
     <ClCompile Include="Level.cpp">
       <Filter>04.Level_Manager\Levels</Filter>
     </ClCompile>
@@ -271,6 +268,9 @@
     </ClCompile>
     <ClCompile Include="Server_Connection.cpp">
       <Filter>07.Server_Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_Manager.cpp">
+      <Filter>04.Level_Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

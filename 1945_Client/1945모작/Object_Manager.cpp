@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Object_Manager.h"
 #include "Collision_Manager.h"
+#include "Server_Connection.h"
 
 CObject_Manager* CObject_Manager::m_pInstance = nullptr;
 
@@ -41,6 +42,10 @@ int CObject_Manager::Update(void)
 	}
 
 	return 0;
+}
+
+void CObject_Manager::Recv_Data(void)
+{
 }
 
 void CObject_Manager::Late_Update(void)

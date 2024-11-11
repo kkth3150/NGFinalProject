@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Level_Manager.h"
+#include "Server_Connection.h"
 
 CLevel_Manager* CLevel_Manager::m_pInstance = nullptr;
 
@@ -33,7 +34,6 @@ void CLevel_Manager::Level_Change(LEVEL_ID eID)
 			break;
 		}
 
-
 		m_pLevel->Initialize();
 		m_ePreLevel = m_eCurLevel;
 
@@ -45,6 +45,11 @@ int CLevel_Manager::Update()
 {
 	m_pLevel->Update();
 	return 0;
+}
+
+void CLevel_Manager::Recv_Data()
+{
+	m_pLevel->Recv_Data();
 }
 
 void CLevel_Manager::Late_Update()

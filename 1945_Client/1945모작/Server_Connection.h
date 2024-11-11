@@ -1,6 +1,6 @@
 #pragma once
 #include "Define.h"
-
+#include "Common.h"
 class CServer_Connection
 {
 public:

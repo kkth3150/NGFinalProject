@@ -9,6 +9,7 @@
 #include "Enemy_1.h"
 #include "Enemy_2.h"
 #include "Level_Manager.h"
+#include "Server_Connection.h"
 
 #define MAP_SizeY 5353
 #define MAP_SizeX 600
@@ -81,6 +82,11 @@ int CLevel_GamePlay::Update()
 	}
 	CObject_Manager::Get_Instance()->Update();
 	return 0;
+}
+
+void CLevel_GamePlay::Recv_Data()
+{
+
 }
 
 void CLevel_GamePlay::Late_Update()

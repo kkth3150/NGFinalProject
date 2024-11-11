@@ -10,6 +10,7 @@ public:
 public:
 	void Initialize(void);
 	void Update(void);
+	void Recv_Data(void);
 	void Late_Update(void);
 	void Render(void);
 	void Release(void);
