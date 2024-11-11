@@ -140,6 +140,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Boss_Posin.h" />
     <ClInclude Include="Collision_Manager.h" />
+    <ClInclude Include="Common.h" />
     <ClInclude Include="Enemy_1.h" />
     <ClInclude Include="Enemy_2.h" />
     <ClInclude Include="Enemy_Bullet.h" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Player_Bullet.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Server_Connection.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
@@ -192,6 +194,7 @@
     </ClCompile>
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Player_Bullet.cpp" />
+    <ClCompile Include="Server_Connection.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>

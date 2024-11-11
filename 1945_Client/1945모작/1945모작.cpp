@@ -46,16 +46,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     const int targetFPS = 60;
     const int frameDelay = 1000 / targetFPS;
-    DWORD dwTime = GetTickCount64();
-    DWORD frameStart = 0;
-    int frameTime = 0;
+    LARGE_INTEGER frequency;
+    LARGE_INTEGER frameStart, frameEnd;
+    QueryPerformanceFrequency(&frequency);
 
     CMainGame MainGame;
     MainGame.Initialize();
 
     // 기본 메시지 루프입니다:
     while (true) {
-        frameStart = GetTickCount64();
+        QueryPerformanceCounter(&frameStart);
 
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
@@ -74,12 +74,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             MainGame.Late_Update();
             MainGame.Render();
 
-            frameTime = GetTickCount64() - frameStart;
-            if (frameTime < frameDelay) {
-                Sleep(frameDelay - frameTime);
-            }
+            do {
+                QueryPerformanceCounter(&frameEnd);
+            } while (((frameEnd.QuadPart - frameStart.QuadPart) * 1000.0 / frequency.QuadPart) < frameDelay);
         }
     }
+
+    MainGame.Release();
     return (int) msg.wParam;
 }
 

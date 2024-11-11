@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -19,18 +11,66 @@
     <Filter Include="00.Main_Server">
       <UniqueIdentifier>{b51f632b-ecf2-44d1-ae8a-77eaf74ba6a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pch">
+      <UniqueIdentifier>{5cd503de-b55d-40b3-946c-20c12d1a6dc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.Define">
+      <UniqueIdentifier>{68617ba3-f064-4b6b-ab47-5d9077865a90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98.Design">
+      <UniqueIdentifier>{2ca20632-2e35-4118-af32-c011bb1f7734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Level_Manager">
+      <UniqueIdentifier>{0405801c-9a25-45e0-8734-56db35bca1d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Level_Manager\Levels">
+      <UniqueIdentifier>{fb9ee669-6e4d-4064-bd23-4abea657425c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Level_Manager\Levels\01-00.Menu_Level">
+      <UniqueIdentifier>{b62fbcb2-a4d6-4a4f-8460-aea5b251908b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Level_Manager\Levels\01-01.GamePlay_Level">
+      <UniqueIdentifier>{5ef02e79-0226-4c0e-ba30-44b68f11993a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="ServerFramework.cpp">
       <Filter>00.Main_Server</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Pch</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_Manager.cpp">
+      <Filter>02.Level_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Define.h">
+      <Filter>99.Define</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>02.Level_Manager\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_Menu.cpp">
+      <Filter>02.Level_Manager\Levels\01-00.Menu_Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_GamePlay.cpp">
+      <Filter>02.Level_Manager\Levels\01-01.GamePlay_Level</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
-      <Filter>소스 파일</Filter>
+      <Filter>Pch</Filter>
+    </ClInclude>
+    <ClInclude Include="Level_Manager.h">
+      <Filter>02.Level_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>02.Level_Manager\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Level_Menu.h">
+      <Filter>02.Level_Manager\Levels\01-00.Menu_Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Level_GamePlay.h">
+      <Filter>02.Level_Manager\Levels\01-01.GamePlay_Level</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

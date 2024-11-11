@@ -82,6 +82,12 @@
     <Filter Include="03.Object_Manager\GameObjects\03-05.Explosion_Object">
       <UniqueIdentifier>{f88d952b-ffc6-4c9b-a0cb-439beb111856}</UniqueIdentifier>
     </Filter>
+    <Filter Include="07.Server_Connection">
+      <UniqueIdentifier>{c0a34911-f6ed-44a4-ac25-e6b9640ddbc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07.Server_Connection\Common">
+      <UniqueIdentifier>{e9249045-e5e5-4901-b989-aef17ad0b314}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -177,6 +183,12 @@
     <ClInclude Include="Explosion_Object.h">
       <Filter>03.Object_Manager\GameObjects\03-05.Explosion_Object</Filter>
     </ClInclude>
+    <ClInclude Include="Server_Connection.h">
+      <Filter>07.Server_Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>07.Server_Connection\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1945모작.cpp">
@@ -256,6 +268,9 @@
     </ClCompile>
     <ClCompile Include="Explosion_Object.cpp">
       <Filter>03.Object_Manager\GameObjects\03-05.Explosion_Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Server_Connection.cpp">
+      <Filter>07.Server_Connection</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
