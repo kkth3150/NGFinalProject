@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Server_Connection.h"
+#include "ErrorMsg.h"
 
 #define SERVERPORT 9000
 
@@ -49,7 +50,7 @@ void CServer_Connection::Initialize(const char* ServerIP)
 void CServer_Connection::Send_Data(SEND_EVENT_TYPE eEvent, void* Data)
 {
     switch (eEvent) {
-    case S_PLAYER_CHOICE:
+    case S_PLAYER_CHOICE: {
 
         S_PlayerChoicePacket* eventData = static_cast<S_PlayerChoicePacket*>(Data);
 
@@ -64,9 +65,11 @@ void CServer_Connection::Send_Data(SEND_EVENT_TYPE eEvent, void* Data)
         retval = send(sock, reinterpret_cast<const char*>(eventData), sizeof(S_PlayerChoicePacket), 0);
         if (retval == SOCKET_ERROR)
             err_quit("send() - PlayerChoicePacket");
+    }
         break;
 
     case S_KEY_INPUT:
+    {
 
         S_KeyInputPacket* eventData = static_cast<S_KeyInputPacket*>(Data);
 
@@ -81,6 +84,7 @@ void CServer_Connection::Send_Data(SEND_EVENT_TYPE eEvent, void* Data)
         retval = send(sock, reinterpret_cast<const char*>(eventData), sizeof(S_KeyInputPacket), 0);
         if (retval == SOCKET_ERROR)
             err_quit("send() - KeyInputPacket");
+    }
         break;
 
     default:
@@ -98,13 +102,14 @@ ReceiveDataResult CServer_Connection::Receive_Data()
     }
 
     switch (header.event) {
-    case R_PLAYER_CHOICE:
+    case R_PLAYER_CHOICE: {
         auto* eventData = new R_PlayerChoicePacket;
         retval = recv(sock, reinterpret_cast<char*>(eventData), sizeof(R_PlayerChoicePacket), 0);
         if (retval == SOCKET_ERROR || retval == 0) {
             err_quit("recv() failed - R_PlayerChoicePacket");
         }
         return { R_PLAYER_CHOICE, eventData };
+    }
         break;
 
     case R_LEVEL_CHANGE:
@@ -119,7 +124,6 @@ ReceiveDataResult CServer_Connection::Receive_Data()
 
     case R_EVENT_END:
         break;
-    break;
     }
 
 }

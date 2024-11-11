@@ -9,6 +9,7 @@ C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Coll
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Enemy_1.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\Enemy_1.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Enemy_2.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\Enemy_2.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Enemy_Bullet.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\Enemy_Bullet.obj
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\ErrorMsg.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\ErrorMsg.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Explosion_Object.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\Explosion_Object.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Key_Manager.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\Key_Manager.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Level_GamePlay.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\Level_GamePlay.obj
@@ -23,4 +24,5 @@ C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Obje
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\pch.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\pch.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Player.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\Player.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Player_Bullet.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\Player_Bullet.obj
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Server_Connection.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\Server_Connection.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\UI.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\x64\Release\UI.obj

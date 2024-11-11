@@ -6,5 +6,6 @@
 #include <map>
 #include <vector>
 #include <cmath>
+#include "Common.h"
 
 using namespace std;

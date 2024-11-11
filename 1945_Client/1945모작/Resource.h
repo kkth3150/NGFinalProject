@@ -15,6 +15,10 @@
 #define IDC_MYICON				2
 #ifndef IDC_STATIC
 #define IDC_STATIC				-1
+
+
+#define IDD_IP_DIALOG 110 // 사용 가능한 숫자로 설정
+#define IDC_IP_EDIT    1002
 #endif
 // 다음은 새 개체에 사용할 기본값입니다.
 //

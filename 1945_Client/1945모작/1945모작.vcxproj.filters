@@ -88,6 +88,9 @@
     <Filter Include="07.Server_Connection\Common">
       <UniqueIdentifier>{e9249045-e5e5-4901-b989-aef17ad0b314}</UniqueIdentifier>
     </Filter>
+    <Filter Include="07.Server_Connection\ErrorMsg">
+      <UniqueIdentifier>{f5559162-fb9f-4377-8d83-a2d040fb75f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -189,6 +192,9 @@
     <ClInclude Include="Common.h">
       <Filter>07.Server_Connection\Common</Filter>
     </ClInclude>
+    <ClInclude Include="ErrorMsg.h">
+      <Filter>07.Server_Connection\ErrorMsg</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1945모작.cpp">
@@ -271,6 +277,9 @@
     </ClCompile>
     <ClCompile Include="Level_Manager.cpp">
       <Filter>04.Level_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrorMsg.cpp">
+      <Filter>07.Server_Connection\ErrorMsg</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

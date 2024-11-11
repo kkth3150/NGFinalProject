@@ -1,10 +1,13 @@
 #include "pch.h"
+#include "resource.h"
 #include "MainGame.h"
 #include "Key_Manager.h"
 #include "Bmp_Manager.h"
 #include "Level_Manager.h"
 #include "Object_Manager.h"
 #include "Server_Connection.h"
+
+INT_PTR CALLBACK IPDialogProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 
 CMainGame::CMainGame() : m_dwTime(GetTickCount()), m_iFPS(0)
 {
@@ -19,9 +22,31 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize(void)
 {
 
-	char* serverIP;
+	/*char* serverIP;*/
 	m_hDC = GetDC(g_hWnd);
-	CServer_Connection::Get_Instance()->Initialize(serverIP);
+	//CServer_Connection::Get_Instance()->Initialize(serverIP);
+	
+	wchar_t* serverIP = nullptr;
+	if (DialogBoxParam(GetModuleHandle(NULL), MAKEINTRESOURCE(IDD_IP_DIALOG), g_hWnd, IPDialogProc, (LPARAM)&serverIP) == IDOK)
+	{
+		// 입력받은 IP 주소를 char*로 변환
+		char ipBuffer[16];
+		size_t convertedChars = 0;
+
+		// wcstombs_s 사용하여 IP 주소 변환
+		wcstombs_s(&convertedChars, ipBuffer, sizeof(ipBuffer), serverIP, _TRUNCATE);
+
+		// 서버 초기화
+		CServer_Connection::Get_Instance()->Initialize(ipBuffer);
+
+		// 메모리 해제
+		free(serverIP);
+	}
+	else
+	{
+		MessageBox(g_hWnd, L"Server IP was not provided.", L"Error", MB_OK | MB_ICONERROR);
+
+	}
 	CBmp_Manager::Get_Instance()->Insert_Bmp(L"../Image/Back.bmp", L"BackBuffer");
 	CLevel_Manager::Get_Instance()->Level_Change(LEVEL_MENU);
 }
@@ -67,4 +92,33 @@ void CMainGame::Release(void)
 {
 	
 	ReleaseDC(g_hWnd, m_hDC);
+}
+
+INT_PTR CALLBACK IPDialogProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+	case WM_INITDIALOG:
+		return (INT_PTR)TRUE;
+
+	case WM_COMMAND:
+		if (LOWORD(wParam) == IDOK)
+		{
+			// IP 주소를 얻기 위해 텍스트 박스의 내용을 가져옴
+			wchar_t ip[16];
+			GetDlgItemText(hDlg, IDC_IP_EDIT, ip, 16);
+
+			// IP 주소를 전달
+			SetWindowLongPtr(hDlg, GWLP_USERDATA, (LONG_PTR)_wcsdup(ip));
+			EndDialog(hDlg, IDOK);
+			return (INT_PTR)TRUE;
+		}
+		else if (LOWORD(wParam) == IDCANCEL)
+		{
+			EndDialog(hDlg, IDCANCEL);
+			return (INT_PTR)TRUE;
+		}
+		break;
+	}
+	return (INT_PTR)FALSE;
 }

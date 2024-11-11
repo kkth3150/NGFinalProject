@@ -15,6 +15,7 @@ public:
 	void Render(void);
 	void Release(void);
 
+
 private:
 
 	HDC				m_hDC;
