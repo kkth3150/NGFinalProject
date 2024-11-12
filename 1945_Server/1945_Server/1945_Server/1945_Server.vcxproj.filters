@@ -20,16 +20,19 @@
     <Filter Include="98.Design">
       <UniqueIdentifier>{2ca20632-2e35-4118-af32-c011bb1f7734}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.Level_Manager">
+    <Filter Include="01.ClinetSession">
+      <UniqueIdentifier>{e96f3d83-9248-4773-b8f3-1cf391f618ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Level_Manager">
       <UniqueIdentifier>{0405801c-9a25-45e0-8734-56db35bca1d0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.Level_Manager\Levels">
+    <Filter Include="03.Level_Manager\Levels">
       <UniqueIdentifier>{fb9ee669-6e4d-4064-bd23-4abea657425c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.Level_Manager\Levels\01-00.Menu_Level">
+    <Filter Include="03.Level_Manager\Levels\01-00.Menu_Level">
       <UniqueIdentifier>{b62fbcb2-a4d6-4a4f-8460-aea5b251908b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.Level_Manager\Levels\01-01.GamePlay_Level">
+    <Filter Include="03.Level_Manager\Levels\01-01.GamePlay_Level">
       <UniqueIdentifier>{5ef02e79-0226-4c0e-ba30-44b68f11993a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -38,36 +41,42 @@
       <Filter>00.Main_Server</Filter>
     </ClCompile>
     <ClCompile Include="Level_Manager.cpp">
-      <Filter>02.Level_Manager</Filter>
+      <Filter>03.Level_Manager</Filter>
     </ClCompile>
     <ClCompile Include="Define.h">
       <Filter>99.Define</Filter>
     </ClCompile>
     <ClCompile Include="Level.cpp">
-      <Filter>02.Level_Manager\Levels</Filter>
+      <Filter>03.Level_Manager\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Level_Menu.cpp">
-      <Filter>02.Level_Manager\Levels\01-00.Menu_Level</Filter>
+      <Filter>03.Level_Manager\Levels\01-00.Menu_Level</Filter>
     </ClCompile>
     <ClCompile Include="Level_GamePlay.cpp">
-      <Filter>02.Level_Manager\Levels\01-01.GamePlay_Level</Filter>
+      <Filter>03.Level_Manager\Levels\01-01.GamePlay_Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Client_Session.cpp">
+      <Filter>01.ClinetSession</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Level_Manager.h">
-      <Filter>02.Level_Manager</Filter>
+      <Filter>03.Level_Manager</Filter>
     </ClInclude>
     <ClInclude Include="Level.h">
-      <Filter>02.Level_Manager\Levels</Filter>
+      <Filter>03.Level_Manager\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Level_Menu.h">
-      <Filter>02.Level_Manager\Levels\01-00.Menu_Level</Filter>
+      <Filter>03.Level_Manager\Levels\01-00.Menu_Level</Filter>
     </ClInclude>
     <ClInclude Include="Level_GamePlay.h">
-      <Filter>02.Level_Manager\Levels\01-01.GamePlay_Level</Filter>
+      <Filter>03.Level_Manager\Levels\01-01.GamePlay_Level</Filter>
     </ClInclude>
     <ClInclude Include="Common.h">
       <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Client_Session.h">
+      <Filter>01.ClinetSession</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
