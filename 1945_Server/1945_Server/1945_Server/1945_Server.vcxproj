@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Client_Session.cpp" />
     <ClCompile Include="Define.h" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Level_GamePlay.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="ServerFramework.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Client_Session.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Level_GamePlay.h" />

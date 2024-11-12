@@ -31,6 +31,9 @@ void CServer_Connection::Initialize(const char* ServerIP)
     if (sock == INVALID_SOCKET)
         err_quit("socket()");
 
+    u_long on = 1;
+    ioctlsocket(sock, FIONBIO, &on);
+
     struct sockaddr_in serveraddr;
     memset(&serveraddr, 0, sizeof(serveraddr));
     serveraddr.sin_family = AF_INET;
