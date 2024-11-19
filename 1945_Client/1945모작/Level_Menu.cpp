@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "UI.h"
 #include "Button.h"
+#include "Finger.h"
 #include "Level_Manager.h"
 #include "Bmp_Manager.h"
 #include "Object_Manager.h"
@@ -94,24 +95,17 @@ int CLevel_Menu::Update()
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pFLIGHTNAME);
 
 		// ------------------------- ¼Õ²Ù¶ô -----------------------------
-		CGameObject* pFinger2 = CAbstractFactory<CUI>::Create_UI(300.f, 300.f, 32.f, 32.f);
+		CGameObject* pFinger2 = CAbstractFactory<CFinger>::Create_UI(300.f, 300.f, 32.f, 32.f);
 		pFinger2->Set_FrameKey(L"PLAYER_FINGER");
-		dynamic_cast<CUI*>(pFinger2)->Set_State(UI_NONANIM);
-		dynamic_cast<CUI*>(pFinger2)->Set_Choice(1);
-		dynamic_cast<CUI*>(pFinger2)->Set_ScoreUI(0);
-		CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pFinger2);
+		CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger2);
 
-		CGameObject* pFinger1 = CAbstractFactory<CUI>::Create_UI(500.f, 300.f, 32.f, 32.f);
+		CGameObject* pFinger1 = CAbstractFactory<CFinger>::Create_UI(500.f, 300.f, 32.f, 32.f);
 		pFinger1->Set_FrameKey(L"PLAYER_FINGER");
-		dynamic_cast<CUI*>(pFinger1)->Set_State(UI_NONANIM);
-		dynamic_cast<CUI*>(pFinger1)->Set_Choice(0);
-		dynamic_cast<CUI*>(pFinger1)->Set_ScoreUI(0);
-		CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pFinger1);
+		CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger1);
 
 		m_bDoOnce = true;
 
-		S_PlayerChoicePacket a = { 2 };
-		CServer_Connection::Get_Instance()->Send_Data(S_PLAYER_CHOICE, &a);
+		
 	}
 
 

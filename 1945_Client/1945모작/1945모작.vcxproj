@@ -146,6 +146,7 @@
     <ClInclude Include="Enemy_Bullet.h" />
     <ClInclude Include="ErrorMsg.h" />
     <ClInclude Include="Explosion_Object.h" />
+    <ClInclude Include="Finger.h" />
     <ClInclude Include="Key_Manager.h" />
     <ClInclude Include="Level_GamePlay.h" />
     <ClInclude Include="Define.h" />
@@ -180,6 +181,7 @@
     <ClCompile Include="Enemy_Bullet.cpp" />
     <ClCompile Include="ErrorMsg.cpp" />
     <ClCompile Include="Explosion_Object.cpp" />
+    <ClCompile Include="Finger.cpp" />
     <ClCompile Include="Key_Manager.cpp" />
     <ClCompile Include="Level_GamePlay.cpp" />
     <ClCompile Include="GameObject.cpp" />
