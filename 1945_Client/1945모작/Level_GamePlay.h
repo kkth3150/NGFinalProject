@@ -10,7 +10,6 @@ public:
 
 	virtual void Initialize() override;
 	virtual int Update() override;
-	virtual void Recv_Data() override;
 	virtual void Late_Update() override;
 	virtual void Render(HDC hDC) override;
 	virtual void Release(void) override;

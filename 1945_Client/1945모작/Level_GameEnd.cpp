@@ -23,9 +23,6 @@ int CLevel_GameEnd::Update()
 	return 0;
 }
 
-void CLevel_GameEnd::Recv_Data()
-{
-}
 
 void CLevel_GameEnd::Late_Update()
 {

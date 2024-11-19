@@ -1,4 +1,3 @@
-#include "Common.h"
 #include "Client_Session.h"
 #include "Level_Manager.h"
 #include <thread>
@@ -31,12 +30,8 @@ int main() {
     printf("[알림] 윈속 초기화 성공\n");
 
     SOCKET listen_sock = socket(AF_INET, SOCK_STREAM, 0);
-    if (listen_sock == INVALID_SOCKET)
-        err_quit("socket()");
-
-    u_long on = 1;
-    ioctlsocket(listen_sock, FIONBIO, &on);
-
+    //if (listen_sock == INVALID_SOCKET)
+    //    err_quit("socket()");
 
     struct sockaddr_in serveraddr;
     memset(&serveraddr, 0, sizeof(serveraddr));
@@ -44,12 +39,12 @@ int main() {
     serveraddr.sin_addr.s_addr = htonl(INADDR_ANY);
     serveraddr.sin_port = htons(SERVERPORT);
     retval = bind(listen_sock, (struct sockaddr*)&serveraddr, sizeof(serveraddr));
-    if (retval == SOCKET_ERROR)
-        err_quit("bind()");
+    //if (retval == SOCKET_ERROR)
+    //    err_quit("bind()");
 
     retval = listen(listen_sock, SOMAXCONN);
-    if (retval == SOCKET_ERROR)
-        err_quit("listen()");
+    //if (retval == SOCKET_ERROR)
+    //    err_quit("listen()");
 
 
 

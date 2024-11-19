@@ -1,19 +1,7 @@
 ﻿  Client_Session.cpp
   ServerFramework.cpp
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Common.h(17,6): error C2084: 'void err_quit(const char *)' 함수에 이미 본문이 있습니다.
-  (소스 파일 'ServerFramework.cpp'을(를) 컴파일하는 중)
-      C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Common.h(17,6):
-      'err_quit'의 이전 정의를 참조하십시오.
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Common.h(31,6): error C2084: 'void err_display(const char *)' 함수에 이미 본문이 있습니다.
-  (소스 파일 'ServerFramework.cpp'을(를) 컴파일하는 중)
-      C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Common.h(31,6):
-      'err_display'의 이전 정의를 참조하십시오.
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Common.h(44,6): error C2084: 'void err_display(int)' 함수에 이미 본문이 있습니다.
-  (소스 파일 'ServerFramework.cpp'을(를) 컴파일하는 중)
-      C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Common.h(44,6):
-      'err_display'의 이전 정의를 참조하십시오.
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(25,20): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(24,20): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(21,31): warning C4101: 'frameEnd' :참조되지 않은 지역 변수입니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(21,19): warning C4101: 'frameStart' :참조되지 않은 지역 변수입니다.
   코드를 생성하고 있습니다...
+  1945_Server.vcxproj -> C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\x64\Debug\1945_Server.exe

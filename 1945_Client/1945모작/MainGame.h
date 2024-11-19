@@ -1,6 +1,6 @@
 #pragma once
 #include "define.h"
-
+#include <thread>
 class CMainGame
 {
 public:
@@ -23,5 +23,5 @@ private:
 	DWORD			m_dwTime;
 	int				m_iFPS;
 	TCHAR			m_szFPS[32];
-
+	thread m_recvThread;
 };

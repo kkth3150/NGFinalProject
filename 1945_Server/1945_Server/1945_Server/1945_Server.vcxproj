@@ -145,7 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client_Session.h" />
-    <ClInclude Include="Common.h" />
+    <ClInclude Include="ErrorMsg.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Level_GamePlay.h" />
     <ClInclude Include="Level_Manager.h" />

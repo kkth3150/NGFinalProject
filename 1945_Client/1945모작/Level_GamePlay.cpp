@@ -84,10 +84,6 @@ int CLevel_GamePlay::Update()
 	return 0;
 }
 
-void CLevel_GamePlay::Recv_Data()
-{
-
-}
 
 void CLevel_GamePlay::Late_Update()
 {

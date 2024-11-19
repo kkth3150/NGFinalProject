@@ -86,11 +86,21 @@ void ClientSession::ReceiveData() {
 }
 
 void ClientSession::SendData() {
-    // 데이터를 전송하는 로직 (이 예제에서는 단순히 빈 함수로 두었습니다)
-    // 처리된 데이터를 클라이언트에게 전송할 수 있도록 구현
+
     while (running) {
-        // 예시: 처리된 데이터 전송
-        // send(clientSocket, ...);
+
+
+        RecvHeaderPacket header;
+        header.length = sizeof(R_PlayerChoicePacket);
+        header.event = R_PLAYER_CHOICE;
+
+     
+
+        R_PlayerChoicePacket a = {0,1};
+
+        int retval = send(clientSocket,reinterpret_cast<const char*>(&header),sizeof(SendHeaderPacket),0);
+        retval = send(clientSocket, reinterpret_cast<const char*>(&a), sizeof(R_PlayerChoicePacket),0);      
+
         std::this_thread::sleep_for(std::chrono::milliseconds(100));  // 대기 시간
     }
 }

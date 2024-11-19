@@ -1,10 +1,16 @@
 #include "pch.h"
 #include "Server_Connection.h"
 #include "ErrorMsg.h"
+#include <thread>
+#include <mutex>
+#include <condition_variable>
 
 #define SERVERPORT 9000
 
 CServer_Connection* CServer_Connection::m_pInstance = nullptr;
+
+
+
 
 CServer_Connection::CServer_Connection()
 {
@@ -31,9 +37,6 @@ void CServer_Connection::Initialize(const char* ServerIP)
     if (sock == INVALID_SOCKET)
         err_quit("socket()");
 
-    u_long on = 1;
-    ioctlsocket(sock, FIONBIO, &on);
-
     struct sockaddr_in serveraddr;
     memset(&serveraddr, 0, sizeof(serveraddr));
     serveraddr.sin_family = AF_INET;
@@ -58,12 +61,8 @@ void CServer_Connection::Send_Data(SEND_EVENT_TYPE eEvent, void* Data)
         header.event = S_PLAYER_CHOICE;
 
         int retval = send(sock, reinterpret_cast<const char*>(&header), sizeof(SendHeaderPacket), 0);
-        //if (retval == SOCKET_ERROR)
-        //    err_quit("send() - header");
 
         retval = send(sock, reinterpret_cast<const char*>(eventData), sizeof(S_PlayerChoicePacket), 0);
-        //if (retval == SOCKET_ERROR)
-        //    err_quit("send() - PlayerChoicePacket");
     }
         break;
 
@@ -77,12 +76,10 @@ void CServer_Connection::Send_Data(SEND_EVENT_TYPE eEvent, void* Data)
         header.event = S_PLAYER_CHOICE;
 
         int retval = send(sock, reinterpret_cast<const char*>(&header), sizeof(SendHeaderPacket), 0);
-        //if (retval == SOCKET_ERROR)
-        //    err_quit("send() - header");
+
 
         retval = send(sock, reinterpret_cast<const char*>(eventData), sizeof(S_KeyInputPacket), 0);
-        //if (retval == SOCKET_ERROR)
-        //    err_quit("send() - KeyInputPacket");
+
     }
         break;
 

@@ -46,16 +46,18 @@ void CMainGame::Initialize(void)
 	CServer_Connection::Get_Instance()->Initialize("127.0.0.1");
 	CBmp_Manager::Get_Instance()->Insert_Bmp(L"../Image/Back.bmp", L"BackBuffer");
 	CLevel_Manager::Get_Instance()->Level_Change(LEVEL_MENU);
+	m_recvThread = std::thread(&CLevel_Manager::ReceiveThread, CLevel_Manager::Get_Instance());
+
 }
 
 void CMainGame::Update(void)
 {
 	CLevel_Manager::Get_Instance()->Update();
+	CLevel_Manager::Get_Instance()->ProcessReceivedData();
 }
 
 void CMainGame::Recv_Data(void)
 {
-	CLevel_Manager::Get_Instance()->Recv_Data();
 }
 
 void CMainGame::Late_Update(void)
@@ -87,7 +89,9 @@ void CMainGame::Render(void)
 
 void CMainGame::Release(void)
 {
-	
+	if (m_recvThread.joinable()) {
+		m_recvThread.join();  // 수신 스레드 종료 대기
+	}
 	ReleaseDC(g_hWnd, m_hDC);
 }
 
