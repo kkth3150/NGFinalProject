@@ -91,6 +91,9 @@
     <Filter Include="07.Server_Connection\ErrorMsg">
       <UniqueIdentifier>{f5559162-fb9f-4377-8d83-a2d040fb75f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03.Object_Manager\GameObjects\03-12.Finger">
+      <UniqueIdentifier>{ea52659c-0da2-4364-8899-f44c597350b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -195,6 +198,9 @@
     <ClInclude Include="ErrorMsg.h">
       <Filter>07.Server_Connection\ErrorMsg</Filter>
     </ClInclude>
+    <ClInclude Include="Finger.h">
+      <Filter>03.Object_Manager\GameObjects\03-12.Finger</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1945모작.cpp">
@@ -280,6 +286,9 @@
     </ClCompile>
     <ClCompile Include="ErrorMsg.cpp">
       <Filter>07.Server_Connection\ErrorMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="Finger.cpp">
+      <Filter>03.Object_Manager\GameObjects\03-12.Finger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

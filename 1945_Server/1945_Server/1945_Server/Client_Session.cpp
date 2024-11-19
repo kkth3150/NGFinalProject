@@ -89,17 +89,29 @@ void ClientSession::SendData() {
 
     while (running) {
 
-
         RecvHeaderPacket header;
         header.length = sizeof(R_PlayerChoicePacket);
         header.event = R_PLAYER_CHOICE;
 
+        if (clientIndex == CLIENT_1) {
+
+            R_PlayerChoicePacket Temp = { P1.index ,P2.index };
+
+            int retval = send(clientSocket, reinterpret_cast<const char*>(&header), sizeof(SendHeaderPacket), 0);
+            retval = send(clientSocket, reinterpret_cast<const char*>(&Temp), sizeof(R_PlayerChoicePacket), 0);
+
+        }
+        else if(clientIndex == CLIENT_2) {
+
+            R_PlayerChoicePacket Temp = { P2.index,P1.index };
+
+            int retval = send(clientSocket, reinterpret_cast<const char*>(&header), sizeof(SendHeaderPacket), 0);
+            retval = send(clientSocket, reinterpret_cast<const char*>(&Temp), sizeof(R_PlayerChoicePacket), 0);
+
+        }
+       
      
 
-        R_PlayerChoicePacket a = {0,1};
-
-        int retval = send(clientSocket,reinterpret_cast<const char*>(&header),sizeof(SendHeaderPacket),0);
-        retval = send(clientSocket, reinterpret_cast<const char*>(&a), sizeof(R_PlayerChoicePacket),0);      
 
         std::this_thread::sleep_for(std::chrono::milliseconds(100));  // 대기 시간
     }

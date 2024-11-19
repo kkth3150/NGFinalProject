@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Level_Manager.h"
 #include "Server_Connection.h"
+#include "Object_Manager.h"
+#include "Finger.h"
 #include <thread>
 #include <mutex>
 #include <condition_variable>
@@ -95,11 +97,15 @@ void CLevel_Manager::ProcessReceivedData()
 	if (!g_hasNewData) {
 		return;
 	}
+
+
 	switch (g_receivedData.eventType) {
-	case R_PLAYER_CHOICE:
-		R_PlayerChoicePacket* Temp = static_cast<R_PlayerChoicePacket*>(g_receivedData.data);
-		
-		
+	case R_PLAYER_CHOICE: {
+		if (m_eCurLevel == LEVEL_MENU) {
+			R_PlayerChoicePacket* Temp = static_cast<R_PlayerChoicePacket*>(g_receivedData.data);
+			dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())->SetFlight((int)Temp->Choiced_Character_P2);
+		}
+	}
 		break;
 	case R_LEVEL_CHANGE:
 		// R_LEVEL_CHANGE 이벤트 처리

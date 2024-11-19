@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "UI.h"
+#include "Player.h"
 #include "Bmp_Manager.h"
 #include "Object_Manager.h"
-#include "Player.h"
 #include "Key_Manager.h"
 
 CUI::CUI()
@@ -25,35 +25,6 @@ int CUI::Update()
 
 	__super::Update_Rect();
 
-	if (m_pFrameKey == L"PLAYER_FINGER") {
-		if (CKey_Manager::Get_Instance()->Key_Down('A') && m_Choice == 1) {
-			--m_iScore;
-		}
-		if (CKey_Manager::Get_Instance()->Key_Down('D') && m_Choice == 1) {
-			++m_iScore;
-		}
-		if (CKey_Manager::Get_Instance()->Key_Down(VK_LEFT) && m_Choice == 0) {
-			--m_iScore;
-		}
-		if (CKey_Manager::Get_Instance()->Key_Down(VK_RIGHT) && m_Choice == 0) {
-			++m_iScore;
-		}
-		if (m_iScore < 0)
-			m_iScore = 2;
-		if (m_iScore > 2)
-			m_iScore = 0;
-
-		if (m_iScore == 0)
-			Set_Pos(175 + (int)m_Choice * 60, 150);
-
-		if (m_iScore == 1)
-			Set_Pos(500 + (int)m_Choice * 60, 150);
-
-		if (m_iScore == 2)
-			Set_Pos(350 + (int)m_Choice * 60, 250);
-	}
-
-	
 
 	return OBJ_NOEVENT;
 }
@@ -87,37 +58,18 @@ void CUI::Render(HDC hDC)
 	HDC	hMemDC = CBmp_Manager::Get_Instance()->Find_Img(m_pFrameKey);
 	switch (m_eUIState) {
 	case UI_NONANIM:
-
-		if (m_pFrameKey == L"PLAYER_FINGER") {
-			GdiTransparentBlt(
-				hDC,
-				m_tRect.left,
-				m_tRect.top,
-				60,
-				60,
-				hMemDC,
-				(int)m_Choice * m_tInfo.fCX,
-				0,
-				(int)m_tInfo.fCX,
-				(int)m_tInfo.fCY,
-				RGB(255, 255, 255));
-		}
-		else {
-			GdiTransparentBlt(
-				hDC,
-				m_tRect.left,
-				m_tRect.top,
-				(int)m_tInfo.fCX,
-				(int)m_tInfo.fCY,
-				hMemDC,
-				0,
-				0,
-				(int)m_tInfo.fCX,
-				(int)m_tInfo.fCY,
-				RGB(255, 255, 255));
-		}
-		
-
+		GdiTransparentBlt(
+			hDC,
+			m_tRect.left,
+			m_tRect.top,
+			(int)m_tInfo.fCX,
+			(int)m_tInfo.fCY,
+			hMemDC,
+			0,
+			0,
+			(int)m_tInfo.fCX,
+			(int)m_tInfo.fCY,
+			RGB(255, 255, 255));
 		break;
 
 	case UI_ANIM:
