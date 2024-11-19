@@ -1,8 +1,15 @@
 #include "pch.h"
 #include "Level_Manager.h"
 #include "Server_Connection.h"
+#include <thread>
+#include <mutex>
+#include <condition_variable>
 
 CLevel_Manager* CLevel_Manager::m_pInstance = nullptr;
+std::mutex g_recvMutex;
+std::condition_variable g_dataCondVar;
+bool g_hasNewData = false;
+ReceiveDataResult g_receivedData;
 
 CLevel_Manager::CLevel_Manager() : m_eCurLevel(LEVEL_GAMEPLAY), m_ePreLevel(LEVEL_END)
 {
@@ -47,10 +54,6 @@ int CLevel_Manager::Update()
 	return 0;
 }
 
-void CLevel_Manager::Recv_Data()
-{
-	m_pLevel->Recv_Data();
-}
 
 void CLevel_Manager::Late_Update()
 {
@@ -65,4 +68,45 @@ void CLevel_Manager::Render(HDC hDC)
 void CLevel_Manager::Release(void)
 {
 	Safe_Delete(m_pLevel);
+}
+
+void CLevel_Manager::ReceiveThread()
+{
+	while (true) {
+		ReceiveDataResult data = CServer_Connection::Get_Instance()->Receive_Data();
+
+		std::unique_lock<std::mutex> lock(g_recvMutex);
+		g_receivedData = data;
+		g_hasNewData = true;
+		lock.unlock();
+
+		g_dataCondVar.notify_one();
+	}
+
+}
+
+void CLevel_Manager::ProcessReceivedData()
+{
+
+	std::unique_lock<std::mutex> lock(g_recvMutex);
+	if (!lock.owns_lock()) {
+		return;
+	}
+	if (!g_hasNewData) {
+		return;
+	}
+	switch (g_receivedData.eventType) {
+	case R_PLAYER_CHOICE:
+		R_PlayerChoicePacket* Temp = static_cast<R_PlayerChoicePacket*>(g_receivedData.data);
+		
+		
+		break;
+	case R_LEVEL_CHANGE:
+		// R_LEVEL_CHANGE 이벤트 처리
+		break;
+	default:
+		break;
+	}
+
+	g_hasNewData = false;
 }

@@ -51,8 +51,7 @@ int CLevel_Menu::Update()
 	if (m_bButton_Down&&!m_bDoOnce) {
 
 		
-		S_PlayerChoicePacket a = { 1 };
-		CServer_Connection::Get_Instance()->Send_Data(S_PLAYER_CHOICE, &a);
+
 
 		// ---------------------START BUTTON--------------------------
 		CGameObject* pButton = CAbstractFactory<CButton>::Create(300.f, 800.f);
@@ -111,7 +110,8 @@ int CLevel_Menu::Update()
 
 		m_bDoOnce = true;
 
-
+		S_PlayerChoicePacket a = { 2 };
+		CServer_Connection::Get_Instance()->Send_Data(S_PLAYER_CHOICE, &a);
 	}
 
 
@@ -133,53 +133,6 @@ int CLevel_Menu::Update()
 
 	CObject_Manager::Get_Instance()->Update();
 	return 0;
-}
-
-void CLevel_Menu::Recv_Data()
-{
-	ReceiveDataResult Data = CServer_Connection::Get_Instance()->Receive_Data();
-	switch (Data.eventType) {
-	case R_PLAYER_CHOICE:
-		switch (static_cast<R_PlayerChoicePacket*>(Data.data)->Choiced_Character_P1) {
-		case 0:
-			//0번 플레이어 선택중이라면 손가락 이동시키기 
-			
-			break;
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		}
-
-		switch (static_cast<R_PlayerChoicePacket*>(Data.data)->Choiced_Character_P2) {
-		case 0:
-			//0번 플레이어 선택중이라면 손가락 이동시키기 
-
-			break;
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		}
-
-
-
-		break;
-
-	case R_LEVEL_CHANGE:
-		if (LEVEL_GAMEPLAY == static_cast<R_LevelChangePacket*>(Data.data)->Level) {
-			CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAMEPLAY);
-		}
-		break;
-
-	default:
-		break;
-
-	}
 }
 
 void CLevel_Menu::Late_Update()

@@ -72,11 +72,11 @@
     <ClInclude Include="Level_GamePlay.h">
       <Filter>03.Level_Manager\Levels\01-01.GamePlay_Level</Filter>
     </ClInclude>
-    <ClInclude Include="Common.h">
-      <Filter>Default</Filter>
-    </ClInclude>
     <ClInclude Include="Client_Session.h">
       <Filter>01.ClinetSession</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorMsg.h">
+      <Filter>Default</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

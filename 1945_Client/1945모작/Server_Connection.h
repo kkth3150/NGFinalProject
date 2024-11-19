@@ -35,7 +35,8 @@ public:
 private:
 
 	static	CServer_Connection* m_pInstance;
-	SOCKET sock;
+	SOCKET						sock;
+
 
 };
 

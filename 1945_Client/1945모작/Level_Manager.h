@@ -15,11 +15,12 @@ public:
 		return m_eCurLevel;
 	}
 	int	 Update();
-	void Recv_Data();
 	void Late_Update();
 	
 	void Render(HDC hDC);
 	void Release(void);
+	void ReceiveThread();
+	void ProcessReceivedData();
 
 public:
 	static	CLevel_Manager* Get_Instance()

@@ -1,12 +1,10 @@
 #pragma once
 #ifndef CLIENTSESSION_H
 #define CLIENTSESSION_H
-
-#include <winsock2.h>
+#include "ErrorMsg.h"
 #include <thread>
 #include <condition_variable>
 #include <mutex>
-#include "Common.h"
 #include "Define.h"
 
 class ClientSession {
