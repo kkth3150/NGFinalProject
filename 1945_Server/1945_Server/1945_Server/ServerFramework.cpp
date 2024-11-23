@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "Client_Connection.h"
 #include "Level_Manager.h"
 #include <thread>
 #include <stdio.h>
@@ -19,6 +20,7 @@ int main() {
     LARGE_INTEGER frequency;
     LARGE_INTEGER frameStart, frameEnd;
     QueryPerformanceFrequency(&frequency);
+    QueryPerformanceCounter(&frameStart);
     int frameCount = 0;
     DWORD fpsTimer = GetTickCount64();
 
@@ -29,8 +31,6 @@ int main() {
     printf("[알림] 윈속 초기화 성공\n");
 
     SOCKET listen_sock = socket(AF_INET, SOCK_STREAM, 0);
-    //if (listen_sock == INVALID_SOCKET)
-    //    err_quit("socket()");
 
     struct sockaddr_in serveraddr;
     memset(&serveraddr, 0, sizeof(serveraddr));
@@ -38,28 +38,50 @@ int main() {
     serveraddr.sin_addr.s_addr = htonl(INADDR_ANY);
     serveraddr.sin_port = htons(SERVERPORT);
     retval = bind(listen_sock, (struct sockaddr*)&serveraddr, sizeof(serveraddr));
-    //if (retval == SOCKET_ERROR)
-    //    err_quit("bind()");
+
 
     retval = listen(listen_sock, SOMAXCONN);
-    //if (retval == SOCKET_ERROR)
-    //    err_quit("listen()");
-
-
 
     CLevel_Manager::Get_Instance()->Level_Change(LEVEL_MENU);
 
 
-    while (true) {
-        SOCKET clientSocket = accept(listen_sock, NULL, NULL);
-        if (clientSocket == INVALID_SOCKET) {
+    CClient_Connection* clients[CLIENT_END];
+    for (int i = 0; i < CLIENT_END; ++i) {
+        SOCKET clientSock = accept(listen_sock, NULL, NULL);
+        if (clientSock == INVALID_SOCKET) {
+            cerr << "Client connection failed" << endl;
             continue;
-        };
+        }
+        cout << "Client " << i + 1 << " connected" << endl;
+
+        clients[i] = CClient_Connection::Get_Instance(static_cast<CLIENT_ID>(i));
+        clients[i]->Set_SOCKET(clientSock);  // 수락된 소켓을 설정
+        clients[i]->Initialize();           // 초기화
+    }
+
+
+
+    while (true) {
+
+
+        CLevel_Manager::Get_Instance()->Update();       // 각 클라이언트의 데이터 처리
+        CLevel_Manager::Get_Instance()->Late_Update();  // 추가적인 업데이트 처리
+
+        // 원하는 프레임 대기
+        QueryPerformanceCounter(&frameEnd);
+        DWORD frameTime = (frameEnd.QuadPart - frameStart.QuadPart) * 1000 / frequency.QuadPart;
+        if (frameDelay > frameTime) {
+            Sleep(frameDelay - frameTime);
+        }
+        frameStart = frameEnd;
     }
 
     // 서버 종료 시 리소스 해제
+    for (int i = 0; i < CLIENT_END; ++i) {
+        clients[i]->Release();  // 각 클라이언트 연결 해제
+    }
+    CClient_Connection::Destroy_Instance();
     closesocket(listen_sock);
-    CLevel_Manager::Get_Instance()->Release();
     WSACleanup();
 
     return 0;

@@ -43,6 +43,15 @@ void CLevel_Menu::Initialize()
 	dynamic_cast<CUI*>(pMainUI)->Set_State(UI_NONANIM);
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pMainUI);
 
+
+	S_InitDataPacket InitPacket;
+	InitPacket.Connected = true;
+
+	SendQueue_data InitData;
+	InitData.event = S_INIT_DATA;
+	InitData.data[0] = static_cast<uint8_t>(InitPacket.Connected);
+	CServer_Connection::Get_Instance()->Push_SendQueue(InitData);
+
 	m_bButton_Down = false;
 	m_bDoOnce = false;
 }

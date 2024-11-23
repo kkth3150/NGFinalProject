@@ -52,7 +52,6 @@ void CMainGame::Initialize(void)
 void CMainGame::Update(void)
 {
 	CLevel_Manager::Get_Instance()->Update();
-	CLevel_Manager::Get_Instance()->ProcessReceivedData();
 }
 
 void CMainGame::Recv_Data(void)

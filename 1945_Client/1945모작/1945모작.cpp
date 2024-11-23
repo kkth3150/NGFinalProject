@@ -71,7 +71,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         else
         {
             MainGame.Update();
-            MainGame.Recv_Data();
             MainGame.Late_Update();
             MainGame.Render();
 

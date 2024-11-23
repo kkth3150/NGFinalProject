@@ -1,22 +1,2 @@
-﻿  pch.cpp
-  Client_Connection.cpp
-  Define.h
-  Finger.cpp
-  GameObject.cpp
-  Level.cpp
-  Level_GamePlay.cpp
-  Level_Manager.cpp
-  Level_Menu.cpp
-  Object_Manager.cpp
-  ServerFramework.cpp
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(23,20): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/ServerFramework.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,31): warning C4101: 'frameEnd' :참조되지 않은 지역 변수입니다.
-  (소스 파일 '/ServerFramework.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(20,19): warning C4101: 'frameStart' :참조되지 않은 지역 변수입니다.
-  (소스 파일 '/ServerFramework.cpp'을(를) 컴파일하는 중)
-  
-  코드를 생성하고 있습니다...
+﻿  Client_Connection.cpp
   1945_Server.vcxproj -> C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\x64\Debug\1945_Server.exe
