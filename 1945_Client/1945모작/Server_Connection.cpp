@@ -24,12 +24,10 @@ void CServer_Connection::Initialize(const char* ServerIP)
     int retval;
     WSADATA wsa;
     
-
     if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
         return;
+
     printf("[알림] 윈속 초기화 성공\n");
-
-
 
     sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock == INVALID_SOCKET)
@@ -46,14 +44,9 @@ void CServer_Connection::Initialize(const char* ServerIP)
     if (retval == SOCKET_ERROR)
         err_quit("connect()");
 
-
-    senderThread = std::thread(&CServer_Connection::SendThread, this);
-    receiverThread = std::thread(&CServer_Connection::ReceiveThread, this);
+    senderThread    = std::thread(&CServer_Connection::SendThread, this);
+    receiverThread  = std::thread(&CServer_Connection::ReceiveThread, this);
 }
-
-
-
-
 
 void CServer_Connection::SendThread()
 {
@@ -70,13 +63,14 @@ void CServer_Connection::SendThread()
         SEND_EVENT_TYPE eventType = Temp.event;
 
         switch (eventType) {
-        case S_INIT_DATA:
-            SendHeaderPacket headerPacket = { sizeof(S_InitDataPacket),S_INIT_DATA};
+        case S_INIT_DATA: {
+            SendHeaderPacket headerPacket = { sizeof(S_InitDataPacket),S_INIT_DATA };
             int retval = send(sock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
 
             S_InitDataPacket packet;
             packet.Connected = *(reinterpret_cast<bool*>(Temp.data));
             retval = send(sock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+        }
             break;
         case S_PLAYER_CHOICE:
             break;
@@ -87,9 +81,6 @@ void CServer_Connection::SendThread()
         default:
             break;
         }
-
-        
-
     }
 }
 

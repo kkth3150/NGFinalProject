@@ -20,7 +20,6 @@ enum SEND_EVENT_TYPE : uint8_t { S_INIT_DATA , S_PLAYER_CHOICE, S_KEY_INPUT, S_E
 enum RECEIVE_EVENT_TYPE : uint8_t {R_MY_CLIENT_ID ,R_PLAYER_CHOICE,R_LEVEL_CHANGE, R_EVENT_END };
 enum PLAYERID {PLAYER_1,PLAYER_2,PLAYER_END};
 
-
 template<typename T>
 void Safe_Delete(T& Temp)
 {
@@ -30,7 +29,6 @@ void Safe_Delete(T& Temp)
 		Temp = nullptr;
 	}
 }
-
 
 typedef struct tagInfo
 {
@@ -165,11 +163,11 @@ struct RecvHeaderPacket {
 };
 
 
-
 struct R_LevelChangePacket {
 
 	LEVEL_ID Level;
 };
+
 
 struct  R_PlayerMovePacket {
 
@@ -179,16 +177,19 @@ struct  R_PlayerMovePacket {
 
 };
 
+
 struct R_PlayerChoicePacket {
 
 	uint8_t Choiced_Character_P1;
 	uint8_t Choiced_Character_P2;
 };
 
+
 struct ReceiveDataResult {
 	RECEIVE_EVENT_TYPE eventType;
 	void* data;
 };
+
 
 struct RecvQueue_data {
 
