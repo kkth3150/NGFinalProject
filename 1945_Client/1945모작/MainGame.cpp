@@ -46,7 +46,6 @@ void CMainGame::Initialize(void)
 	CServer_Connection::Get_Instance()->Initialize("127.0.0.1");
 	CBmp_Manager::Get_Instance()->Insert_Bmp(L"../Image/Back.bmp", L"BackBuffer");
 	CLevel_Manager::Get_Instance()->Level_Change(LEVEL_MENU);
-	m_recvThread = std::thread(&CLevel_Manager::ReceiveThread, CLevel_Manager::Get_Instance());
 
 }
 

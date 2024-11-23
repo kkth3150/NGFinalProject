@@ -1,9 +1,7 @@
 #include "pch.h"
 #include "Server_Connection.h"
 #include "ErrorMsg.h"
-#include <thread>
-#include <mutex>
-#include <condition_variable>
+
 
 #define SERVERPORT 9000
 
@@ -47,84 +45,115 @@ void CServer_Connection::Initialize(const char* ServerIP)
 
     if (retval == SOCKET_ERROR)
         err_quit("connect()");
+
+
+    senderThread = std::thread(&CServer_Connection::SendThread, this);
+    receiverThread = std::thread(&CServer_Connection::ReceiveThread, this);
 }
 
-void CServer_Connection::Send_Data(SEND_EVENT_TYPE eEvent, void* Data)
+
+
+
+
+void CServer_Connection::SendThread()
 {
-    switch (eEvent) {
-    case S_PLAYER_CHOICE: {
+    while (!m_bTerminateThreads) {
+        std::unique_lock<std::mutex> lock(sendMutex);
+        sendCv.wait(lock, [this]() { return !sendQueue.empty() || m_bTerminateThreads; });
 
-        S_PlayerChoicePacket* eventData = static_cast<S_PlayerChoicePacket*>(Data);
+        if (m_bTerminateThreads) break;
 
-        SendHeaderPacket header;
-        header.length = sizeof(S_PlayerChoicePacket);
-        header.event = S_PLAYER_CHOICE;
+        SendQueue_data Temp = sendQueue.front();
+        sendQueue.pop();
+        lock.unlock();
 
-        int retval = send(sock, reinterpret_cast<const char*>(&header), sizeof(SendHeaderPacket), 0);
+        SEND_EVENT_TYPE eventType = Temp.event;
 
-        retval = send(sock, reinterpret_cast<const char*>(eventData), sizeof(S_PlayerChoicePacket), 0);
+        switch (eventType) {
+        case S_INIT_DATA:
+            SendHeaderPacket headerPacket = { sizeof(S_InitDataPacket),S_INIT_DATA};
+            int retval = send(sock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+
+            S_InitDataPacket packet;
+            packet.Connected = *(reinterpret_cast<bool*>(Temp.data));
+            retval = send(sock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+            break;
+        case S_PLAYER_CHOICE:
+            break;
+        case S_KEY_INPUT:
+            break;
+
+
+        default:
+            break;
+        }
+
+        
+
     }
-        break;
+}
 
-    case S_KEY_INPUT:
-    {
+void CServer_Connection::ReceiveThread()
+{
+    while (!m_bTerminateThreads) {
+        ReceiveDataResult result = Receive_Data();
 
-        S_KeyInputPacket* eventData = static_cast<S_KeyInputPacket*>(Data);
-
-        SendHeaderPacket header;
-        header.length = sizeof(S_KeyInputPacket);
-        header.event = S_PLAYER_CHOICE;
-
-        int retval = send(sock, reinterpret_cast<const char*>(&header), sizeof(SendHeaderPacket), 0);
-
-
-        retval = send(sock, reinterpret_cast<const char*>(eventData), sizeof(S_KeyInputPacket), 0);
-
+        std::lock_guard<std::mutex> lock(receiveMutex);
+        // 수신된 데이터를 큐에 추가하여 후속 처리가 가능하게 함
+       /* receiveQueue.push(result);*/
     }
-        break;
+}
 
-    default:
-        break;
-    }
 
+void CServer_Connection::Push_SendQueue(SendQueue_data Data)
+{
+    std::lock_guard<std::mutex> lock(sendMutex);
+    sendQueue.emplace(Data);
+    sendCv.notify_one();
 }
 
 ReceiveDataResult CServer_Connection::Receive_Data()
 {
     RecvHeaderPacket header;
     int retval = recv(sock, reinterpret_cast<char*>(&header), sizeof(RecvHeaderPacket), 0);
-    //if (retval == SOCKET_ERROR || retval == 0) {
-    //    err_quit("recv() failed or connection closed");
-    //}
+    if (retval == SOCKET_ERROR || retval == 0) {
+        err_quit("recv() failed or connection closed");
+    }
 
     switch (header.event) {
     case R_PLAYER_CHOICE: {
         auto* eventData = new R_PlayerChoicePacket;
         retval = recv(sock, reinterpret_cast<char*>(eventData), sizeof(R_PlayerChoicePacket), 0);
-        //if (retval == SOCKET_ERROR || retval == 0) {
-        //    err_quit("recv() failed - R_PlayerChoicePacket");
-        //}
+        if (retval == SOCKET_ERROR || retval == 0) {
+            err_quit("recv() failed - R_PlayerChoicePacket");
+        }
         return { R_PLAYER_CHOICE, eventData };
     }
-        break;
-
-    case R_LEVEL_CHANGE:
-    {
+    case R_LEVEL_CHANGE: {
         auto* eventData = new R_LevelChangePacket;
         retval = recv(sock, reinterpret_cast<char*>(eventData), sizeof(R_LevelChangePacket), 0);
-        //if (retval == SOCKET_ERROR || retval == 0) {
-        //    err_quit("recv() failed - R_LevelChangePacket");
-        //}
+        if (retval == SOCKET_ERROR || retval == 0) {
+            err_quit("recv() failed - R_LevelChangePacket");
+        }
         return { R_LEVEL_CHANGE, eventData };
     }
-
     case R_EVENT_END:
         break;
     }
 
+    return { R_EVENT_END, nullptr };
 }
-
 
 void CServer_Connection::Release()
 {
+    m_bTerminateThreads = true;
+    sendCv.notify_all();
+
+    if (senderThread.joinable())
+        senderThread.join();
+    if (receiverThread.joinable())
+        receiverThread.join();
+
+    closesocket(sock);
+    WSACleanup();
 }

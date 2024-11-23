@@ -51,7 +51,7 @@ int CFinger::Update()
 		}
 
 		S_PlayerChoicePacket  TempPacket = { m_iFlight };
-		CServer_Connection::Get_Instance()->Send_Data(S_PLAYER_CHOICE, &TempPacket);
+		//CServer_Connection::Get_Instance()->Send_Data(S_PLAYER_CHOICE, &TempPacket);
 	}
 
 	return OBJ_NOEVENT;
