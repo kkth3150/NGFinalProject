@@ -1,4 +1,4 @@
-#include "Client_Session.h"
+#include "pch.h"
 #include "Level_Manager.h"
 #include <thread>
 #include <stdio.h>
@@ -13,7 +13,6 @@ const int frameDelay = 1000 / targetFPS;
 
 SOCKET g_listenSocket;
 SOCKET g_clientSockets[CLIENT_END];
-ClientSession* g_clientSessions[CLIENT_END];
 
 
 int main() {
@@ -55,20 +54,7 @@ int main() {
         SOCKET clientSocket = accept(listen_sock, NULL, NULL);
         if (clientSocket == INVALID_SOCKET) {
             continue;
-        }
-
-        u_long on = 1;
-        ioctlsocket(clientSocket, FIONBIO, &on);
-
-        // 새로운 ClientSession 객체 생성 및 시작
-        for (int i = 0; i < CLIENT_END; ++i) {
-            if (g_clientSessions[i] == nullptr) {
-                g_clientSessions[i] = new ClientSession(clientSocket, i);
-                g_clientSessions[i]->Start();
-                std::cout << "클라이언트 " << i << " 연결됨\n";
-                break;
-            }
-        }
+        };
     }
 
     // 서버 종료 시 리소스 해제

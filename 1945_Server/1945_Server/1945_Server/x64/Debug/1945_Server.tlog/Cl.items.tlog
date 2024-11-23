@@ -1,7 +1,11 @@
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Client_Session.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\Client_Session.obj
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Client_Connection.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\Client_Connection.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Define.h;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\Define.obj
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Finger.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\Finger.obj
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\GameObject.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\GameObject.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Level.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\Level.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Level_GamePlay.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\Level_GamePlay.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Level_Manager.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\Level_Manager.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Level_Menu.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\Level_Menu.obj
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Object_Manager.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\Object_Manager.obj
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\pch.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\pch.obj
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp;C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\x64\Debug\ServerFramework.obj
