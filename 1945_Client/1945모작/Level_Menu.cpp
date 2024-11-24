@@ -9,6 +9,7 @@
 #include "Level_GamePlay.h"
 #include "AbstractFactory.h"
 #include "Server_Connection.h"
+#include "Key_Manager.h"
 
 CLevel_Menu::CLevel_Menu()
 {
@@ -58,9 +59,9 @@ void CLevel_Menu::Initialize()
 
 int CLevel_Menu::Update()
 {
-	if (m_bButton_Down&&!m_bDoOnce) {
+	if (m_bButton_Down && !m_bDoOnce) {
 
-		
+
 
 
 		// ---------------------START BUTTON--------------------------
@@ -70,7 +71,7 @@ int CLevel_Menu::Update()
 
 
 		// ---------------------비행기들-------------------------------
-		CGameObject* pFlightUI = CAbstractFactory<CUI>::Create_UI(290.f, 300.f, 528.f, 288.f,44,50);
+		CGameObject* pFlightUI = CAbstractFactory<CUI>::Create_UI(290.f, 300.f, 528.f, 288.f, 44, 50);
 		pFlightUI->Set_FrameKey(L"MENU_FLIGHT_F_4");
 		dynamic_cast<CUI*>(pFlightUI)->Set_State(UI_ANIM);
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pFlightUI);
@@ -84,7 +85,7 @@ int CLevel_Menu::Update()
 		pFlightUI3->Set_FrameKey(L"MENU_FLIGHT_S_F");
 		dynamic_cast<CUI*>(pFlightUI3)->Set_State(UI_ANIM);
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pFlightUI3);
-		
+
 
 		// -------------------- 비행기 설명 ----------------------------
 
@@ -104,13 +105,26 @@ int CLevel_Menu::Update()
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pFLIGHTNAME);
 
 		// ------------------------- 손꾸락 -----------------------------
-		CGameObject* pFinger2 = CAbstractFactory<CFinger>::Create_UI(300.f, 300.f, 32.f, 32.f);
-		pFinger2->Set_FrameKey(L"PLAYER_FINGER");
-		CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger2);
+		if (MyClientID == PLAYER_1) {
+			CGameObject* pFinger2 = CAbstractFactory<CFinger>::Create_UI(300.f, 300.f, 32.f, 32.f);
+			pFinger2->Set_FrameKey(L"PLAYER_FINGER");
+			CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger2);
 
-		CGameObject* pFinger1 = CAbstractFactory<CFinger>::Create_UI(500.f, 300.f, 32.f, 32.f);
-		pFinger1->Set_FrameKey(L"PLAYER_FINGER");
-		CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger1);
+			CGameObject* pFinger1 = CAbstractFactory<CFinger>::Create_UI(500.f, 300.f, 32.f, 32.f);
+			pFinger1->Set_FrameKey(L"PLAYER_FINGER");
+			CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger1);
+		}
+		else {
+
+			CGameObject* pFinger1 = CAbstractFactory<CFinger>::Create_UI(500.f, 300.f, 32.f, 32.f);
+			pFinger1->Set_FrameKey(L"PLAYER_FINGER");
+			CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger1);
+
+			CGameObject* pFinger2 = CAbstractFactory<CFinger>::Create_UI(300.f, 300.f, 32.f, 32.f);
+			pFinger2->Set_FrameKey(L"PLAYER_FINGER");
+			CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger2);
+
+		}
 
 		m_bDoOnce = true;
 
@@ -127,6 +141,70 @@ int CLevel_Menu::Update()
 				m_bButton_Down = true;
 			}
 		}
+	}
+
+	if (m_bButton_Down) {
+
+		RecvQueue_data data;
+		CServer_Connection::Get_Instance()->Lock_RecvQueue();
+		while (!CServer_Connection::Get_Instance()->RecvQueueEmpty()) {
+			CServer_Connection::Get_Instance()->Get_RecvQueueData(data);
+			switch (data.event) {
+			case R_MY_CLIENT_ID:
+				MyClientID = data.data[0];
+				break;
+
+			case R_PLAYER_CHOICE:
+
+				if (CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->size() > 1) {
+					auto it = std::next(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->begin(), 1);
+					CFinger* pSecondFinger = dynamic_cast<CFinger*>(*it);
+
+					if (pSecondFinger) {
+						pSecondFinger->SetMyFlight((int)data.data[0]);
+					}
+
+				}
+
+				break;
+
+			case R_LEVEL_CHANGE:
+				break;
+			default:
+				break;
+
+			}
+				
+		}
+		CServer_Connection::Get_Instance()->Unlock_RecvQueue();
+
+			if (CKey_Manager::Get_Instance()->Key_Down(VK_RIGHT)) {
+				dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())->MoveRight();
+
+				S_PlayerChoicePacket ChoicePacket;
+				ChoicePacket.Choiced_Character = static_cast<uint8_t>(dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->
+					Get_List(OBJ_FINGER)->front())->GetMyFlight());
+
+				SendQueue_data ChoiceData;
+				ChoiceData.event = S_PLAYER_CHOICE;
+				ChoiceData.data[0] = static_cast<uint8_t>(ChoicePacket.Choiced_Character);
+				CServer_Connection::Get_Instance()->Push_SendQueue(ChoiceData);
+
+			}
+
+			if (CKey_Manager::Get_Instance()->Key_Down(VK_LEFT)) {
+				dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())->MoveLeft();
+
+				S_PlayerChoicePacket ChoicePacket;
+				ChoicePacket.Choiced_Character = static_cast<uint8_t>(dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->
+					Get_List(OBJ_FINGER)->front())->GetMyFlight());
+
+				SendQueue_data ChoiceData;
+				ChoiceData.event = S_PLAYER_CHOICE;
+				ChoiceData.data[0] = static_cast<uint8_t>(ChoicePacket.Choiced_Character);
+				CServer_Connection::Get_Instance()->Push_SendQueue(ChoiceData);
+			}
+		
 	}
 
 	if (m_bDoOnce) {

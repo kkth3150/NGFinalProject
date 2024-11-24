@@ -22,8 +22,11 @@ void CClient_Connection::Set_SOCKET(SOCKET sock)
 	clientSock = sock;
 }
 
-void CClient_Connection::Push_SendQueue()
+void CClient_Connection::Push_RecvQueue(RecvQueue_data data)
 {
+    std::lock_guard<std::mutex> lock(receiveMutex);
+    receiveQueue.emplace(data);
+    recvCv.notify_one();
 
 }
 
@@ -66,15 +69,78 @@ void CClient_Connection::ReceiveThread()
 
 void CClient_Connection::SendThread()
 {
+    while (!m_bTerminateThreads) {
+        std::unique_lock<std::mutex> lock(receiveMutex);
+        recvCv.wait(lock, [this]() {return !receiveQueue.empty() || m_bTerminateThreads; });
+        if (m_bTerminateThreads) break;
 
+        RecvQueue_data Temp = receiveQueue.front();
+        receiveQueue.pop();
+        lock.unlock();
+
+        RECEIVE_EVENT_TYPE eventType = Temp.event;
+
+        switch (eventType) {
+        case R_MY_CLIENT_ID: {
+            RecvHeaderPacket headerPacket = { sizeof(R_MY_CLIENT_ID),R_MY_CLIENT_ID };
+            int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+
+            R_SetClientPacket packet;
+            packet.ID = myID;
+            retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+        }
+            break;
+
+        case R_PLAYER_CHOICE:
+        {
+            RecvHeaderPacket headerPacket = { sizeof(R_PLAYER_CHOICE),R_PLAYER_CHOICE };
+            int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+
+            R_PlayerChoicePacket packet;
+            packet.Choiced_Character = Temp.data[0];
+            retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+
+            cout << "플레이어" << "선택 정보 전송" << endl;
+        }
+            break;
+        case R_LEVEL_CHANGE:
+            
+            break;
+        default:
+            
+            break;
+        }
+
+    }
 
 }
 
 void CClient_Connection::Release()
 {
+    m_bTerminateThreads = true;
+    
+    recvCv.notify_all();
+    sendCv.notify_all();
 }
 
-void CClient_Connection::Receive_Data()
+
+bool CClient_Connection::Get_SendQueueData(SendQueue_data& data)
 {
-    
+    if (sendQueue.empty()) {
+        return false;
+    }
+
+    data = sendQueue.front();
+    sendQueue.pop();
+    return true;
+}
+
+void CClient_Connection::Lock_SendQueue()
+{
+    sendMutex.lock();
+}
+
+void CClient_Connection::Unlock_SendQueue()
+{
+    sendMutex.unlock();
 }

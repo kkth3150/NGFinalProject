@@ -149,10 +149,14 @@ struct S_KeyInputPacket {
 
 struct RecvHeaderPacket {
 	uint8_t length; // 두 번째 데이터의 길이
-	SEND_EVENT_TYPE event; // 이벤트 타입
+	RECEIVE_EVENT_TYPE event; // 이벤트 타입
 };
 
 
+struct R_SetClientPacket {
+	uint8_t ID;
+
+};
 
 struct R_LevelChangePacket {
 
@@ -167,10 +171,11 @@ struct  R_PlayerMovePacket {
 
 };
 
+
 struct R_PlayerChoicePacket {
 
-	uint8_t Choiced_Character_P1;
-	uint8_t Choiced_Character_P2;
+	uint8_t Choiced_Character;
+
 };
 
 struct ReceiveDataResult {

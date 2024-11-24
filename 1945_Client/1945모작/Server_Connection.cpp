@@ -72,7 +72,14 @@ void CServer_Connection::SendThread()
             retval = send(sock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
         }
             break;
-        case S_PLAYER_CHOICE:
+        case S_PLAYER_CHOICE: {
+            SendHeaderPacket headerPacket = { sizeof(S_PlayerChoicePacket),S_PLAYER_CHOICE };
+            int retval = send(sock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+
+            S_InitDataPacket packet;
+            packet.Connected = *(reinterpret_cast<bool*>(Temp.data));
+            retval = send(sock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+        }
             break;
         case S_KEY_INPUT:
             break;
@@ -87,11 +94,35 @@ void CServer_Connection::SendThread()
 void CServer_Connection::ReceiveThread()
 {
     while (!m_bTerminateThreads) {
-        ReceiveDataResult result = Receive_Data();
+       // ReceiveDataResult result = Receive_Data();
 
+       // std::lock_guard<std::mutex> lock(receiveMutex);
+       // // 수신된 데이터를 큐에 추가하여 후속 처리가 가능하게 함
+       ///* receiveQueue.push(result);*/
+        char buffer[512];
+        int retval = recv(sock, buffer, sizeof(RecvHeaderPacket), 0);
+        
+        RecvHeaderPacket headerPacket;
+        memcpy(&headerPacket, buffer, sizeof(headerPacket));
+
+        if (headerPacket.length > 0) {
+            retval = recv(sock, buffer, headerPacket.length, 0);
+            if (retval == SOCKET_ERROR || retval == 0) {
+                break;
+            }
+        }
+        
+        RecvQueue_data queueData;
+        queueData.event = headerPacket.event;
+
+        size_t dataLength = headerPacket.length;
+        if (dataLength > sizeof(queueData.data)) {
+            dataLength = sizeof(queueData.data);
+        }
+        memcpy(queueData.data, buffer, dataLength);
+        
         std::lock_guard<std::mutex> lock(receiveMutex);
-        // 수신된 데이터를 큐에 추가하여 후속 처리가 가능하게 함
-       /* receiveQueue.push(result);*/
+        receiveQueue.push(queueData);
     }
 }
 
@@ -103,37 +134,6 @@ void CServer_Connection::Push_SendQueue(SendQueue_data Data)
     sendCv.notify_one();
 }
 
-ReceiveDataResult CServer_Connection::Receive_Data()
-{
-    RecvHeaderPacket header;
-    int retval = recv(sock, reinterpret_cast<char*>(&header), sizeof(RecvHeaderPacket), 0);
-    if (retval == SOCKET_ERROR || retval == 0) {
-        err_quit("recv() failed or connection closed");
-    }
-
-    switch (header.event) {
-    case R_PLAYER_CHOICE: {
-        auto* eventData = new R_PlayerChoicePacket;
-        retval = recv(sock, reinterpret_cast<char*>(eventData), sizeof(R_PlayerChoicePacket), 0);
-        if (retval == SOCKET_ERROR || retval == 0) {
-            err_quit("recv() failed - R_PlayerChoicePacket");
-        }
-        return { R_PLAYER_CHOICE, eventData };
-    }
-    case R_LEVEL_CHANGE: {
-        auto* eventData = new R_LevelChangePacket;
-        retval = recv(sock, reinterpret_cast<char*>(eventData), sizeof(R_LevelChangePacket), 0);
-        if (retval == SOCKET_ERROR || retval == 0) {
-            err_quit("recv() failed - R_LevelChangePacket");
-        }
-        return { R_LEVEL_CHANGE, eventData };
-    }
-    case R_EVENT_END:
-        break;
-    }
-
-    return { R_EVENT_END, nullptr };
-}
 
 void CServer_Connection::Release()
 {
@@ -147,4 +147,25 @@ void CServer_Connection::Release()
 
     closesocket(sock);
     WSACleanup();
+}
+
+void CServer_Connection::Lock_RecvQueue()
+{
+    receiveMutex.lock();
+}
+
+void CServer_Connection::Unlock_RecvQueue()
+{
+    receiveMutex.unlock();
+}
+
+bool CServer_Connection::Get_RecvQueueData(RecvQueue_data& data)
+{
+    if (receiveQueue.empty()) {
+        return false;
+    }
+
+    data = receiveQueue.front();
+    receiveQueue.pop();
+    return true;
 }

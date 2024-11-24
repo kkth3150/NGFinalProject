@@ -21,7 +21,7 @@ CMainGame::~CMainGame()
 
 void CMainGame::Initialize(void)
 {
-
+	
 	m_hDC = GetDC(g_hWnd);
 	//wchar_t* serverIP = new wchar_t[16]; // 16개의 wchar_t 크기로 메모리 할당
 	//if (DialogBoxParam(GetModuleHandle(NULL), MAKEINTRESOURCE(IDD_IP_DIALOG), g_hWnd, IPDialogProc, (LPARAM)serverIP) == IDOK)
