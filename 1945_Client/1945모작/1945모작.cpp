@@ -4,7 +4,7 @@
 #include "framework.h"
 #include "1945모작.h"
 #include "MainGame.h"
-
+int MyClientID = 3;
 #define MAX_LOADSTRING 100
 
 // 전역 변수:

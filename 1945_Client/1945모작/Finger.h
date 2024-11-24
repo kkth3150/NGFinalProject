@@ -16,6 +16,12 @@ public:
 	virtual void Render(HDC hDC) override;
 	virtual void Release(void) override;
 
+	void MoveRight();
+	void MoveLeft();
+
+	int GetMyFlight();
+	void SetMyFlight(int num);
+
 public:
 	void SetPlayerID(PLAYERID eID) {
 		m_ePlayerID = eID;

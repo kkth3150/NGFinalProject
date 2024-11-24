@@ -15,9 +15,20 @@ public:
 	void Push_SendQueue(SendQueue_data);
 	void ReceiveThread();
 	void SendThread();
-	
-	ReceiveDataResult Receive_Data();
 	void Release();
+
+	void Lock_RecvQueue();
+	void Unlock_RecvQueue();
+
+	
+	bool RecvQueueEmpty() {
+		if (receiveQueue.empty())
+			return true;
+		else
+			return false;
+
+	}
+	bool Get_RecvQueueData(RecvQueue_data& data);
 
 public:
 	static	CServer_Connection* Get_Instance()
@@ -55,5 +66,7 @@ private:
 	condition_variable			sendCv;  // 송신 대기를 위한 조건 변수
 	mutex						sendMutex;
 	mutex						receiveMutex;
+	mutex						TempMutex;
+
 };
 

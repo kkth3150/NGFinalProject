@@ -52,7 +52,7 @@ int main() {
             cerr << "Client connection failed" << endl;
             continue;
         }
-        cout << "Client " << i + 1 << " connected" << endl;
+        cout << "Client " << i << "연결됨 " << endl;
 
         clients[i] = CClient_Connection::Get_Instance(static_cast<CLIENT_ID>(i));
         clients[i]->Set_SOCKET(clientSock);  // 수락된 소켓을 설정

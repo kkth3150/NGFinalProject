@@ -9,12 +9,15 @@ public:
 public:
 	void Initialize();
 	void Set_SOCKET(SOCKET sock);
-	void Push_SendQueue();
+	void Push_RecvQueue(RecvQueue_data data);
 	void ReceiveThread();
 	void SendThread();
 	void Release();
-	void Receive_Data();
+	void SetID(CLIENT_ID ID) {
+		myID = ID;
+	}
 
+	bool Get_SendQueueData(SendQueue_data& data);
 
 public:
 	static	CClient_Connection* Get_Instance(CLIENT_ID ID)
@@ -24,6 +27,7 @@ public:
 		}
 		if (!m_pInstance[ID]) {
 			m_pInstance[ID] = new CClient_Connection;
+			m_pInstance[ID]->Get_Instance(ID)->SetID(ID);
 		}
 		return m_pInstance[ID];
 	}
@@ -38,6 +42,17 @@ public:
 		}
 	}
 
+	void Lock_SendQueue();
+	void Unlock_SendQueue();
+	bool SendQueue_Empty() {
+		if (sendQueue.empty())
+			return true;
+		else
+			return false;
+	}
+
+
+
 private:
 	static CClient_Connection* m_pInstance[CLIENT_END];
 
@@ -46,12 +61,14 @@ private:
 	thread						receiverThread;			// 수신 스레드
 	condition_variable			sendCv;		
 	condition_variable			recvCv;	// 송신 대기를 위한 조건 변수
+
 	mutex						sendMutex;
 	mutex						receiveMutex;
 
 	queue<SendQueue_data>		sendQueue;
 	queue<RecvQueue_data>		receiveQueue;
 
-	bool m_bTerminateThreads = false;  // 스레드 종료 플래그
+	bool m_bTerminateThreads	= false;  // 스레드 종료 플래그
+	CLIENT_ID myID;
 };
 

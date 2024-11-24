@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Level_Menu.h"
+#include "Client_Connection.h"
 
 CLevel_Menu::CLevel_Menu()
 {
@@ -16,6 +17,39 @@ void CLevel_Menu::Initialize()
 
 int CLevel_Menu::Update()
 {
+    for (int i = 0; i < CLIENT_END; ++i) {
+
+        SendQueue_data data;
+        CClient_Connection::Get_Instance((CLIENT_ID)i)->Lock_SendQueue();
+        while (!CClient_Connection::Get_Instance((CLIENT_ID)i)->SendQueue_Empty()) {
+
+            CClient_Connection::Get_Instance((CLIENT_ID)i)->Get_SendQueueData(data);
+            switch (data.event) {
+            case S_INIT_DATA:
+            {
+                RecvQueue_data Temp;
+                Temp.event = R_MY_CLIENT_ID;
+                Temp.data[0] = static_cast<uint8_t>(i);
+                CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(Temp);
+            }
+                break;
+            case S_PLAYER_CHOICE: {
+                RecvQueue_data Temp;
+                Temp.event = R_PLAYER_CHOICE;
+                Temp.data[0] = data.data[0];
+                CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(Temp);
+                cout << "플레이어 " << i << "선택정보 수신" << endl;
+            }
+                break;
+            default:
+                break;
+
+            }
+
+        }
+        CClient_Connection::Get_Instance((CLIENT_ID)i)->Unlock_SendQueue();
+    }
+
     return 0;
 }
 

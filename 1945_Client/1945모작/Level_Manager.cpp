@@ -74,16 +74,7 @@ void CLevel_Manager::Release(void)
 
 void CLevel_Manager::ReceiveThread()
 {
-	while (true) {
-		ReceiveDataResult data = CServer_Connection::Get_Instance()->Receive_Data();
 
-		std::unique_lock<std::mutex> lock(g_recvMutex);
-		g_receivedData = data;
-		g_hasNewData = true;
-		lock.unlock();
-
-		g_dataCondVar.notify_one();
-	}
 
 }
 
