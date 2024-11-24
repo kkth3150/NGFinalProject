@@ -37,7 +37,15 @@ int CLevel_Menu::Update()
                 RecvQueue_data Temp;
                 Temp.event = R_PLAYER_CHOICE;
                 Temp.data[0] = data.data[0];
-                CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(Temp);
+                if (i == CLIENT_1) {
+
+                    CClient_Connection::Get_Instance(CLIENT_2)->Push_RecvQueue(Temp);
+                }
+                if (i == CLIENT_2) {
+
+                    CClient_Connection::Get_Instance(CLIENT_1)->Push_RecvQueue(Temp);
+                }
+                
                 cout << "플레이어 " << i << "선택정보 수신" << endl;
             }
                 break;
