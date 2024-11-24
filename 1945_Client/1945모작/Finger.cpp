@@ -22,11 +22,11 @@ int CFinger::Update()
 {
 
 	if (m_iFlight == 0)
-		Set_Pos(175 + (int)MyClientID * 60, 150);
+		Set_Pos(175 + (int)m_ePlayerID * 60, 150);
 	if (m_iFlight == 1)
-		Set_Pos(500 + (int)MyClientID * 60, 150);
+		Set_Pos(500 + (int)m_ePlayerID * 60, 150);
 	if (m_iFlight == 2)
-		Set_Pos(350 + (int)MyClientID * 60, 250);
+		Set_Pos(350 + (int)m_ePlayerID * 60, 250);
 	__super::Update_Rect();
 
 	
@@ -48,7 +48,7 @@ void CFinger::Render(HDC hDC)
 		60,
 		60,
 		hMemDC,
-		(int)MyClientID * m_tInfo.fCX,
+		(int)m_ePlayerID * m_tInfo.fCX,
 		0,
 		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
@@ -62,45 +62,27 @@ void CFinger::Release(void)
 void CFinger::MoveRight()
 {
 
-	if (MyClientID == PLAYER_2) {
 
-		if (m_iFlight < 2) {
-			++m_iFlight;
-		}
-		else {
-			m_iFlight = 0;
-		}
+
+	if (m_iFlight < 2) {
+		++m_iFlight;
 	}
 	else {
-
-		if (m_iFlight < 2) {
-			++m_iFlight;
-		}
-		else {
-			m_iFlight = 0;
-		}
+		m_iFlight = 0;
 	}
+
 }
 
-void CFinger::MoveLeft()
-{
-	if (MyClientID == PLAYER_2) {
-		if (m_iFlight > 0) {
-			--m_iFlight;
-		}
-		else {
-			m_iFlight = 2;
-		}
+void CFinger::MoveLeft(){
+
+	if (m_iFlight > 0) {
+		--m_iFlight;
 	}
 	else {
-
-		if (m_iFlight > 0) {
-			--m_iFlight;
-		}
-		else {
-			m_iFlight = 2;
-		}
+		m_iFlight = 2;
 	}
+
+
 }
 
 int CFinger::GetMyFlight()
