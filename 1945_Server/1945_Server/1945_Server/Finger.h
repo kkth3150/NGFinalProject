@@ -15,7 +15,15 @@ public:
 	virtual void Late_Update() override;
 	virtual void Release(void) override;
 
+	void SetFlight(int i) {
+		m_iFlight = i;
+	};
+	int GetFlight() {
+
+		return m_iFlight;
+	}
+private:
 	PLAYERID	m_ePlayerID;
-	int			m_iFlight;
+	int			m_iFlight = 0;
 };
 

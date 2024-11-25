@@ -53,6 +53,12 @@
     <Filter Include="02.Object_Manager\GameObejcts\02-01 Player\Player2">
       <UniqueIdentifier>{a2816d4b-73dc-4c62-a3d1-8a776afa0713}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-00 Finger\Finger1">
+      <UniqueIdentifier>{0ed638fb-1b2a-4a33-9b32-5f508802b7da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-00 Finger\Finger2">
+      <UniqueIdentifier>{f74674d5-bd31-4689-8e96-cf96fad44750}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ServerFramework.cpp">
@@ -82,9 +88,6 @@
     <ClCompile Include="pch.cpp">
       <Filter>Pch</Filter>
     </ClCompile>
-    <ClCompile Include="Finger.cpp">
-      <Filter>02.Object_Manager\GameObejcts\02-00 Finger</Filter>
-    </ClCompile>
     <ClCompile Include="Client_Connection.cpp">
       <Filter>01.Client_Connection</Filter>
     </ClCompile>
@@ -93,6 +96,12 @@
     </ClCompile>
     <ClCompile Include="Player1.cpp">
       <Filter>02.Object_Manager\GameObejcts\02-01 Player\Player1</Filter>
+    </ClCompile>
+    <ClCompile Include="Finger.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-00 Finger\Finger1</Filter>
+    </ClCompile>
+    <ClCompile Include="Finger2.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-00 Finger\Finger2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -120,9 +129,6 @@
     <ClInclude Include="pch.h">
       <Filter>Pch</Filter>
     </ClInclude>
-    <ClInclude Include="Finger.h">
-      <Filter>02.Object_Manager\GameObejcts\02-00 Finger</Filter>
-    </ClInclude>
     <ClInclude Include="Client_Connection.h">
       <Filter>01.Client_Connection</Filter>
     </ClInclude>
@@ -134,6 +140,12 @@
     </ClInclude>
     <ClInclude Include="AbstractFactory.h">
       <Filter>98.Design</Filter>
+    </ClInclude>
+    <ClInclude Include="Finger.h">
+      <Filter>02.Object_Manager\GameObejcts\02-00 Finger\Finger1</Filter>
+    </ClInclude>
+    <ClInclude Include="Finger2.h">
+      <Filter>02.Object_Manager\GameObejcts\02-00 Finger\Finger2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
