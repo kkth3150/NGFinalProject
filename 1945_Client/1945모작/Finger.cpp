@@ -27,6 +27,7 @@ int CFinger::Update()
 		Set_Pos(500 + (int)m_ePlayerID * 60, 150);
 	if (m_iFlight == 2)
 		Set_Pos(350 + (int)m_ePlayerID * 60, 250);
+
 	__super::Update_Rect();
 
 	

@@ -100,45 +100,6 @@ int CLevel_Menu::Update()
 
 		// ------------------------- ¼Õ²Ù¶ô -----------------------------
 
-		CGameObject* pFinger1 = CAbstractFactory<CFinger>::Create_UI(500.f, 300.f, 32.f, 32.f);
-		pFinger1->Set_FrameKey(L"PLAYER_FINGER");
-		CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger1);
-
-		CGameObject* pFinger2 = CAbstractFactory<CFinger>::Create_UI(300.f, 300.f, 32.f, 32.f);
-		pFinger2->Set_FrameKey(L"PLAYER_FINGER");
-		CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger2);
-
-		if (MyClientID == PLAYER_1) {
-			dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())
-				->SetPlayerID(PLAYER_1);
-			MyFinger = dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front());
-
-			if (CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->size() > 1) {
-				auto it = std::next(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->begin(), 1);
-				OtherFinger = dynamic_cast<CFinger*>(*it);
-				if (OtherFinger) {
-					OtherFinger->SetPlayerID(PLAYER_2);
-				}
-
-			}
-
-		}
-		else if (MyClientID == PLAYER_2) {
-			dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())
-				->SetPlayerID(PLAYER_1);
-			OtherFinger = dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front());
-
-			if (CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->size() > 1) {
-				auto it = std::next(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->begin(), 1);
-				MyFinger = dynamic_cast<CFinger*>(*it);
-				if (MyFinger) {
-					MyFinger->SetPlayerID(PLAYER_2);
-				}
-
-			}
-		}
-
-		
 
 		m_bDoOnce = true;
 
@@ -172,15 +133,49 @@ int CLevel_Menu::Update()
 		while (!CServer_Connection::Get_Instance()->RecvQueueEmpty()) {
 			CServer_Connection::Get_Instance()->Get_RecvQueueData(data);
 			switch (data.event) {
-			case R_MY_CLIENT_ID:
+			case R_MY_CLIENT_ID: {
+			
+				
 				MyClientID = (int)data.data[0];
+
+				CGameObject* pFinger1 = CAbstractFactory<CFinger>::Create_UI(500.f, 300.f, 32.f, 32.f);
+				pFinger1->Set_FrameKey(L"PLAYER_FINGER");
+				CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger1);
+
+				CGameObject* pFinger2 = CAbstractFactory<CFinger>::Create_UI(300.f, 300.f, 32.f, 32.f);
+				pFinger2->Set_FrameKey(L"PLAYER_FINGER");
+				CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger2);
+
+
+
+				dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())
+					->SetPlayerID(PLAYER_1);
+				auto it = std::next(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->begin(), 1);
+				dynamic_cast<CFinger*>(*it)->SetPlayerID(PLAYER_2);
+
+
+
+				if (MyClientID == PLAYER_1) {
+
+					MyFinger = dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front());
+					auto it = std::next(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->begin(), 1);
+					OtherFinger = dynamic_cast<CFinger*>(*it);
+
+				}
+				else if (MyClientID == PLAYER_2) {
+
+					OtherFinger = dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front());
+					auto it = std::next(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->begin(), 1);
+					MyFinger = dynamic_cast<CFinger*>(*it);
+				}
+
+			}
 				break;
 
 			case R_PLAYER_CHOICE:
 
 				if (CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->size() > 1) {
 
-					
 					if (OtherFinger) {
 						OtherFinger->SetMyFlight((int)data.data[0]);
 					}
@@ -201,7 +196,7 @@ int CLevel_Menu::Update()
 		CServer_Connection::Get_Instance()->Unlock_RecvQueue();
 
 		if (CKey_Manager::Get_Instance()->Key_Down(VK_RIGHT)) {
-			dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())->MoveRight();
+			MyFinger->MoveRight();
 
 			S_PlayerChoicePacket ChoicePacket;
 			ChoicePacket.Choiced_Character = static_cast<uint8_t>(dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->
@@ -215,7 +210,7 @@ int CLevel_Menu::Update()
 		}
 
 		if (CKey_Manager::Get_Instance()->Key_Down(VK_LEFT)) {
-			dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())->MoveLeft();
+			MyFinger->MoveLeft();
 
 			S_PlayerChoicePacket ChoicePacket;
 			ChoicePacket.Choiced_Character = static_cast<uint8_t>(dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->
