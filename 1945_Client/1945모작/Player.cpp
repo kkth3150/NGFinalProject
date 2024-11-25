@@ -140,12 +140,12 @@ void CPlayer::Key_Input()
 				m_eDir = DIR_UP;
 			}
 
-			SendQueue_data KetInputData;
-			KetInputData.event = S_MY_PLAYER_MOVE;
+			SendQueue_data PlayerMoveData;
+			PlayerMoveData.event = S_MY_PLAYER_MOVE;
 			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY };
 
-			memcpy(KetInputData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
-			CServer_Connection::Get_Instance()->Push_SendQueue(KetInputData);
+			memcpy(PlayerMoveData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
+			CServer_Connection::Get_Instance()->Push_SendQueue(PlayerMoveData);
 			m_eDir = DIR_UP;
 		}
 
@@ -156,12 +156,12 @@ void CPlayer::Key_Input()
 				m_eDir = DIR_DOWN;
 			}
 
-			SendQueue_data KetInputData;
-			KetInputData.event = S_MY_PLAYER_MOVE;
+			SendQueue_data PlayerMoveData;
+			PlayerMoveData.event = S_MY_PLAYER_MOVE;
 			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY };
 
-			memcpy(KetInputData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
-			CServer_Connection::Get_Instance()->Push_SendQueue(KetInputData);
+			memcpy(PlayerMoveData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
+			CServer_Connection::Get_Instance()->Push_SendQueue(PlayerMoveData);
 			m_eDir = DIR_DOWN;
 		}
 

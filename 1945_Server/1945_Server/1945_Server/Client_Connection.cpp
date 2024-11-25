@@ -57,6 +57,7 @@ void CClient_Connection::ReceiveThread()
             if (dataLength > sizeof(queueData.data)) {
                 dataLength = sizeof(queueData.data);
             }
+
             memcpy(queueData.data, buffer, dataLength);
 
           
@@ -96,7 +97,7 @@ void CClient_Connection::SendThread()
 
         case R_PLAYER_CHOICE:
         {
-            RecvHeaderPacket headerPacket = { sizeof(R_PLAYER_CHOICE),R_PLAYER_CHOICE };
+            RecvHeaderPacket headerPacket = { sizeof(R_PlayerChoicePacket),R_PLAYER_CHOICE };
             int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
 
             R_PlayerChoicePacket packet;
@@ -107,7 +108,7 @@ void CClient_Connection::SendThread()
         }
             break;
         case R_LEVEL_CHANGE: {
-            RecvHeaderPacket headerPacket = { sizeof(R_LEVEL_CHANGE),R_LEVEL_CHANGE };
+            RecvHeaderPacket headerPacket = { sizeof(R_LevelChangePacket),R_LEVEL_CHANGE };
             int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
 
             R_LevelChangePacket packet;
@@ -118,7 +119,7 @@ void CClient_Connection::SendThread()
         }
         case R_OTHER_PLAYER_MOVE: {
 
-            RecvHeaderPacket headerPacket = { sizeof(R_OTHER_PLAYER_MOVE),R_OTHER_PLAYER_MOVE };
+            RecvHeaderPacket headerPacket = { sizeof(R_Other_Player_MovePacket),R_OTHER_PLAYER_MOVE };
             int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
             R_Other_Player_MovePacket packet;
             memcpy(&packet, Temp.data, sizeof(R_Other_Player_MovePacket));

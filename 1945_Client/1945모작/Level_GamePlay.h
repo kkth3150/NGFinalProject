@@ -28,8 +28,8 @@ public:
 	DWORD					Timer;
 	DWORD					END_Time;
 
-	CPlayer* Player1;
-	CPlayer* Player2;
+	CPlayer* My_Player;
+	CPlayer* Other_Player;
 	
 };
 

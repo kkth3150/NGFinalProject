@@ -42,8 +42,8 @@ int CLevel_GamePlay::Update()
             break;
             case S_MY_PLAYER_MOVE: {              
                 
-                float fx = *reinterpret_cast<float*>(&data.data[0]);  // x 값 추출
-                float fy = *reinterpret_cast<float*>(&data.data[4]);  // y 값 추출
+                float fx = *reinterpret_cast<float*>(&data.data[0]);
+                float fy = *reinterpret_cast<float*>(&data.data[4]);
 
                 if (i == CLIENT_1) {
                     Player_C1->Set_Pos(fx, fy);
@@ -76,29 +76,28 @@ void CLevel_GamePlay::Late_Update()
     for (int i = 0; i < CLIENT_END; ++i) {
 
         if (i == CLIENT_1) {
+            RecvQueue_data PlayerMoveQueueData1;
+            PlayerMoveQueueData1.event = R_OTHER_PLAYER_MOVE;
 
-            R_Other_Player_MovePacket PlayerMoveData;
-            PlayerMoveData.fx = Player_C2->Get_Info().fX;
-            PlayerMoveData.fy = Player_C2->Get_Info().fY;
-            RecvQueue_data Temp;
+            R_Other_Player_MovePacket PlayerMoveData1;
+            PlayerMoveData1.fx = Player_C2->Get_Info().fX;
+            PlayerMoveData1.fy = Player_C2->Get_Info().fY;
+ 
+            memcpy(PlayerMoveQueueData1.data, &PlayerMoveData1, sizeof(R_Other_Player_MovePacket));
 
-            Temp.event = R_OTHER_PLAYER_MOVE;
-     
-            memcpy(Temp.data, &PlayerMoveData, sizeof(R_Other_Player_MovePacket));
-            CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(Temp);
+            CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(PlayerMoveQueueData1);
         }
        
         if (i == CLIENT_2) {
+            RecvQueue_data RecvQueueData2;
+            RecvQueueData2.event = R_OTHER_PLAYER_MOVE;
 
-            R_Other_Player_MovePacket PlayerMoveData;
-            PlayerMoveData.fx = Player_C1->Get_Info().fX;
-            PlayerMoveData.fy = Player_C1->Get_Info().fY;
-            RecvQueue_data Temp;
+            R_Other_Player_MovePacket PlayerMoveData2;
+            PlayerMoveData2.fx = Player_C1->Get_Info().fX;
+            PlayerMoveData2.fy = Player_C1->Get_Info().fY;
 
-            Temp.event = R_OTHER_PLAYER_MOVE;
-
-            memcpy(Temp.data, &PlayerMoveData, sizeof(R_Other_Player_MovePacket));
-            CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(Temp);
+            memcpy(RecvQueueData2.data, &PlayerMoveData2, sizeof(R_Other_Player_MovePacket));
+            CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(RecvQueueData2);
         }
         
     }
