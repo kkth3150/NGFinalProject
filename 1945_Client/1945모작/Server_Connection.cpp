@@ -123,19 +123,13 @@ void CServer_Connection::ReceiveThread()
         
         RecvQueue_data queueData;
         queueData.event = headerPacket.event;
-
+       
         size_t dataLength = headerPacket.length;
         if (dataLength > sizeof(queueData.data)) {
             dataLength = sizeof(queueData.data);
         }
-      /*  memcpy(queueData.data, buffer, dataLength);
-        if (queueData.event == R_PLAYER_MOVE) {
 
-            R_PlayerMovePacket Temp;
-            memcpy(&Temp, queueData.data, 16);
-            int a = Temp.P1X;
-            int B = Temp.P1Y;
-        }*/
+        memcpy(queueData.data, buffer, dataLength);
         std::lock_guard<std::mutex> lock(receiveMutex);
         receiveQueue.push(queueData);
     }

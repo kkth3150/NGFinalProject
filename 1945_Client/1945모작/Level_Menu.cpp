@@ -45,13 +45,7 @@ void CLevel_Menu::Initialize()
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pMainUI);
 
 
-	S_InitDataPacket InitPacket;
-	InitPacket.Connected = true;
 
-	SendQueue_data InitData;
-	InitData.event = S_INIT_DATA;
-	InitData.data[0] = static_cast<uint8_t>(InitPacket.Connected);
-	CServer_Connection::Get_Instance()->Push_SendQueue(InitData);
 
 	m_bButton_Down = false;
 	m_bDoOnce = false;
@@ -159,6 +153,14 @@ int CLevel_Menu::Update()
 				dynamic_cast<CButton*>(CObject_Manager::Get_Instance()->Get_List(OBJ_BUTTON)->front())->Set_Dead();
 				dynamic_cast<CUI*>(CObject_Manager::Get_Instance()->Get_List(OBJ_UI)->front())->Set_Dead();
 				m_bButton_Down = true;
+				S_InitDataPacket InitPacket;
+				InitPacket.Connected = true;
+
+				SendQueue_data InitData;
+				InitData.event = S_INIT_DATA;
+				InitData.data[0] = static_cast<uint8_t>(InitPacket.Connected);
+				CServer_Connection::Get_Instance()->Push_SendQueue(InitData);
+
 			}
 		}
 	}
@@ -171,7 +173,7 @@ int CLevel_Menu::Update()
 			CServer_Connection::Get_Instance()->Get_RecvQueueData(data);
 			switch (data.event) {
 			case R_MY_CLIENT_ID:
-				MyClientID = data.data[0];
+				MyClientID = (int)data.data[0];
 				break;
 
 			case R_PLAYER_CHOICE:
@@ -238,6 +240,8 @@ int CLevel_Menu::Update()
 			m_bStart = true;
 
 			CObject_Manager::Get_Instance()->DeleteID(OBJ_BUTTON);
+
+
 		}
 			
 	}

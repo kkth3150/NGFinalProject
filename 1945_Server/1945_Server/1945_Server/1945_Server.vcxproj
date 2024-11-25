@@ -138,6 +138,7 @@
     <ClCompile Include="Client_Connection.cpp" />
     <ClCompile Include="Define.h" />
     <ClCompile Include="Finger.cpp" />
+    <ClCompile Include="Finger2.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Level_GamePlay.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Client_Connection.h" />
     <ClInclude Include="ErrorMsg.h" />
     <ClInclude Include="Finger.h" />
+    <ClInclude Include="Finger2.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Level_GamePlay.h" />

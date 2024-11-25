@@ -1,5 +1,6 @@
 #pragma once
 #include "Level.h"
+#include "Finger.h"
 
 class CLevel_Menu : public CLevel
 {
@@ -16,5 +17,8 @@ public:
 
 private:
 	bool Flag[CLIENT_END] = { false,false };
+
+	CFinger* P1Finger;
+	CFinger* P2Finger;
 };
 

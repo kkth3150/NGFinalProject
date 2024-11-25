@@ -85,8 +85,12 @@ void CClient_Connection::SendThread()
             int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
 
             R_SetClientPacket packet;
-            packet.ID = myID;
+            memcpy(&packet, Temp.data, sizeof(R_SetClientPacket));
             retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+
+            cout << "플레이어" << "선택 정보 전송" << endl;
+            cout << "클라이언트 " << myID << "에게 보냄" << Temp.data[0];
+
         }
             break;
 
@@ -99,7 +103,7 @@ void CClient_Connection::SendThread()
             packet.Choiced_Character = Temp.data[0];
             retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
 
-            cout << "플레이어" << "선택 정보 전송" << endl;
+
         }
             break;
         case R_LEVEL_CHANGE: {
@@ -119,6 +123,7 @@ void CClient_Connection::SendThread()
             R_Other_Player_MovePacket packet;
             memcpy(&packet, Temp.data, sizeof(R_Other_Player_MovePacket));
             retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+            
 
         }
 
