@@ -1,5 +1,6 @@
 #pragma once
 #include "Level.h"
+#include "Finger.h"
 class CLevel_Menu : public CLevel
 {
 public:
@@ -19,5 +20,9 @@ private:
 	bool m_bButton_Down;
 	bool m_bDoOnce;
 	bool m_bStart = false;
+
+	CFinger* MyFinger;
+	CFinger* OtherFinger;
+
 };
 

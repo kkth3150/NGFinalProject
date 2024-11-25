@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "UI.h"
 #include "Button.h"
-#include "Finger.h"
+
 #include "Level_Manager.h"
 #include "Bmp_Manager.h"
 #include "Object_Manager.h"
@@ -99,46 +99,46 @@ int CLevel_Menu::Update()
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pFLIGHTNAME);
 
 		// ------------------------- ¼Õ²Ù¶ô -----------------------------
+
+		CGameObject* pFinger1 = CAbstractFactory<CFinger>::Create_UI(500.f, 300.f, 32.f, 32.f);
+		pFinger1->Set_FrameKey(L"PLAYER_FINGER");
+		CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger1);
+
+		CGameObject* pFinger2 = CAbstractFactory<CFinger>::Create_UI(300.f, 300.f, 32.f, 32.f);
+		pFinger2->Set_FrameKey(L"PLAYER_FINGER");
+		CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger2);
+
 		if (MyClientID == PLAYER_1) {
-			CGameObject* pFinger2 = CAbstractFactory<CFinger>::Create_UI(300.f, 300.f, 32.f, 32.f);
-			pFinger2->Set_FrameKey(L"PLAYER_FINGER");
-			CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger2);
 			dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())
 				->SetPlayerID(PLAYER_1);
+			MyFinger = dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front());
 
-			CGameObject* pFinger1 = CAbstractFactory<CFinger>::Create_UI(500.f, 300.f, 32.f, 32.f);
-			pFinger1->Set_FrameKey(L"PLAYER_FINGER");
-			CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger1);
 			if (CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->size() > 1) {
 				auto it = std::next(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->begin(), 1);
-				CFinger* pSecondFinger = dynamic_cast<CFinger*>(*it);
-				if (pSecondFinger) {
-					pSecondFinger->SetPlayerID(PLAYER_2);
+				OtherFinger = dynamic_cast<CFinger*>(*it);
+				if (OtherFinger) {
+					OtherFinger->SetPlayerID(PLAYER_2);
 				}
 
 			}
-		}
-		else {
 
-			CGameObject* pFinger1 = CAbstractFactory<CFinger>::Create_UI(500.f, 300.f, 32.f, 32.f);
-			pFinger1->Set_FrameKey(L"PLAYER_FINGER");
-			CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger1);
+		}
+		else if (MyClientID == PLAYER_2) {
 			dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())
-				->SetPlayerID(PLAYER_2);
+				->SetPlayerID(PLAYER_1);
+			OtherFinger = dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front());
 
-			CGameObject* pFinger2 = CAbstractFactory<CFinger>::Create_UI(300.f, 300.f, 32.f, 32.f);
-			pFinger2->Set_FrameKey(L"PLAYER_FINGER");
-			CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, pFinger2);
 			if (CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->size() > 1) {
 				auto it = std::next(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->begin(), 1);
-				CFinger* pSecondFinger = dynamic_cast<CFinger*>(*it);
-				if (pSecondFinger) {
-					pSecondFinger->SetPlayerID(PLAYER_1);
+				MyFinger = dynamic_cast<CFinger*>(*it);
+				if (MyFinger) {
+					MyFinger->SetPlayerID(PLAYER_2);
 				}
 
 			}
-
 		}
+
+		
 
 		m_bDoOnce = true;
 
@@ -179,11 +179,10 @@ int CLevel_Menu::Update()
 			case R_PLAYER_CHOICE:
 
 				if (CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->size() > 1) {
-					auto it = std::next(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->begin(), 1);
-					CFinger* pSecondFinger = dynamic_cast<CFinger*>(*it);
 
-					if (pSecondFinger) {
-						pSecondFinger->SetMyFlight((int)data.data[0]);
+					
+					if (OtherFinger) {
+						OtherFinger->SetMyFlight((int)data.data[0]);
 					}
 
 				}
