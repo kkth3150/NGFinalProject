@@ -189,6 +189,7 @@ int CLevel_Menu::Update()
 				break;
 
 			case R_LEVEL_CHANGE:
+				CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAMEPLAY);
 				break;
 			default:
 				break;
@@ -227,9 +228,18 @@ int CLevel_Menu::Update()
 		
 	}
 
-	if (m_bDoOnce) {
-		if (dynamic_cast<CButton*>(CObject_Manager::Get_Instance()->Get_List(OBJ_BUTTON)->front())->GetButtonDown())
-			CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAMEPLAY);
+	if (m_bDoOnce && !m_bStart) {
+		if (dynamic_cast<CButton*>(CObject_Manager::Get_Instance()->Get_List(OBJ_BUTTON)->front())->GetButtonDown()) {
+
+			SendQueue_data StartData;
+			StartData.event = S_START;
+			StartData.data[0] = true;
+			CServer_Connection::Get_Instance()->Push_SendQueue(StartData);
+			m_bStart = true;
+
+			CObject_Manager::Get_Instance()->DeleteID(OBJ_BUTTON);
+		}
+			
 	}
 
 	CObject_Manager::Get_Instance()->Update();
@@ -250,6 +260,7 @@ void CLevel_Menu::Render(HDC hDC)
 
 void CLevel_Menu::Release(void)
 {
+	CObject_Manager::Get_Instance()->DeleteID(OBJ_FINGER);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_BUTTON);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_UI);
 }

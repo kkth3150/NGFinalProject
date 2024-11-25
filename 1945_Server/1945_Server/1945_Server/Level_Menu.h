@@ -15,6 +15,6 @@ public:
 	virtual void Release(void) override;
 
 private:
-
+	bool Flag[CLIENT_END] = { false,false };
 };
 

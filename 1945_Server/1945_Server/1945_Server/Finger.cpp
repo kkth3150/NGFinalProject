@@ -22,10 +22,6 @@ void CFinger::Late_Update()
 {
 }
 
-void CFinger::Render(HDC hDC)
-{
-}
-
 void CFinger::Release(void)
 {
 }

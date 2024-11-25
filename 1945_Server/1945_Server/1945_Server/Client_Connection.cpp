@@ -62,7 +62,6 @@ void CClient_Connection::ReceiveThread()
           
             std::lock_guard<std::mutex> lock(receiveMutex);
             sendQueue.push(queueData);
-            cout << "데이터 수신 성공" << endl;
         }
     }
 }
@@ -103,8 +102,26 @@ void CClient_Connection::SendThread()
             cout << "플레이어" << "선택 정보 전송" << endl;
         }
             break;
-        case R_LEVEL_CHANGE:
-            
+        case R_LEVEL_CHANGE: {
+            RecvHeaderPacket headerPacket = { sizeof(R_LEVEL_CHANGE),R_LEVEL_CHANGE };
+            int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+
+            R_LevelChangePacket packet;
+            packet.Level = Temp.data[0];
+            retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+
+            cout << "레벨 변경 데이터 전송" << endl;
+        }
+        case R_OTHER_PLAYER_MOVE: {
+
+            RecvHeaderPacket headerPacket = { sizeof(R_OTHER_PLAYER_MOVE),R_OTHER_PLAYER_MOVE };
+            int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+            R_Other_Player_MovePacket packet;
+            memcpy(&packet, Temp.data, sizeof(R_Other_Player_MovePacket));
+            retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+
+        }
+
             break;
         default:
             

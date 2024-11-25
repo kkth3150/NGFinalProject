@@ -150,9 +150,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Player1.cpp" />
+    <ClCompile Include="Player2.cpp" />
     <ClCompile Include="ServerFramework.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="Client_Connection.h" />
     <ClInclude Include="ErrorMsg.h" />
     <ClInclude Include="Finger.h" />
@@ -163,6 +166,8 @@
     <ClInclude Include="Level_Menu.h" />
     <ClInclude Include="Object_Manager.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Player1.h" />
+    <ClInclude Include="Player2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

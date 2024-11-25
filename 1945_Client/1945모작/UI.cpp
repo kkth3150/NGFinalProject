@@ -41,11 +41,11 @@ void CUI::Late_Update()
 		break;
 
 	case UI_SCORE:
-		m_iScore = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player())->Get_Score();
+		m_iScore = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1))->Get_Score();
 		break;
 
 	case UI_LIFE:
-		m_iLife = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player())->Get_Life();
+		m_iLife = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1))->Get_Life();
 		break;
 
 	default:
