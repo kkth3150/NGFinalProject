@@ -1,42 +1,6 @@
-﻿  Level_GameEnd.cpp
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\GameObject.h(41,35): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/Level_GameEnd.cpp'을(를) 컴파일하는 중)
-  
-  Level_GamePlay.cpp
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\GameObject.h(41,35): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/Level_GamePlay.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Level_GamePlay.cpp(48,30): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/Level_GamePlay.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Level_GamePlay.cpp(65,26): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/Level_GamePlay.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Level_GamePlay.cpp(80,103): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/Level_GamePlay.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Level_GamePlay.cpp(83,128): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/Level_GamePlay.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Level_GamePlay.cpp(83,109): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/Level_GamePlay.cpp'을(를) 컴파일하는 중)
-  
-  Level_Manager.cpp
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\GameObject.h(41,35): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/Level_Manager.cpp'을(를) 컴파일하는 중)
-  
-  Level_Menu.cpp
+﻿  Level_Menu.cpp
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\GameObject.h(41,35): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Level_Menu.cpp'을(를) 컴파일하는 중)
   
-  MainGame.cpp
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\GameObject.h(41,35): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/MainGame.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\MainGame.cpp(76,28): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/MainGame.cpp'을(를) 컴파일하는 중)
-  
-  코드를 생성하고 있습니다...
 C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Object_Manager.h(35,1): warning C4715: 'CObject_Manager::Get_List': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\Object_Manager.h(30,1): warning C4715: 'CObject_Manager::Get_Player': 모든 제어 경로에서 값을 반환하지는 않습니다.
   1945모작.vcxproj -> C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\x64\Debug\1945모작.exe
