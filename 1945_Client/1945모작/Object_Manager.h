@@ -15,9 +15,18 @@ public:
 	void		Render(HDC hDC);
 	void		Release(void);
 
-	CGameObject* Get_Player() {
-		if (!List_Empty(OBJ_PLAYER))
-			return m_ObjectList[OBJ_PLAYER].front();
+	CGameObject* Get_Player(PLAYERID ID) {
+
+		if (ID == PLAYER_1) {
+			if (!List_Empty(OBJ_MY_PLAYER))
+				return m_ObjectList[OBJ_MY_PLAYER].front();
+		}
+		else if (ID == PLAYER_2) {
+			if (!List_Empty(OBJ_OTHER_PLAYER))
+				return m_ObjectList[OBJ_OTHER_PLAYER].front();
+
+		}
+		
 	}
 
 	list<CGameObject*>* Get_List(OBJ_ID eID) {

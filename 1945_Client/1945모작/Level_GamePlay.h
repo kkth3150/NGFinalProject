@@ -1,5 +1,7 @@
 #pragma once
 #include "Level.h"
+#include "Player.h"
+
 class CLevel_GamePlay : public CLevel
 {
 public:
@@ -25,5 +27,9 @@ public:
 	DWORD                    Enemy_Count;
 	DWORD					Timer;
 	DWORD					END_Time;
+
+	CPlayer* Player1;
+	CPlayer* Player2;
+	
 };
 

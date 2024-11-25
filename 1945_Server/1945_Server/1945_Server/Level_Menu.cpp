@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "Level_Manager.h"
 #include "Level_Menu.h"
 #include "Client_Connection.h"
 
@@ -49,6 +50,17 @@ int CLevel_Menu::Update()
                 cout << "플레이어 " << i << "선택정보 수신" << endl;
             }
                 break;
+           
+            case S_START: {
+
+                if (i == CLIENT_1)
+                    Flag[CLIENT_1] = true;
+                
+                if (i == CLIENT_2)
+                    Flag[CLIENT_2] = true;
+
+            }
+                        break;
             default:
                 break;
 
@@ -63,6 +75,24 @@ int CLevel_Menu::Update()
 
 void CLevel_Menu::Late_Update()
 {
+    int temp = 0;
+    for (int i = 0; i < CLIENT_END; ++i) {
+        if (Flag[i])
+            ++temp;
+    }
+    
+    if (temp == CLIENT_END) {
+
+        for (int i = 0; i < CLIENT_END; ++i) {
+            RecvQueue_data Temp;
+            Temp.event = R_LEVEL_CHANGE;
+            Temp.data[0] = static_cast<uint8_t>(LEVEL_GAMEPLAY);
+            CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(Temp);
+            
+        }
+        CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAMEPLAY);
+        cout << "===============게임플레이 레벨======================" << endl;
+    }
 }
 
 void CLevel_Menu::Release(void)

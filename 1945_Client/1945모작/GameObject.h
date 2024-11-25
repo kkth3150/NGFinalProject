@@ -30,6 +30,8 @@ public:
 
 	void		Set_X(float _fX) { m_tInfo.fX += _fX; }
 	void		Set_Y(float _fY) { m_tInfo.fY += _fY; }
+	void		Set_FixedX(float _fx) { m_tInfo.fX = _fx; }
+	void		Set_FixedY(float _fy) { m_tInfo.fY = _fy; }
 	void		Set_FrameKey(const TCHAR* pFrameKey) { m_pFrameKey = pFrameKey; }
 	void		Set_Frame(int iFrameEnd, DWORD FrameSpeed) {
 	

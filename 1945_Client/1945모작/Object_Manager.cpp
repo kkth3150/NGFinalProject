@@ -67,7 +67,7 @@ void CObject_Manager::Late_Update(void)
 	CCollision_Manager::Collision_MyBullet(m_ObjectList[OBJ_PLAYERBULLET],m_ObjectList[OBJ_BOSSPART]);
 	CCollision_Manager::Collision_MyBullet(m_ObjectList[OBJ_PLAYERBULLET], m_ObjectList[OBJ_ENEMY_1]);
 	CCollision_Manager::Collision_MyBullet(m_ObjectList[OBJ_PLAYERBULLET], m_ObjectList[OBJ_ENEMY_2]);
-	CCollision_Manager::Collision_MonsterBullet(m_ObjectList[OBJ_PLAYER],m_ObjectList[OBJ_BULLET_ENEMY]);
+	CCollision_Manager::Collision_MonsterBullet(m_ObjectList[OBJ_MY_PLAYER],m_ObjectList[OBJ_BULLET_ENEMY]);
 	
 }
 

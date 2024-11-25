@@ -164,8 +164,8 @@ void CBoss_Posin::Release(void)
 
 void CBoss_Posin::Set_PosinAngle()
 {
-	m_fDeltaX = CObject_Manager::Get_Instance()->Get_Player()->Get_Info().fX - m_tInfo.fX;
-	m_fDeltaY = CObject_Manager::Get_Instance()->Get_Player()->Get_Info().fY - m_tInfo.fY;
+	m_fDeltaX = CObject_Manager::Get_Instance()->Get_Player(PLAYER_1)->Get_Info().fX - m_tInfo.fX;
+	m_fDeltaY = CObject_Manager::Get_Instance()->Get_Player(PLAYER_1)->Get_Info().fY - m_tInfo.fY;
 
 	m_fAngle = atan2(m_fDeltaY, m_fDeltaX);
 	m_fDegree = m_fAngle * 180.f / 3.14f;
@@ -215,8 +215,8 @@ void CBoss_Posin::Set_PosinPos(int iNum)
 void CBoss_Posin::Shot_By_Dir()
 {
 
-	float PlayerX = CObject_Manager::Get_Instance()->Get_Player()->Get_Info().fX;
-	float PlayerY = CObject_Manager::Get_Instance()->Get_Player()->Get_Info().fY;
+	float PlayerX = CObject_Manager::Get_Instance()->Get_Player(PLAYER_1)->Get_Info().fX;
+	float PlayerY = CObject_Manager::Get_Instance()->Get_Player(PLAYER_1)->Get_Info().fY;
 
 
 	if (m_dwTimer + m_dwShot_Delay < GetTickCount64()) {

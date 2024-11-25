@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "Player.h"
+
 #include "Boss.h"
 #include "Bmp_Manager.h"
 #include "Object_Manager.h"
@@ -31,8 +31,9 @@ void CLevel_GamePlay::Initialize()
 	CBmp_Manager::Get_Instance()->Insert_Bmp(L"../Image/UI/Life(30X40X4).bmp", L"LIFE");
 	END_Time = 3000;
 
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create());
-	
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_MY_PLAYER, CAbstractFactory<CPlayer>::Create());
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_OTHER_PLAYER, CAbstractFactory<CPlayer>::Create());
+	dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1))->Set_My_Player();
 	
 	CGameObject* pScoreUI = CAbstractFactory<CUI>::Create_UI(0.f, 0.f, 460.f, 46.f);
 	pScoreUI->Set_FrameKey(L"SCORE");
@@ -46,6 +47,8 @@ void CLevel_GamePlay::Initialize()
 
 	Enemy_Count = GetTickCount64();
 
+	Player1 = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
+	Player2 = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
 }
 
 int CLevel_GamePlay::Update()
@@ -80,6 +83,29 @@ int CLevel_GamePlay::Update()
 			CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_1, CAbstractFactory<CEnemy_1>::Create(rand() % 600 - 51, rand() % 300 + 51));
 		}
 	}
+
+	RecvQueue_data data;
+	CServer_Connection::Get_Instance()->Lock_RecvQueue();
+	while (!CServer_Connection::Get_Instance()->RecvQueueEmpty()) {
+
+		CServer_Connection::Get_Instance()->Get_RecvQueueData(data);
+		switch (data.event) {
+		case R_OTHER_PLAYER_MOVE: {
+			R_Other_Player_MovePacket Temp;
+			memcpy(&Temp, data.data, sizeof(R_Other_Player_MovePacket));
+
+			Player2->SetX(Temp.fx);
+			Player2->SetY(Temp.fy);
+
+		}
+			break;
+		default:
+			break;
+		}
+
+	}
+
+	CServer_Connection::Get_Instance()->Unlock_RecvQueue();
 	CObject_Manager::Get_Instance()->Update();
 	return 0;
 }
@@ -87,6 +113,7 @@ int CLevel_GamePlay::Update()
 
 void CLevel_GamePlay::Late_Update()
 {
+	
 	CObject_Manager::Get_Instance()->Late_Update();
 
 }
@@ -100,7 +127,7 @@ void CLevel_GamePlay::Render(HDC hDC)
 
 void CLevel_GamePlay::Release(void)
 {
-	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYER);
+	CObject_Manager::Get_Instance()->DeleteID(OBJ_MY_PLAYER);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYERBULLET);
 
 }
