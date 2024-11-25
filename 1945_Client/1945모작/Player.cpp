@@ -6,6 +6,7 @@
 #include "AbstractFactory.h"
 #include "Player_Bullet.h"
 #include "Explosion_Object.h"
+#include "Server_Connection.h"
 
 CPlayer::CPlayer()
 {
@@ -38,7 +39,7 @@ void CPlayer::Initialize()
 	m_dwShotDelay = 150;
 	m_ePlayerShotState = PLAYER_FINAL;
 	m_iLife = 4;
-
+	m_bMyPlayer = false;
 }
 
 int CPlayer::Update()
@@ -57,6 +58,8 @@ int CPlayer::Update()
 
 void CPlayer::Late_Update()
 {
+
+
 	__super::Move_Frame();
 }
 
@@ -88,49 +91,84 @@ void CPlayer::Release(void)
 
 void CPlayer::Key_Input()
 {
-	if (CKey_Manager::Get_Instance()->Key_Pressing(VK_LEFT)) {
-		if (m_tInfo.fX > 0.f + m_tInfo.fCX / 2.f) {
-			m_tInfo.fX -= m_fSpeed;
-			m_eDir = DIR_LEFT;
-			if (m_iFrameCnt > 0)
+	if (m_bMyPlayer) {
+		if (CKey_Manager::Get_Instance()->Key_Pressing(VK_LEFT)) {
+			if (m_tInfo.fX > 0.f + m_tInfo.fCX / 2.f) {
+				m_tInfo.fX -= m_fSpeed;
+				m_eDir = DIR_LEFT;
+				if (m_iFrameCnt > 0)
+					m_iFrameCnt--;
+			}
+
+			SendQueue_data KetInputData;
+			KetInputData.event = S_MY_PLAYER_MOVE;
+			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY};
+			memcpy(KetInputData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
+			CServer_Connection::Get_Instance()->Push_SendQueue(KetInputData);
+
+
+		}
+		else if (CKey_Manager::Get_Instance()->Key_Pressing(VK_RIGHT)) {
+
+			if (m_tInfo.fX < WINCX - m_tInfo.fCX / 2.f) {
+				m_tInfo.fX += m_fSpeed;
+				m_eDir = DIR_RIGHT;
+				if (m_iFrameCnt < 6)
+					m_iFrameCnt++;
+			}
+
+			SendQueue_data KetInputData;
+			KetInputData.event = S_MY_PLAYER_MOVE;
+			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY };
+
+			memcpy(KetInputData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
+			CServer_Connection::Get_Instance()->Push_SendQueue(KetInputData);
+			
+		}
+		else {
+			if (m_iFrameCnt < 3)
+				m_iFrameCnt++;
+			else if (m_iFrameCnt > 3)
 				m_iFrameCnt--;
 		}
-	}
-	else if (CKey_Manager::Get_Instance()->Key_Pressing(VK_RIGHT)) {
-		if (m_tInfo.fX < WINCX - m_tInfo.fCX / 2.f) {
-			m_tInfo.fX += m_fSpeed;
-			m_eDir = DIR_RIGHT;
-			if (m_iFrameCnt < 6)
-				m_iFrameCnt++;
-		}
-	}
-	else {
-		if (m_iFrameCnt < 3)
-			m_iFrameCnt++;
-		else if (m_iFrameCnt > 3)
-			m_iFrameCnt--;
-	}
 
 
-	if (CKey_Manager::Get_Instance()->Key_Pressing(VK_UP)) {
-		if (m_tInfo.fY > 0.f + m_tInfo.fCY / 2.f) {
-			m_tInfo.fY -= m_fSpeed;
+		if (CKey_Manager::Get_Instance()->Key_Pressing(VK_UP)) {
+
+			if (m_tInfo.fY > 0.f + m_tInfo.fCY / 2.f) {
+				m_tInfo.fY -= m_fSpeed;
+				m_eDir = DIR_UP;
+			}
+
+			SendQueue_data KetInputData;
+			KetInputData.event = S_MY_PLAYER_MOVE;
+			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY };
+
+			memcpy(KetInputData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
+			CServer_Connection::Get_Instance()->Push_SendQueue(KetInputData);
 			m_eDir = DIR_UP;
 		}
-	}
 
-	if (CKey_Manager::Get_Instance()->Key_Pressing(VK_DOWN)) {
-		if (m_tInfo.fY < WINCY - m_tInfo.fCY / 2.f) {
-			m_tInfo.fY += m_fSpeed;
+		if (CKey_Manager::Get_Instance()->Key_Pressing(VK_DOWN)) {
+
+			if (m_tInfo.fY < WINCY - m_tInfo.fCY / 2.f) {
+				m_tInfo.fY += m_fSpeed;
+				m_eDir = DIR_DOWN;
+			}
+
+			SendQueue_data KetInputData;
+			KetInputData.event = S_MY_PLAYER_MOVE;
+			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY };
+
+			memcpy(KetInputData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
+			CServer_Connection::Get_Instance()->Push_SendQueue(KetInputData);
 			m_eDir = DIR_DOWN;
-		
+		}
+
+		if (CKey_Manager::Get_Instance()->Key_Down(VK_LCONTROL)) {
+			m_bNODie = true;
 		}
 	}
-
-	if (CKey_Manager::Get_Instance()->Key_Down(VK_LCONTROL)) {
-		m_bNODie = true;
-	}
-
 
 	if (GetTickCount64() - m_dwShotCount > m_dwShotDelay) {
 		Shot();

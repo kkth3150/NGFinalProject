@@ -81,9 +81,22 @@ void CServer_Connection::SendThread()
             retval = send(sock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
         }
             break;
-        case S_KEY_INPUT:
+        case S_START: {
+            SendHeaderPacket headerPacket = { sizeof(S_GamePlayStartPacket),S_START };
+            int retval = send(sock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+            S_GamePlayStartPacket packet;
+            packet.Connected = *(reinterpret_cast<bool*>(Temp.data));
+            retval = send(sock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+        }
             break;
-
+        case S_MY_PLAYER_MOVE: {
+            SendHeaderPacket headerPacket = { sizeof(S_MyPlayer_MovePacket),S_MY_PLAYER_MOVE };
+            int retval = send(sock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+            S_MyPlayer_MovePacket packet;
+            memcpy(&packet, Temp.data, sizeof(S_MyPlayer_MovePacket));
+            retval = send(sock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+        }
+            break;
 
         default:
             break;
@@ -94,11 +107,7 @@ void CServer_Connection::SendThread()
 void CServer_Connection::ReceiveThread()
 {
     while (!m_bTerminateThreads) {
-       // ReceiveDataResult result = Receive_Data();
 
-       // std::lock_guard<std::mutex> lock(receiveMutex);
-       // // 수신된 데이터를 큐에 추가하여 후속 처리가 가능하게 함
-       ///* receiveQueue.push(result);*/
         char buffer[512];
         int retval = recv(sock, buffer, sizeof(RecvHeaderPacket), 0);
         
@@ -119,14 +128,75 @@ void CServer_Connection::ReceiveThread()
         if (dataLength > sizeof(queueData.data)) {
             dataLength = sizeof(queueData.data);
         }
-        memcpy(queueData.data, buffer, dataLength);
-        
+      /*  memcpy(queueData.data, buffer, dataLength);
+        if (queueData.event == R_PLAYER_MOVE) {
+
+            R_PlayerMovePacket Temp;
+            memcpy(&Temp, queueData.data, 16);
+            int a = Temp.P1X;
+            int B = Temp.P1Y;
+        }*/
         std::lock_guard<std::mutex> lock(receiveMutex);
         receiveQueue.push(queueData);
     }
 }
 
-
+//void CServer_Connection::ReceiveThread()
+//{
+//    while (!m_bTerminateThreads) {
+//
+//        // Step 1: 헤더 패킷 수신
+//        RecvHeaderPacket headerPacket;
+//        int receivedBytes = 0;
+//
+//        while (receivedBytes < sizeof(headerPacket)) {
+//            int retval = recv(sock, reinterpret_cast<char*>(&headerPacket) + receivedBytes, sizeof(headerPacket) - receivedBytes, 0);
+//            if (retval == SOCKET_ERROR || retval == 0) {
+//                // 에러 또는 연결 종료
+//                return;
+//            }
+//            receivedBytes += retval;
+//        }
+//
+//        // Step 2: 데이터 패킷 수신
+//        size_t dataLength = headerPacket.length;
+//        if (dataLength > sizeof(RecvQueue_data::data)) {
+//            dataLength = sizeof(RecvQueue_data::data); // 최대 수신 가능 크기로 제한
+//        }
+//
+//        char buffer[sizeof(RecvQueue_data::data)];
+//        receivedBytes = 0;
+//
+//        while (receivedBytes < dataLength) {
+//            int retval = recv(sock, buffer + receivedBytes, dataLength - receivedBytes, 0);
+//            if (retval == SOCKET_ERROR || retval == 0) {
+//                // 에러 또는 연결 종료
+//                return;
+//            }
+//            receivedBytes += retval;
+//        }
+//
+//        // Step 3: 수신된 데이터를 큐에 추가
+//        RecvQueue_data queueData;
+//        
+//        queueData.event = headerPacket.event; 
+//        memcpy(queueData.data, buffer, dataLength);
+//
+//        if (queueData.event == R_PLAYER_MOVE) {
+//            
+//            R_PlayerMovePacket Temp;
+//            memcpy(&Temp, queueData.data, 16);
+//            int a = Temp.P1X;
+//            int B = Temp.P1Y;
+//        }
+//
+//        // Lock을 사용하여 큐에 안전하게 push
+//        {
+//            std::lock_guard<std::mutex> lock(receiveMutex);
+//            receiveQueue.push(queueData);
+//        }
+//    }
+//}
 void CServer_Connection::Push_SendQueue(SendQueue_data Data)
 {
     std::lock_guard<std::mutex> lock(sendMutex);

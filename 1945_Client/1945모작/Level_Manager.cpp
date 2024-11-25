@@ -81,29 +81,4 @@ void CLevel_Manager::ReceiveThread()
 void CLevel_Manager::ProcessReceivedData()
 {
 
-	std::unique_lock<std::mutex> lock(g_recvMutex);
-	if (!lock.owns_lock()) {
-		return;
-	}
-	if (!g_hasNewData) {
-		return;
-	}
-
-
-	switch (g_receivedData.eventType) {
-	case R_PLAYER_CHOICE: {
-		if (m_eCurLevel == LEVEL_MENU) {
-			R_PlayerChoicePacket* Temp = static_cast<R_PlayerChoicePacket*>(g_receivedData.data);
-			dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER)->front())->SetFlight((int)Temp->Choiced_Character_P2);
-		}
-	}
-		break;
-	case R_LEVEL_CHANGE:
-		// R_LEVEL_CHANGE 이벤트 처리
-		break;
-	default:
-		break;
-	}
-
-	g_hasNewData = false;
 }

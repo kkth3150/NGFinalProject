@@ -1,5 +1,7 @@
 #pragma once
 #include "Level.h"
+#include "Player1.h"
+#include "Player2.h"
 
 class CLevel_GamePlay : public CLevel
 {
@@ -22,7 +24,10 @@ private:
 	bool m_bBossGen = false;
 
 public:
-	DWORD                    Enemy_Count;
+	DWORD                   Enemy_Count;
 	DWORD					Timer;
 	DWORD					END_Time;
+
+	CPlayer1*				Player_C1;
+	CPlayer2*				Player_C2;
 };

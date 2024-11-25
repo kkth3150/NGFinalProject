@@ -44,6 +44,15 @@
     <Filter Include="01.Client_Connection">
       <UniqueIdentifier>{e96f3d83-9248-4773-b8f3-1cf391f618ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-01 Player">
+      <UniqueIdentifier>{f5728e6f-f028-4e48-8e33-113924a26bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-01 Player\Player1">
+      <UniqueIdentifier>{18034a7a-28fa-4e0f-a39e-d4fb6401b299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-01 Player\Player2">
+      <UniqueIdentifier>{a2816d4b-73dc-4c62-a3d1-8a776afa0713}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ServerFramework.cpp">
@@ -79,6 +88,12 @@
     <ClCompile Include="Client_Connection.cpp">
       <Filter>01.Client_Connection</Filter>
     </ClCompile>
+    <ClCompile Include="Player2.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-01 Player\Player2</Filter>
+    </ClCompile>
+    <ClCompile Include="Player1.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-01 Player\Player1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Level_Manager.h">
@@ -110,6 +125,15 @@
     </ClInclude>
     <ClInclude Include="Client_Connection.h">
       <Filter>01.Client_Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Player1.h">
+      <Filter>02.Object_Manager\GameObejcts\02-01 Player\Player1</Filter>
+    </ClInclude>
+    <ClInclude Include="Player2.h">
+      <Filter>02.Object_Manager\GameObejcts\02-01 Player\Player2</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>98.Design</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -18,5 +18,6 @@ public:
 private:
 	bool m_bButton_Down;
 	bool m_bDoOnce;
+	bool m_bStart = false;
 };
 

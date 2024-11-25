@@ -13,9 +13,18 @@ public:
 	void		Late_Update(void);
 	void		Release(void);
 
-	CGameObject* Get_Player() {
-		if (!List_Empty(OBJ_PLAYER))
-			return m_ObjectList[OBJ_PLAYER].front();
+	CGameObject* Get_Player(CLIENT_ID id) {
+		if (id == CLIENT_1) {
+			if (!List_Empty(OBJ_PLAYER1))
+				return m_ObjectList[OBJ_PLAYER1].front();
+
+		}
+		else if(id == CLIENT_2) {
+			if (!List_Empty(OBJ_PLAYER2))
+				return m_ObjectList[OBJ_PLAYER2].front();
+		}
+
+		
 	}
 
 	list<CGameObject*>* Get_List(OBJ_ID eID) {

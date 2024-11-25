@@ -21,12 +21,19 @@ public:
 	void	Shot();
 	void	Motion_Change();
 
+	void SetX(float X) { m_tInfo.fX = X; }
+	void SetY(float Y) { m_tInfo.fY = Y; }
+
 	int		Get_Score() { return m_iScore; };
 	int		Get_Life() { return m_iLife; };
 
 	void	Set_Life();
 	//void	Move_Player_Frame();
 
+	void	Set_My_Player() {
+
+		m_bMyPlayer = true;
+	};
 
 private:
 
@@ -50,6 +57,7 @@ private:
 	int						m_iScore;
 
 	bool					m_bNODie;
+	bool					m_bMyPlayer;
 
 };
 
