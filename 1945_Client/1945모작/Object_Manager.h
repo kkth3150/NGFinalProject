@@ -18,12 +18,12 @@ public:
 	CGameObject* Get_Player(PLAYERID ID) {
 
 		if (ID == PLAYER_1) {
-			if (!List_Empty(OBJ_MY_PLAYER))
-				return m_ObjectList[OBJ_MY_PLAYER].front();
+			if (!List_Empty(OBJ_PLAYER1))
+				return m_ObjectList[OBJ_PLAYER1].front();
 		}
 		else if (ID == PLAYER_2) {
-			if (!List_Empty(OBJ_OTHER_PLAYER))
-				return m_ObjectList[OBJ_OTHER_PLAYER].front();
+			if (!List_Empty(OBJ_PLAYER2))
+				return m_ObjectList[OBJ_PLAYER2].front();
 
 		}
 		

@@ -199,8 +199,7 @@ int CLevel_Menu::Update()
 			MyFinger->MoveRight();
 
 			S_PlayerChoicePacket ChoicePacket;
-			ChoicePacket.Choiced_Character = static_cast<uint8_t>(dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->
-				Get_List(OBJ_FINGER)->front())->GetMyFlight());
+			ChoicePacket.Choiced_Character = static_cast<uint8_t>(MyFinger->GetMyFlight());
 
 			SendQueue_data ChoiceData;
 			ChoiceData.event = S_PLAYER_CHOICE;
@@ -213,8 +212,7 @@ int CLevel_Menu::Update()
 			MyFinger->MoveLeft();
 
 			S_PlayerChoicePacket ChoicePacket;
-			ChoicePacket.Choiced_Character = static_cast<uint8_t>(dynamic_cast<CFinger*>(CObject_Manager::Get_Instance()->
-				Get_List(OBJ_FINGER)->front())->GetMyFlight());
+			ChoicePacket.Choiced_Character = static_cast<uint8_t>(MyFinger->GetMyFlight());
 
 			SendQueue_data ChoiceData;
 			ChoiceData.event = S_PLAYER_CHOICE;
@@ -234,10 +232,7 @@ int CLevel_Menu::Update()
 			m_bStart = true;
 
 			CObject_Manager::Get_Instance()->DeleteID(OBJ_BUTTON);
-
-
 		}
-			
 	}
 
 	CObject_Manager::Get_Instance()->Update();

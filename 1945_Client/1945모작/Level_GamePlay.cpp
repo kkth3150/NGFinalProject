@@ -31,8 +31,9 @@ void CLevel_GamePlay::Initialize()
 	CBmp_Manager::Get_Instance()->Insert_Bmp(L"../Image/UI/Life(30X40X4).bmp", L"LIFE");
 	END_Time = 3000;
 
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_MY_PLAYER, CAbstractFactory<CPlayer>::Create());
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_OTHER_PLAYER, CAbstractFactory<CPlayer>::Create());
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYER1, CAbstractFactory<CPlayer>::Create());
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYER2, CAbstractFactory<CPlayer>::Create());
+
 	dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1))->Set_My_Player();
 	
 	CGameObject* pScoreUI = CAbstractFactory<CUI>::Create_UI(0.f, 0.f, 460.f, 46.f);
@@ -46,9 +47,17 @@ void CLevel_GamePlay::Initialize()
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pLifeUI);
 
 	Enemy_Count = GetTickCount64();
+	if (MyClientID == PLAYER_1) {
+		My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
+		My_Player->Set_My_Player();
+		Other_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
+	}
+	else if (MyClientID == PLAYER_2) {
 
-	Player1 = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
-	Player2 = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
+		My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
+		My_Player->Set_My_Player();
+		Other_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
+	}
 }
 
 int CLevel_GamePlay::Update()
@@ -84,6 +93,7 @@ int CLevel_GamePlay::Update()
 		}
 	}
 
+
 	RecvQueue_data data;
 	CServer_Connection::Get_Instance()->Lock_RecvQueue();
 	while (!CServer_Connection::Get_Instance()->RecvQueueEmpty()) {
@@ -91,11 +101,12 @@ int CLevel_GamePlay::Update()
 		CServer_Connection::Get_Instance()->Get_RecvQueueData(data);
 		switch (data.event) {
 		case R_OTHER_PLAYER_MOVE: {
-			R_Other_Player_MovePacket Temp;
-			memcpy(&Temp, data.data, sizeof(R_Other_Player_MovePacket));
 
-			Player2->SetX(Temp.fx);
-			Player2->SetY(Temp.fy);
+			float fx = *reinterpret_cast<float*>(&data.data[0]);
+			float fy = *reinterpret_cast<float*>(&data.data[4]); 
+			Other_Player->SetX(fx);
+			Other_Player->SetY(fy);
+			
 
 		}
 			break;
@@ -127,7 +138,8 @@ void CLevel_GamePlay::Render(HDC hDC)
 
 void CLevel_GamePlay::Release(void)
 {
-	CObject_Manager::Get_Instance()->DeleteID(OBJ_MY_PLAYER);
+	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYER1);
+	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYER2);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYERBULLET);
 
 }
