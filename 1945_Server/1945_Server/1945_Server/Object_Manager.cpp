@@ -42,6 +42,21 @@ int CObject_Manager::Update(void)
 	return 0;
 }
 
+void CObject_Manager::Late_Update(void)
+{
+	for (size_t i = 0; i < OBJ_END; ++i)
+	{
+		for (auto& iter : m_ObjectList[i])
+		{
+			iter->Late_Update();
+
+			if (m_ObjectList[i].empty())
+				break;
+
+		}
+	}
+}
+
 void CObject_Manager::Release(void)
 {
 

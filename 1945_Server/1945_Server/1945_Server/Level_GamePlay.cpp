@@ -1,9 +1,19 @@
 #include "pch.h"
+#include "Level_Manager.h"
 #include "Level_GamePlay.h"
 #include "Client_Connection.h"
 #include "Object_Manager.h"
 #include "AbstractFactory.h"
 
+#include "Boss.h"
+#include "Monster_1.h"
+#include "Monster_2.h"
+#include "Player1.h"
+#include "Player2.h"
+
+
+#define MAP_SizeY 5353
+#define MAP_SizeX 600
 
 CLevel_GamePlay::CLevel_GamePlay()
 {
@@ -64,15 +74,81 @@ int CLevel_GamePlay::Update()
         CClient_Connection::Get_Instance((CLIENT_ID)i)->Unlock_SendQueue();
     }
 
+    system("cls");
+    cout << "게임플레이 레벨" << endl;
+    cout << "player1 좌표 " << "\t\t\t" << "Player2 좌표" << endl;
+    cout << "X : " << Player_C1->Get_Info().fX << "\t\t\t\t" << "X : " << Player_C2->Get_Info().fX << endl;
+    cout << "Y : " << Player_C1->Get_Info().fY << "\t\t\t\t" << "Y : " << Player_C2->Get_Info().fY << endl << endl << endl;
+
+    cout << "생성된 몬스터 : " << i_Monster1Cnt + i_Monster2Cnt <<" 마리 " << endl;
+
+    if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
+
+        m_bBossGen = true;
+        CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
+    }
+    else if (m_bBossGen && !m_bBossDead) {
+        cout << "======보스 생성======-" << endl;
+        if (CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)) {
+            m_bBossDead = true;
+            Timer = GetTickCount64();
+        }
+
+    }
+    else if (m_bBossGen && m_bBossDead) {
+        if (Timer + END_Time < GetTickCount64()) {
+            CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAME_END);
+        }
+    }
+    else {
+        ++m_iMap_Update;
+    }
+
+    if (!m_bBossGen) {
+        if ((GetTickCount64() - Enemy_Count) % 3000 == 0) {
+            float TempX = rand() % 600;
+            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_2, CAbstractFactory<CMonster_2>::Create(TempX, 0, i_Monster2Cnt));
+            ++i_Monster2Cnt;
+            RecvQueue_data MonsterGenData;
+            MonsterGenData.event = R_MONSTER_GEN;
+            R_MonsterInitPosPacket MonsterInitPacket;
+            MonsterInitPacket.Kind = 0;
+            MonsterInitPacket.fx = TempX;
+            MonsterInitPacket.fy = 0;
+            memcpy(MonsterGenData.data, &MonsterInitPacket, sizeof(R_MonsterInitPosPacket));
+            for (int i = 0; i < CLIENT_END; ++i) {
+                CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(MonsterGenData);
+            }
+
+        }
+        if ((GetTickCount64() - Enemy_Count) % 2000 == 0) {
+            float TempX = rand() % 600 - 51;
+            float TempY = rand() % 300 + 51;
+            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_1, CAbstractFactory<CMonster_1>::Create(TempX, TempY, i_Monster1Cnt));
+            ++i_Monster1Cnt;
+
+            RecvQueue_data MonsterGenData;
+            MonsterGenData.event = R_MONSTER_GEN;
+            R_MonsterInitPosPacket MonsterInitPacket;
+            MonsterInitPacket.Kind = 1;
+            MonsterInitPacket.fx = TempX;
+            MonsterInitPacket.fy = TempY;
+            memcpy(MonsterGenData.data, &MonsterInitPacket, sizeof(R_MonsterInitPosPacket));
+            for (int i = 0; i < CLIENT_END; ++i) {
+                CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(MonsterGenData);
+            }
+
+        }
+    }
+
+
+    CObject_Manager::Get_Instance()->Update();
 	return 0;
 }
 
 void CLevel_GamePlay::Late_Update()
 {
-    
-    
-
-
+      
     for (int i = 0; i < CLIENT_END; ++i) {
 
         if (i == CLIENT_1) {
@@ -102,14 +178,19 @@ void CLevel_GamePlay::Late_Update()
         
     }
 
-    system("cls");
-    cout << "게임플레이 레벨" << endl;
-    cout << "player1 좌표 " << "\t\t\t" << "Player2 좌표" << endl;
-    cout << "X : " << Player_C1->Get_Info().fX << "\t\t\t\t" << "X : " << Player_C2->Get_Info().fX << endl;
-    cout << "Y : " << Player_C1->Get_Info().fY << "\t\t\t\t" << "Y : " << Player_C2->Get_Info().fY << endl;
 
+    CObject_Manager::Get_Instance()->Late_Update();
 }
 
 void CLevel_GamePlay::Release(void)
 {
+    CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYER1);
+    CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYER2);
+    CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYERBULLET);
+}
+
+void CLevel_GamePlay::ShowText(const char* Text, int iTime)
+{
+
+
 }

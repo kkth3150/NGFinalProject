@@ -36,6 +36,8 @@ public:
 	int			Get_HP() { return m_iHp; };
 	void		Set_Hp(int iAtk) { m_iHp -= iAtk; };
 	int			Get_Atk() { return m_iAttack; }
+	void		Set_OBJID(int ID) {	m_iObj_ID = ID;}
+	int			Get_OBJID() {return m_iObj_ID;}
 
 protected:
 	void		Update_Rect();
@@ -47,6 +49,8 @@ protected:
 	DIRECTION	m_eDir;
 
 	bool		m_bDead;
+
+	int			m_iObj_ID;
 
 	float		m_fSpeed;
 	float		m_fAngle;

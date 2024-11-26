@@ -46,6 +46,8 @@ public:
 	int			Get_HP() { return m_iHp; };
 	void		Set_Hp(int iAtk) { m_iHp -= iAtk; };
 	int			Get_Atk() { return m_iAttack; }
+	void		Set_OBJID(int ID) { m_iObj_ID = ID; }
+	int			Get_OBJID() { return m_iObj_ID; }
 
 protected:
 	void		Update_Rect();
@@ -65,6 +67,7 @@ protected:
 	int			m_iHp;
 	int			m_iAttack;
 	float		m_fSpeed_Y;
+	int			m_iObj_ID;
 
 	bool		m_bDeadMotion;
 

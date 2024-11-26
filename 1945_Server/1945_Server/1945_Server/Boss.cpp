@@ -1,0 +1,82 @@
+#include "pch.h"
+#include "Boss.h"
+#include "Object_Manager.h";
+CBoss::CBoss()
+{
+}
+
+CBoss::~CBoss()
+{
+}
+
+void CBoss::Initialize()
+{
+    Set_Init_Boss_Parts();
+	m_tInfo.fX = 1500.f;
+	m_tInfo.fY = 150.f;
+	m_tInfo.fCX = 1365.f;
+	m_tInfo.fCY = 166.f;
+	m_fSpeed = 3.f;
+	Boss_Page = PAGE_1;
+}
+
+int CBoss::Update()
+{
+	switch (Boss_Page) {
+	case PAGE_1:
+		if (m_tInfo.fX > 600) {
+			m_tInfo.fX -= m_fSpeed;
+		}
+
+		break;
+	case PAGE_2:
+
+		if (m_tInfo.fX > 0) {
+			m_tInfo.fX -= m_fSpeed;
+		}
+
+		break;
+
+	case PAGE_3:
+		break;
+
+	default:
+		break;
+	}
+	__super::Update_Rect();
+	return OBJ_NOEVENT;
+}
+
+void CBoss::Late_Update()
+{
+	switch (Boss_Page) {
+	case PAGE_1:
+
+		if (CObject_Manager::Get_Instance()->Get_List(OBJ_BOSSPART)->size() < 10)
+			Boss_Page = PAGE_2;
+
+		break;
+
+	case PAGE_2:
+
+		if (CObject_Manager::Get_Instance()->Get_List(OBJ_BOSSPART)->size() < 0)
+			Boss_Page = PAGE_3;
+
+		break;
+
+	case PAGE_3:
+		//Æø¹ß ÀÌÆåÆ®
+		break;
+
+	default:
+		break;
+	}
+}
+
+void CBoss::Release(void)
+{
+}
+
+void CBoss::Set_Init_Boss_Parts()
+{
+}

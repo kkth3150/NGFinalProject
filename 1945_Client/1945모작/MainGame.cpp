@@ -43,7 +43,7 @@ void CMainGame::Initialize(void)
 
 	//// 메모리 해제
 	//delete[] serverIP;
-	CServer_Connection::Get_Instance()->Initialize("127.0.0.1");
+	CServer_Connection::Get_Instance()->Initialize("192.168.219.102");
 	CBmp_Manager::Get_Instance()->Insert_Bmp(L"../Image/Back.bmp", L"BackBuffer");
 	CLevel_Manager::Get_Instance()->Level_Change(LEVEL_MENU);
 

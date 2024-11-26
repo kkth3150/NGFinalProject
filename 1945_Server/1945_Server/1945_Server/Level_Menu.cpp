@@ -22,11 +22,9 @@ void CLevel_Menu::Initialize()
     auto fingerList = CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER);
 
     if (fingerList->size() >= 2) {
-        // 첫 번째 요소
         P1Finger = dynamic_cast<CFinger*>(fingerList->front());
 
-        // 두 번째 요소
-        auto it = std::next(fingerList->begin(), 1);  // 리스트의 두 번째 요소를 가리키는 반복자
+        auto it = std::next(fingerList->begin(), 1);  
         P2Finger = dynamic_cast<CFinger*>(*it);
     }
 }

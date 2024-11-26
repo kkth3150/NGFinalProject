@@ -84,16 +84,6 @@ int CLevel_GamePlay::Update()
 		++m_iMap_Update;
 	}
 
-	if (!m_bBossGen) {
-		if ((GetTickCount64() - Enemy_Count) % 3000 == 0) {
-			CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_2, CAbstractFactory<CEnemy_2>::Create(rand() % 600, 0));
-		}
-		if ((GetTickCount64() - Enemy_Count) % 2000 == 0) {
-			CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_1, CAbstractFactory<CEnemy_1>::Create(rand() % 600 - 51, rand() % 300 + 51));
-		}
-	}
-
-
 	RecvQueue_data data;
 	CServer_Connection::Get_Instance()->Lock_RecvQueue();
 	while (!CServer_Connection::Get_Instance()->RecvQueueEmpty()) {
@@ -106,10 +96,23 @@ int CLevel_GamePlay::Update()
 			float fy = *reinterpret_cast<float*>(&data.data[4]); 
 			Other_Player->SetX(fx);
 			Other_Player->SetY(fy);
-			
-
 		}
 			break;
+		
+		case R_MONSTER_GEN: {
+			int ID = *reinterpret_cast<int*>(&data.data[0]);
+			float fx = *reinterpret_cast<float*>(&data.data[4]);
+			float fy = *reinterpret_cast<float*>(&data.data[8]);
+
+			if (ID == 0) {
+				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_1, CAbstractFactory<CEnemy_2>::Create(fx, 0, i_Monster1Cnt));
+				++i_Monster1Cnt;
+			}
+			else if (ID == 1) {
+				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_2, CAbstractFactory<CEnemy_1>::Create(fx, fy, i_Monster2Cnt));
+				++i_Monster2Cnt;
+			}
+		}
 		default:
 			break;
 		}
