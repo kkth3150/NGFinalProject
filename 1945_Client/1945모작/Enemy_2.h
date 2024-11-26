@@ -3,7 +3,6 @@
 
 class CEnemy_2 : public CGameObject
 {
-public:
 
 public:
 	CEnemy_2();

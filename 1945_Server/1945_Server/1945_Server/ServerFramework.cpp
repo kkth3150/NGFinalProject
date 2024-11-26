@@ -9,7 +9,7 @@
 using namespace std;
 
 
-const int targetFPS = 30;
+const int targetFPS = 60;
 const int frameDelay = 1000 / targetFPS;
 
 SOCKET g_listenSocket;

@@ -16,12 +16,20 @@ public:
 	virtual void Late_Update() override;
 	virtual void Release(void) override;
 
+public:
+	void ShowText(const char* Text, int iTime);
+
 private:
 	int m_iMap_Update = 0;
 	int m_iScore;
 
 	bool m_bBossDead = false;
 	bool m_bBossGen = false;
+
+	int m_iShowTextCnt;
+
+	int i_Monster1Cnt = 0;
+	int i_Monster2Cnt = 0;
 
 public:
 	DWORD                   Enemy_Count;

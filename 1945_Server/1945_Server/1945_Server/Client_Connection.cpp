@@ -127,6 +127,17 @@ void CClient_Connection::SendThread()
             
 
         }
+             break;
+        case R_MONSTER_GEN: {
+
+            RecvHeaderPacket headerPacket = { sizeof(R_MonsterInitPosPacket),R_MONSTER_GEN };
+            int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+            R_MonsterInitPosPacket packet;
+            memcpy(&packet, Temp.data, sizeof(R_MonsterInitPosPacket));
+            retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+
+
+        }
 
             break;
         default:
