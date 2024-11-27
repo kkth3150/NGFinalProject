@@ -135,7 +135,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="Boss_Bullet.cpp" />
+    <ClCompile Include="Boss_Gun.cpp" />
+    <ClCompile Include="Boss_Posin.cpp" />
     <ClCompile Include="Client_Connection.cpp" />
+    <ClCompile Include="Collision_Manager.cpp" />
     <ClCompile Include="Define.h" />
     <ClCompile Include="Finger.cpp" />
     <ClCompile Include="Finger2.cpp" />
@@ -144,6 +149,9 @@
     <ClCompile Include="Level_GamePlay.cpp" />
     <ClCompile Include="Level_Manager.cpp" />
     <ClCompile Include="Level_Menu.cpp" />
+    <ClCompile Include="Monster_1.cpp" />
+    <ClCompile Include="Monster_2.cpp" />
+    <ClCompile Include="Monster_Bullet.cpp" />
     <ClCompile Include="Object_Manager.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -153,11 +161,17 @@
     </ClCompile>
     <ClCompile Include="Player1.cpp" />
     <ClCompile Include="Player2.cpp" />
+    <ClCompile Include="Player_Bullet.cpp" />
     <ClCompile Include="ServerFramework.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="Boss_Bullet.h" />
+    <ClInclude Include="Boss_Gun.h" />
+    <ClInclude Include="Boss_Posin.h" />
     <ClInclude Include="Client_Connection.h" />
+    <ClInclude Include="Collision_Manager.h" />
     <ClInclude Include="ErrorMsg.h" />
     <ClInclude Include="Finger.h" />
     <ClInclude Include="Finger2.h" />
@@ -166,10 +180,14 @@
     <ClInclude Include="Level_GamePlay.h" />
     <ClInclude Include="Level_Manager.h" />
     <ClInclude Include="Level_Menu.h" />
+    <ClInclude Include="Monster_1.h" />
+    <ClInclude Include="Monster_2.h" />
+    <ClInclude Include="Monster_Bullet.h" />
     <ClInclude Include="Object_Manager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player1.h" />
     <ClInclude Include="Player2.h" />
+    <ClInclude Include="Player_Bullet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

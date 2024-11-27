@@ -1,1 +1,8 @@
-﻿  1945모작.vcxproj -> C:\Users\sangh\OneDrive\바탕 화면\NGFINAL\NGFinalProject\1945_Client\x64\Debug\1945모작.exe
+﻿  MainGame.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\GameObject.h(41,35): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/MainGame.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\1945모작\MainGame.cpp(76,28): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/MainGame.cpp'을(를) 컴파일하는 중)
+  
+  1945모작.vcxproj -> C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Client\x64\Debug\1945모작.exe
