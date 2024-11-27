@@ -97,7 +97,6 @@ void CCollision_Manager::Collision_MyBullet(list<CGameObject*> _Dst, list<CGameO
 			if (IntersectRect(&rc, Dst->Get_Rect(), Src->Get_Rect()))
 			{
 				Dst->Set_Dead();
-				Src->Set_Hp(1);
 			}
 		}
 	}

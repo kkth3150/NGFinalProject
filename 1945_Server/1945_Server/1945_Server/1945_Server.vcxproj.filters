@@ -5,9 +5,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Default">
-      <UniqueIdentifier>{77eda69c-8310-486c-9247-e15ed0b8fba1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="00.Main_Server">
       <UniqueIdentifier>{b51f632b-ecf2-44d1-ae8a-77eaf74ba6a3}</UniqueIdentifier>
     </Filter>
@@ -59,6 +56,39 @@
     <Filter Include="02.Object_Manager\GameObejcts\02-00 Finger\Finger2">
       <UniqueIdentifier>{f74674d5-bd31-4689-8e96-cf96fad44750}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-02 Monster">
+      <UniqueIdentifier>{06cd31a7-6e76-4a2a-bec7-69a7e5b49095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-02 Monster\Monster_1">
+      <UniqueIdentifier>{929cb55b-24fe-4453-a820-87ce86f4ad4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-02 Monster\Monster_2">
+      <UniqueIdentifier>{44443739-58d5-42e7-abb6-489d6fa3b7ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-03 Boss">
+      <UniqueIdentifier>{0cf8c87f-fcc9-4bec-8861-31283c9ef50d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-03 Boss\Boss_Parts">
+      <UniqueIdentifier>{7c7e4597-8133-4d37-936f-7d92c117e164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-04 Bullets">
+      <UniqueIdentifier>{88e4db11-cf4f-41b2-9c25-889a8802a5b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-04 Bullets\Player_Bullet">
+      <UniqueIdentifier>{efff303b-9d7c-4b31-b9f0-09f314bcc009}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-04 Bullets\Monster_Bullet">
+      <UniqueIdentifier>{0631d8c4-2ad8-4ab5-84a9-14b483f9529f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Object_Manager\GameObejcts\02-04 Bullets\Boss_Bullet">
+      <UniqueIdentifier>{ed8d6844-9995-4eb8-a00f-aa14fbcea638}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{77eda69c-8310-486c-9247-e15ed0b8fba1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Collision_Manager">
+      <UniqueIdentifier>{3ed5234f-770a-4bf4-b52e-3e3ebd0cd2a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ServerFramework.cpp">
@@ -103,6 +133,33 @@
     <ClCompile Include="Finger2.cpp">
       <Filter>02.Object_Manager\GameObejcts\02-00 Finger\Finger2</Filter>
     </ClCompile>
+    <ClCompile Include="Monster_1.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-02 Monster\Monster_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster_2.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-02 Monster\Monster_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-03 Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss_Posin.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-03 Boss\Boss_Parts</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss_Gun.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-03 Boss\Boss_Parts</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss_Bullet.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-04 Bullets\Boss_Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster_Bullet.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-04 Bullets\Monster_Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Player_Bullet.cpp">
+      <Filter>02.Object_Manager\GameObejcts\02-04 Bullets\Player_Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision_Manager.cpp">
+      <Filter>04.Collision_Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Level_Manager.h">
@@ -118,7 +175,7 @@
       <Filter>03.Level_Manager\Levels\01-01.GamePlay_Level</Filter>
     </ClInclude>
     <ClInclude Include="ErrorMsg.h">
-      <Filter>Default</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Object_Manager.h">
       <Filter>02.Object_Manager</Filter>
@@ -146,6 +203,33 @@
     </ClInclude>
     <ClInclude Include="Finger2.h">
       <Filter>02.Object_Manager\GameObejcts\02-00 Finger\Finger2</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster_1.h">
+      <Filter>02.Object_Manager\GameObejcts\02-02 Monster\Monster_1</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster_2.h">
+      <Filter>02.Object_Manager\GameObejcts\02-02 Monster\Monster_2</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>02.Object_Manager\GameObejcts\02-03 Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss_Posin.h">
+      <Filter>02.Object_Manager\GameObejcts\02-03 Boss\Boss_Parts</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss_Gun.h">
+      <Filter>02.Object_Manager\GameObejcts\02-03 Boss\Boss_Parts</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss_Bullet.h">
+      <Filter>02.Object_Manager\GameObejcts\02-04 Bullets\Boss_Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster_Bullet.h">
+      <Filter>02.Object_Manager\GameObejcts\02-04 Bullets\Monster_Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Player_Bullet.h">
+      <Filter>02.Object_Manager\GameObejcts\02-04 Bullets\Player_Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision_Manager.h">
+      <Filter>04.Collision_Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
