@@ -69,6 +69,6 @@ public:
 private:
 	static	CObject_Manager* m_pInstance;
 
-
+	int DeadMonsterCnt = 0;
 };
 

@@ -28,8 +28,7 @@ private:
 
 	int m_iShowTextCnt;
 
-	int i_Monster1Cnt = 0;
-	int i_Monster2Cnt = 0;
+	int i_MonsterCnt = 0;
 
 public:
 	DWORD                   Enemy_Count;

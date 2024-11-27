@@ -59,14 +59,11 @@ int CEnemy_1::Update()
 	__super::Update_Rect();
 
 
-	if (m_iHp < 0) {
-		m_bDead = true;
+
+	if (m_bDead) {
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_EXPLOSION, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
-	}
-
-	if (m_bDead)
 		return OBJ_DEAD;
-
+	}
 
 
 	return OBJ_NOEVENT;

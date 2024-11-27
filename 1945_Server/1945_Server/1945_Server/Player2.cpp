@@ -1,5 +1,9 @@
 #include "pch.h"
 #include "Player2.h"
+#include "Object_Manager.h"
+#include "AbstractFactory.h"
+#include "Player_Bullet.h"
+
 
 CPlayer2::CPlayer2()
 {
@@ -24,6 +28,11 @@ void CPlayer2::Initialize()
 
 int CPlayer2::Update()
 {
+	if (GetTickCount64() - m_dwShotCount > m_dwShotDelay) {
+		Shot();
+		m_dwShotCount = GetTickCount64();
+
+	}
 	__super::Update_Rect();
 
 	if (m_bDead) {
@@ -43,6 +52,18 @@ void CPlayer2::Release(void)
 
 void CPlayer2::Shot()
 {
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYERBULLET, CAbstractFactory<CPlayer_Bullet>::CreatePlayerBullet(m_tInfo.fX, m_tInfo.fY - 30.f, PB_NORMAL));
+	//if (m_ePlayerShotState == PLAYER_UPGRADE) {
+
+	//	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYERBULLET, CAbstractFactory<CPlayer_Bullet>::CreatePlayerBullet(m_tInfo.fX - 10.f, m_tInfo.fY - 20.f, PB_LSUB));
+	//	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYERBULLET, CAbstractFactory<CPlayer_Bullet>::CreatePlayerBullet(m_tInfo.fX + 10.f, m_tInfo.fY - 20.f, PB_RSUB));
+
+	//}
+	//if (m_ePlayerShotState == PLAYER_FINAL) {
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYERBULLET, CAbstractFactory<CPlayer_Bullet>::CreatePlayerBullet(m_tInfo.fX - 22.f, m_tInfo.fY, PB_LSIDE));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYERBULLET, CAbstractFactory<CPlayer_Bullet>::CreatePlayerBullet(m_tInfo.fX - 10.f, m_tInfo.fY - 20.f, PB_LSUB));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYERBULLET, CAbstractFactory<CPlayer_Bullet>::CreatePlayerBullet(m_tInfo.fX + 10.f, m_tInfo.fY - 20.f, PB_RSUB));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYERBULLET, CAbstractFactory<CPlayer_Bullet>::CreatePlayerBullet(m_tInfo.fX + 22.f, m_tInfo.fY, PB_RSIDE));
 }
 
 void CPlayer2::SetLife()

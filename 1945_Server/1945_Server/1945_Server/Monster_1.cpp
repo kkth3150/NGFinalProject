@@ -51,7 +51,6 @@ int CMonster_1::Update()
 
 	if (m_iHp < 0) {
 		m_bDead = true;
-		//폭발 오브젝트생성
 	}
 
 	if (m_bDead)
@@ -70,8 +69,7 @@ void CMonster_1::Release(void)
 
 void CMonster_1::Shot()
 {
-	/*CObject_Manager::Get_Instance()->Add_Object(OBJ_BULLET_ENEMY, 
-		CAbstractFactory<CMonster_Bullet>::CreateEnemyBullet(m_tInfo.fX, m_tInfo.fY - 30.f, E1));*/
+
 }
 
 void CMonster_1::Motion_Change()

@@ -19,8 +19,8 @@ public:
 private:
 	int m_iMap_Update = 0;
 	int m_iScore;
-	int i_Monster1Cnt = 0;
-	int i_Monster2Cnt = 0;
+	int i_MonsterCnt = 0;
+
 	bool m_bBossDead =	false;
 	bool m_bBossGen  =	false;
 
