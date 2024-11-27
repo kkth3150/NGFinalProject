@@ -34,6 +34,15 @@ void CLevel_GamePlay::Initialize()
 
 int CLevel_GamePlay::Update()
 {
+    system("cls");
+    cout << "게임플레이 레벨" << endl;
+    cout << "player1 좌표 " << "\t\t\t" << "Player2 좌표" << endl;
+    cout << "X : " << Player_C1->Get_Info().fX << "\t\t\t\t" << "X : " << Player_C2->Get_Info().fX << endl;
+    cout << "Y : " << Player_C1->Get_Info().fY << "\t\t\t\t" << "Y : " << Player_C2->Get_Info().fY << endl << endl << endl;
+
+    cout << "생성된 몬스터 : " << i_MonsterCnt << " 마리 " << endl;
+
+ 
     for (int i = 0; i < CLIENT_END; ++i) {
 
         SendQueue_data data;
@@ -74,13 +83,8 @@ int CLevel_GamePlay::Update()
         CClient_Connection::Get_Instance((CLIENT_ID)i)->Unlock_SendQueue();
     }
 
-    system("cls");
-    cout << "게임플레이 레벨" << endl;
-    cout << "player1 좌표 " << "\t\t\t" << "Player2 좌표" << endl;
-    cout << "X : " << Player_C1->Get_Info().fX << "\t\t\t\t" << "X : " << Player_C2->Get_Info().fX << endl;
-    cout << "Y : " << Player_C1->Get_Info().fY << "\t\t\t\t" << "Y : " << Player_C2->Get_Info().fY << endl << endl << endl;
-
-    cout << "생성된 몬스터 : " << i_Monster1Cnt + i_Monster2Cnt <<" 마리 " << endl;
+  
+   
 
     if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
 
@@ -89,7 +93,7 @@ int CLevel_GamePlay::Update()
     }
     else if (m_bBossGen && !m_bBossDead) {
         cout << "======보스 생성======-" << endl;
-        if (CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)) {
+        if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
             m_bBossDead = true;
             Timer = GetTickCount64();
         }
@@ -107,8 +111,8 @@ int CLevel_GamePlay::Update()
     if (!m_bBossGen) {
         if ((GetTickCount64() - Enemy_Count) % 3000 == 0) {
             float TempX = rand() % 600;
-            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_2, CAbstractFactory<CMonster_2>::Create(TempX, 0, i_Monster2Cnt));
-            ++i_Monster2Cnt;
+            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CMonster_2>::Create(TempX, 0, i_MonsterCnt));
+            ++i_MonsterCnt;
             RecvQueue_data MonsterGenData;
             MonsterGenData.event = R_MONSTER_GEN;
             R_MonsterInitPosPacket MonsterInitPacket;
@@ -122,17 +126,17 @@ int CLevel_GamePlay::Update()
 
         }
         if ((GetTickCount64() - Enemy_Count) % 2000 == 0) {
-            float TempX = rand() % 600 - 51;
-            float TempY = rand() % 300 + 51;
-            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_1, CAbstractFactory<CMonster_1>::Create(TempX, TempY, i_Monster1Cnt));
-            ++i_Monster1Cnt;
+            float TempX = rand() % 600;
+            float TempY = rand() % 300;
+            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CMonster_1>::Create(TempX, TempY, i_MonsterCnt));
+            ++i_MonsterCnt;
 
             RecvQueue_data MonsterGenData;
             MonsterGenData.event = R_MONSTER_GEN;
             R_MonsterInitPosPacket MonsterInitPacket;
             MonsterInitPacket.Kind = 1;
             MonsterInitPacket.fx = TempX;
-            MonsterInitPacket.fy = TempY;
+            MonsterInitPacket.fy = 0;
             memcpy(MonsterGenData.data, &MonsterInitPacket, sizeof(R_MonsterInitPosPacket));
             for (int i = 0; i < CLIENT_END; ++i) {
                 CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(MonsterGenData);

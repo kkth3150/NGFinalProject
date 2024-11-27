@@ -19,7 +19,7 @@ void CLevel_Menu::Initialize()
 {
     CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, CAbstractFactory<CFinger>::Create());
     CObject_Manager::Get_Instance()->Add_Object(OBJ_FINGER, CAbstractFactory<CFinger>::Create());
-    auto fingerList = CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER);
+    list<CGameObject*>* fingerList = CObject_Manager::Get_Instance()->Get_List(OBJ_FINGER);
 
     if (fingerList->size() >= 2) {
         P1Finger = dynamic_cast<CFinger*>(fingerList->front());

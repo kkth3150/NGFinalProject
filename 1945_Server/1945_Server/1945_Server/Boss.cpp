@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Boss.h"
 #include "Object_Manager.h";
+
 CBoss::CBoss()
 {
 }
@@ -52,14 +53,14 @@ void CBoss::Late_Update()
 	switch (Boss_Page) {
 	case PAGE_1:
 
-		if (CObject_Manager::Get_Instance()->Get_List(OBJ_BOSSPART)->size() < 10)
+		if (CObject_Manager::Get_Instance()->Get_List(OBJ_ENEMY)->size() < 10)
 			Boss_Page = PAGE_2;
 
 		break;
 
 	case PAGE_2:
 
-		if (CObject_Manager::Get_Instance()->Get_List(OBJ_BOSSPART)->size() < 0)
+		if (CObject_Manager::Get_Instance()->Get_List(OBJ_ENEMY)->size() < 0)
 			Boss_Page = PAGE_3;
 
 		break;

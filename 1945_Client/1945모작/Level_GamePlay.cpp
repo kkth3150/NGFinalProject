@@ -10,6 +10,7 @@
 #include "Enemy_2.h"
 #include "Level_Manager.h"
 #include "Server_Connection.h"
+#include "Collision_Manager.h"
 
 #define MAP_SizeY 5353
 #define MAP_SizeX 600
@@ -69,7 +70,7 @@ int CLevel_GamePlay::Update()
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
 	}
 	else if (m_bBossGen && !m_bBossDead) {
-		if (CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)) {
+		if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
 			m_bBossDead = true;
 			Timer = GetTickCount64();
 		}
@@ -105,14 +106,32 @@ int CLevel_GamePlay::Update()
 			float fy = *reinterpret_cast<float*>(&data.data[8]);
 
 			if (ID == 0) {
-				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_1, CAbstractFactory<CEnemy_2>::Create(fx, 0, i_Monster1Cnt));
-				++i_Monster1Cnt;
+				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CEnemy_2>::Create(fx, 0, i_MonsterCnt));
+				++i_MonsterCnt;
 			}
 			else if (ID == 1) {
-				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY_2, CAbstractFactory<CEnemy_1>::Create(fx, fy, i_Monster2Cnt));
-				++i_Monster2Cnt;
+				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CEnemy_1>::Create(fx, fy, i_MonsterCnt));
+				++i_MonsterCnt;
 			}
+
+			
 		}
+		break;
+
+		case R_OBJ_DEAD: 
+		{
+			int ID = (int)data.data[0];
+			list<CGameObject*>* pEnemyList = CObject_Manager::Get_Instance()->Get_List(OBJ_ENEMY);
+			if (!pEnemyList->empty()) {
+				for (auto& Src : *pEnemyList) {
+					if (Src->Get_OBJID() == ID) {
+						Src->Set_Dead();
+					}
+				}
+			}
+
+		}
+			break;
 		default:
 			break;
 		}
