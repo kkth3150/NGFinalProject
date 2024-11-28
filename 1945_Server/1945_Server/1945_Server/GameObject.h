@@ -38,6 +38,8 @@ public:
 	int			Get_Atk() { return m_iAttack; }
 	void		Set_OBJID(int ID) {	m_iObj_ID = ID;}
 	int			Get_OBJID() {return m_iObj_ID;}
+	bool		GetType() { return m_bType; }
+	void		SetType(bool type) { m_bType = type; }
 
 protected:
 	void		Update_Rect();
@@ -51,6 +53,7 @@ protected:
 	bool		m_bDead;
 
 	int			m_iObj_ID;
+	bool		m_bType;
 
 	float		m_fSpeed;
 	float		m_fAngle;

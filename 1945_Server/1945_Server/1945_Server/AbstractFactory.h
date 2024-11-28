@@ -42,6 +42,18 @@ public:
 		return pGameObject;
 	}
 
+	static CGameObject* Create(float fX, float fY, int ID, bool type)
+	{
+		CGameObject* pGameObject = new T;
+		pGameObject->Set_Pos(fX, fY);
+		pGameObject->Initialize();
+		pGameObject->Set_OBJID(ID);
+		pGameObject->SetType(type);
+
+		return pGameObject;
+	}
+
+
 	static CGameObject* Create(float fX, float fY, DIRECTION eDir)
 	{
 		CGameObject* pGameObject = new T;

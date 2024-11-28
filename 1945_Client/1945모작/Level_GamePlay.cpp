@@ -66,11 +66,13 @@ int CLevel_GamePlay::Update()
 	
 
 	if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
-		m_bBossGen = true;
-		CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
+		if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
+			m_bBossGen = true;
+			CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
+		}
 	}
 	else if (m_bBossGen && !m_bBossDead) {
-		if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
+		if (CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)) {
 			m_bBossDead = true;
 			Timer = GetTickCount64();
 		}
@@ -103,14 +105,14 @@ int CLevel_GamePlay::Update()
 		case R_MONSTER_GEN: {
 			int ID = *reinterpret_cast<int*>(&data.data[0]);
 			float fx = *reinterpret_cast<float*>(&data.data[4]);
-			float fy = *reinterpret_cast<float*>(&data.data[8]);
+			/*float fy = *reinterpret_cast<float*>(&data.data[8]);*/
 
 			if (ID == 0) {
 				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CEnemy_2>::Create(fx, 0, i_MonsterCnt));
 				++i_MonsterCnt;
 			}
 			else if (ID == 1) {
-				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CEnemy_1>::Create(fx, fy, i_MonsterCnt));
+				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CEnemy_1>::Create(fx, 0, i_MonsterCnt));
 				++i_MonsterCnt;
 			}
 

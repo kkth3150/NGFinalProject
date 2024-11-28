@@ -42,7 +42,7 @@ int CMonster_2::Update()
 	m_tInfo.fY += m_fSpeed_Y;
 
 	if (GetTickCount64() - m_dwShotCount > m_dwShotDelay) {
-		//Shot();
+		Shot();
 		m_dwShotCount = GetTickCount64();
 
 	}
@@ -70,8 +70,8 @@ void CMonster_2::Release(void)
 
 void CMonster_2::Shot()
 {
-	/*CObject_Manager::Get_Instance()->Add_Object(OBJ_BULLET_ENEMY, CAbstractFactory<CMonster_Bullet>::CreateEnemyBullet(m_tInfo.fX + 10.f, m_tInfo.fY - 30.f, E2R));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BULLET_ENEMY, CAbstractFactory<CMonster_Bullet>::CreateEnemyBullet(m_tInfo.fX - 10.f, m_tInfo.fY - 30.f, E2L));*/
+	//CObject_Manager::Get_Instance()->Add_Object(OBJ_BULLET_ENEMY, CAbstractFactory<CMonster_Bullet>::CreateEnemyBullet(m_tInfo.fX + 10.f, m_tInfo.fY - 30.f, E2R));
+	//CObject_Manager::Get_Instance()->Add_Object(OBJ_BULLET_ENEMY, CAbstractFactory<CMonster_Bullet>::CreateEnemyBullet(m_tInfo.fX - 10.f, m_tInfo.fY - 30.f, E2L));
 }
 
 void CMonster_2::Motion_Change()
