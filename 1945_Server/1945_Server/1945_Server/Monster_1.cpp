@@ -27,6 +27,8 @@ void CMonster_1::Initialize()
 
 int CMonster_1::Update()
 {
+	
+
 	if (m_tInfo.fX > m_fMAX_X) {
 		m_fSpeed = -2.f;
 		m_fSpeed_Y = -2.f;
@@ -42,19 +44,20 @@ int CMonster_1::Update()
 	m_tInfo.fX += m_fSpeed;
 	m_tInfo.fY += m_fSpeed_Y;
 	if (GetTickCount64() - m_dwShotCount > m_dwShotDelay) {
-		Shot();
+		//Shot();
 		m_dwShotCount = GetTickCount64();
 
 	}
 	__super::Update_Rect();
-	return 0;
 
 	if (m_iHp < 0) {
 		m_bDead = true;
 	}
 
 	if (m_bDead)
-		return OBJ_NOEVENT;
+		return OBJ_DEAD;
+
+	return OBJ_NOEVENT;
 
 }
 

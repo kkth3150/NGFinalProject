@@ -70,5 +70,7 @@ private:
 	static	CObject_Manager* m_pInstance;
 
 	int DeadMonsterCnt = 0;
+	int Monster1Cnt = 0;
+	int Monster2Cnt = 0;
 };
 

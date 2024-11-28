@@ -44,11 +44,19 @@ int CObject_Manager::Update(void)
 						DeadMonsterPacket.MonsterID = (uint8_t)dynamic_cast<CGameObject*>(*iter)->Get_OBJID();
 						memcpy(DeadMonsterData.data, &DeadMonsterPacket, sizeof(R_MonsterDeadPacket));
 						CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(DeadMonsterData);
-						++DeadMonsterCnt;
+						
+					}
+					++DeadMonsterCnt;
 
+					if (dynamic_cast<CGameObject*>(*iter)->GetType()) {
+						++Monster1Cnt;
+					}
+					else if (!dynamic_cast<CGameObject*>(*iter)->GetType()) {
+						++Monster2Cnt;
 					}
 				}
 
+				
 				Safe_Delete<CGameObject*>(*iter);
 				iter = m_ObjectList[i].erase(iter);
 
@@ -60,6 +68,8 @@ int CObject_Manager::Update(void)
 	}
 
 	cout << "제거된 몬스터 수 : " << DeadMonsterCnt << " 개" << endl;
+	cout << "제거된 작은 몬스터 수 : " << Monster1Cnt << " 개" << endl;
+	cout << "제거된 큰 몬스터 수 : " << Monster2Cnt << " 개" << endl;
 	return 0;
 }
 
@@ -78,8 +88,9 @@ void CObject_Manager::Late_Update(void)
 	}
 
 	CCollision_Manager::Collision_MyBullet(m_ObjectList[OBJ_PLAYERBULLET], m_ObjectList[OBJ_ENEMY]);
-	CCollision_Manager::Collision_MyBullet(m_ObjectList[OBJ_PLAYERBULLET], m_ObjectList[OBJ_ENEMY]);
-	CCollision_Manager::Collision_MyBullet(m_ObjectList[OBJ_PLAYERBULLET], m_ObjectList[OBJ_ENEMY]);
+	if (!CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)) {
+		CCollision_Manager::Collision_MyBullet(m_ObjectList[OBJ_PLAYERBULLET], m_ObjectList[OBJ_BOSSPART]);
+	}
 }
 
 void CObject_Manager::Release(void)

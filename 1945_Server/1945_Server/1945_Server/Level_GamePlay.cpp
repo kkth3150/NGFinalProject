@@ -27,6 +27,7 @@ void CLevel_GamePlay::Initialize()
 {
     CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYER1, CAbstractFactory<CPlayer1>::Create());
     CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYER2, CAbstractFactory<CPlayer2>::Create());
+
     Player_C1 = dynamic_cast<CPlayer1*>(CObject_Manager::Get_Instance()->Get_Player(CLIENT_1));
     Player_C2 = dynamic_cast<CPlayer2*>(CObject_Manager::Get_Instance()->Get_Player(CLIENT_2));
 
@@ -87,13 +88,15 @@ int CLevel_GamePlay::Update()
    
 
     if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
-
-        m_bBossGen = true;
-        CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
+        if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
+            m_bBossGen = true;
+            cout << "================焊胶 积己===================" << endl;
+            CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
+        }
     }
     else if (m_bBossGen && !m_bBossDead) {
-        cout << "======焊胶 积己======-" << endl;
-        if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
+ 
+        if (CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)) {
             m_bBossDead = true;
             Timer = GetTickCount64();
         }
@@ -111,7 +114,7 @@ int CLevel_GamePlay::Update()
     if (!m_bBossGen) {
         if ((GetTickCount64() - Enemy_Count) % 3000 == 0) {
             float TempX = rand() % 600;
-            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CMonster_2>::Create(TempX, 0, i_MonsterCnt));
+            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CMonster_2>::Create(TempX, 0, i_MonsterCnt,false));
             ++i_MonsterCnt;
             RecvQueue_data MonsterGenData;
             MonsterGenData.event = R_MONSTER_GEN;
@@ -127,8 +130,7 @@ int CLevel_GamePlay::Update()
         }
         if ((GetTickCount64() - Enemy_Count) % 2000 == 0) {
             float TempX = rand() % 600;
-            float TempY = rand() % 300;
-            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CMonster_1>::Create(TempX, TempY, i_MonsterCnt));
+            CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CMonster_1>::Create(TempX, 0, i_MonsterCnt, true));
             ++i_MonsterCnt;
 
             RecvQueue_data MonsterGenData;
