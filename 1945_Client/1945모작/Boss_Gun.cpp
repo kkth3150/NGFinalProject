@@ -108,14 +108,11 @@ int CBoss_Gun::Update()
 	Shot_By_Dir();
 
 	__super::Update_Rect();
-	if (m_iHp < 0) {
+
+	if (m_bDead) {
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_EXPLOSION, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
-		m_bDead = true;
-	}
-
-
-	if (m_bDead)
 		return OBJ_DEAD;
+	}
 
 	return OBJ_NOEVENT;
 }
@@ -124,7 +121,7 @@ void CBoss_Gun::Late_Update()
 {
 
 	if (m_bDead) {
-		CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
+		CObject_Manager::Get_Instance()->Add_Object(OBJ_EXPLOSION, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
 	}
 	__super::Move_Frame();
 }

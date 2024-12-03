@@ -55,6 +55,28 @@ int CObject_Manager::Update(void)
 						++Monster2Cnt;
 					}
 				}
+				else if (i == OBJ_BOSSPART) {
+
+					for (int i = 0; i < CLIENT_END; ++i) {
+
+						RecvQueue_data DeadBossPartData;
+						DeadBossPartData.event = R_BOSS_PART_DEAD;
+
+						R_MonsterDeadPacket DeadMonsterPacket;
+						DeadMonsterPacket.MonsterID = (uint8_t)dynamic_cast<CGameObject*>(*iter)->Get_OBJID();
+						memcpy(DeadBossPartData.data, &DeadMonsterPacket, sizeof(R_MonsterDeadPacket));
+						CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(DeadBossPartData);
+
+					}
+					++DeadMonsterCnt;
+
+					if (dynamic_cast<CGameObject*>(*iter)->GetType()) {
+						++Monster1Cnt;
+					}
+					else if (!dynamic_cast<CGameObject*>(*iter)->GetType()) {
+						++Monster2Cnt;
+					}
+				}
 
 				
 				Safe_Delete<CGameObject*>(*iter);

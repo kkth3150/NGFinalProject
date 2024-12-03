@@ -148,6 +148,25 @@ void CClient_Connection::SendThread()
             retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
         }
             break;
+
+        case R_BOSS_GEN: {
+            RecvHeaderPacket headerPacket = { sizeof(R_BossGenPacket),R_BOSS_GEN };
+            int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+            R_BossGenPacket packet;
+            memcpy(&packet, Temp.data, sizeof(R_BossGenPacket));
+            retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+        }
+            break;
+        case R_BOSS_PART_DEAD: {
+
+            RecvHeaderPacket headerPacket = { sizeof(R_MonsterDeadPacket),R_BOSS_PART_DEAD };
+            int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+            R_MonsterDeadPacket packet;
+            memcpy(&packet, Temp.data, sizeof(R_MonsterDeadPacket));
+            retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+
+        }
+             break;
         default:
             
             break;

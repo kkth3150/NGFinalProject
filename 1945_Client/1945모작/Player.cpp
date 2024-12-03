@@ -69,19 +69,19 @@ void CPlayer::Render(HDC hDC)
 
 	//Rectangle(hDC, m_tInfo.fX - m_tInfo.fCX / 2, m_tInfo.fY - m_tInfo.fCY / 2, m_tInfo.fX + m_tInfo.fCX / 2, m_tInfo.fY + m_tInfo.fCY / 2);
 	//피격 범위용 Rect => 조절 필요
-
-	GdiTransparentBlt(hDC,
-		(int)m_tInfo.fX - m_tInfo.fCX / 2,	//복사 받을 X 위치
-		(int)m_tInfo.fY - m_tInfo.fCY / 2,	//복사 받을 Y 위치
-		62,									//복사 받을 가로 길이
-		64,									//복사 받을 세로 길이
-		PlayerDC,							//복사할 비트맵 DC
-		62 * m_iFrameCnt,					//비트맵 이미지의 왼쪽 X 좌표
-		0,									//비트맵 이미지의 위쪽 Y 좌표
-		m_tInfo.fCX,						//복사할 이미지의 가로 사이즈 
-		m_tInfo.fCY,						//복사할 이미지의 세로 사이즈
-		RGB(255, 255, 255));
-
+	if (m_bMyPlayer) {
+		GdiTransparentBlt(hDC,
+			(int)m_tInfo.fX - m_tInfo.fCX / 2,	//복사 받을 X 위치
+			(int)m_tInfo.fY - m_tInfo.fCY / 2,	//복사 받을 Y 위치
+			62,									//복사 받을 가로 길이
+			64,									//복사 받을 세로 길이
+			PlayerDC,							//복사할 비트맵 DC
+			62 * m_iFrameCnt,					//비트맵 이미지의 왼쪽 X 좌표
+			0,									//비트맵 이미지의 위쪽 Y 좌표
+			m_tInfo.fCX,						//복사할 이미지의 가로 사이즈 
+			m_tInfo.fCY,						//복사할 이미지의 세로 사이즈
+			RGB(255, 255, 255));
+	}
 }
 
 void CPlayer::Release(void)

@@ -30,6 +30,11 @@ public:
 	}
 	bool Get_RecvQueueData(RecvQueue_data& data);
 
+	void Clear_Recv_Queue(){
+		while (!receiveQueue.empty()) {
+			receiveQueue.pop();
+		}
+	}
 public:
 	static	CServer_Connection* Get_Instance()
 	{
