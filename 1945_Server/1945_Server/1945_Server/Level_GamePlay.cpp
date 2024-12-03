@@ -42,8 +42,7 @@ int CLevel_GamePlay::Update()
     cout << "Y : " << Player_C1->Get_Info().fY << "\t\t\t\t" << "Y : " << Player_C2->Get_Info().fY << endl << endl << endl;
 
     cout << "积己等 阁胶磐 : " << i_MonsterCnt << " 付府 " << endl;
-
- 
+    int ikey[2];
     for (int i = 0; i < CLIENT_END; ++i) {
 
         SendQueue_data data;
@@ -64,14 +63,16 @@ int CLevel_GamePlay::Update()
                 
                 float fx = *reinterpret_cast<float*>(&data.data[0]);
                 float fy = *reinterpret_cast<float*>(&data.data[4]);
-                int ikey = *reinterpret_cast<int*>(&data.data[8]);
+                ikey[i] = *reinterpret_cast<int*>(&data.data[8]);
                 if (i == CLIENT_1) {
                     Player_C1->Set_Pos(fx, fy);
-                    Player_C1->SetFrameKey(ikey);
+                    Player_C1->SetFrameKey(ikey[0]);
+                   
                 }
                 else if (i == CLIENT_2) {
                     Player_C2->Set_Pos(fx, fy);
-                    Player_C2->SetFrameKey(ikey);
+                    Player_C2->SetFrameKey(ikey[1]);
+                   
                 }
 
 
@@ -87,7 +88,8 @@ int CLevel_GamePlay::Update()
     }
 
   
-   
+    cout << "Player1 FrameCnt : " << ikey[0] << endl;
+    cout << "Player2 FrameCnt : " << ikey[1] << endl;
 
     if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
         if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {

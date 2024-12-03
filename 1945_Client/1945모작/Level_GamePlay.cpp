@@ -104,7 +104,7 @@ int CLevel_GamePlay::Update()
 			int	key = *reinterpret_cast<float*>(&data.data[8]);
 			Other_Player->SetX(fx);
 			Other_Player->SetY(fy);
-			Other_Player->SetFrameKey(key);
+			//Other_Player->SetFrameKey(key);
 		}
 			break;
 		

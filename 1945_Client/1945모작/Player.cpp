@@ -46,21 +46,43 @@ int CPlayer::Update()
 {
 	++m_iScore;
 	Key_Input();
+	
+	prevX = m_tInfo.fX;
+
 	__super::Update_Rect();
-
-
 	if (m_bDead) {
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_EXPLOSION, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
 		return OBJ_DEAD;
 	}
 	return OBJ_NOEVENT;
+
+	//플레이어 좌표 설정
 }
 
 void CPlayer::Late_Update()
 {
 
 
+	if (!m_bMyPlayer) {
+
+		if (m_tInfo.fX < prevX) {
+			if (m_iFrameCnt > 0)
+				m_iFrameCnt--;
+		}
+		else if (m_tInfo.fX > prevX) { 
+			if (m_iFrameCnt < 6)
+				m_iFrameCnt++;
+		}
+		else { 
+			if (m_iFrameCnt < 3)
+				m_iFrameCnt++;
+			else if (m_iFrameCnt > 3)
+				m_iFrameCnt--;
+		}
+	}
+
 	__super::Move_Frame();
+	
 }
 
 void CPlayer::Render(HDC hDC)
@@ -168,13 +190,7 @@ void CPlayer::Key_Input()
 			m_bNODie = true;
 		}
 	}
-	else if (!m_bMyPlayer) {
 
-		if (m_iFrameCnt < 3)
-			m_iFrameCnt++;
-		else if (m_iFrameCnt > 3)
-			m_iFrameCnt--;
-	}
 
 	if (GetTickCount64() - m_dwShotCount > m_dwShotDelay) {
 		Shot();

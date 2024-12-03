@@ -62,7 +62,8 @@ private:
 	int						m_iScore;
 
 	bool					m_bNODie;
-	bool					m_bMyPlayer;
-
+	bool					m_bMyPlayer = false;
+	float prevX;  // ÀÌÀü X ÁÂÇ¥ ÀúÀå
+	float prevY; // ÀÌÀü Y ÁÂÇ¥ ÀúÀå
 };
 
