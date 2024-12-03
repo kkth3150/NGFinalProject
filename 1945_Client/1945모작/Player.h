@@ -65,5 +65,6 @@ private:
 	bool					m_bMyPlayer = false;
 	float prevX;  // ÀÌÀü X ÁÂÇ¥ ÀúÀå
 	float prevY; // ÀÌÀü Y ÁÂÇ¥ ÀúÀå
+	int   time;
 };
 

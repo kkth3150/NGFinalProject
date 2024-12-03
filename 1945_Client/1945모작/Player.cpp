@@ -61,28 +61,30 @@ int CPlayer::Update()
 
 void CPlayer::Late_Update()
 {
-
-
 	if (!m_bMyPlayer) {
-
 		if (m_tInfo.fX < prevX) {
-			if (m_iFrameCnt > 0)
+			if (m_iFrameCnt > 0) 
 				m_iFrameCnt--;
+			time = GetTickCount();
 		}
 		else if (m_tInfo.fX > prevX) { 
-			if (m_iFrameCnt < 6)
+			if (m_iFrameCnt < 6) 
 				m_iFrameCnt++;
+			time = GetTickCount();
 		}
 		else { 
-			if (m_iFrameCnt < 3)
-				m_iFrameCnt++;
-			else if (m_iFrameCnt > 3)
-				m_iFrameCnt--;
+			if (GetTickCount() - time >= 25) {
+				if (m_iFrameCnt < 3) {
+					m_iFrameCnt++;
+					time = GetTickCount();
+				}
+				else if (m_iFrameCnt > 3) {
+					 m_iFrameCnt--;
+					 time = GetTickCount();
+				}
+			}
 		}
-	}
-
-	__super::Move_Frame();
-	
+	}	
 }
 
 void CPlayer::Render(HDC hDC)
