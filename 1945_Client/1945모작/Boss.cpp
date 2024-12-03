@@ -69,14 +69,14 @@ void CBoss::Late_Update()
 	case PAGE_1:
 
 
-		if (CObject_Manager::Get_Instance()->Get_List(OBJ_BOSSPART)->size() < 10)
+		if ((CObject_Manager::Get_Instance()->Get_List(OBJ_BOSSPART))->size() < 10)
 			Boss_Page = PAGE_2;
 
 		break;
 
 	case PAGE_2:
 
-		if (CObject_Manager::Get_Instance()->Get_List(OBJ_BOSSPART)->size() < 0)
+		if ((CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)))
 			Boss_Page = PAGE_3;
 
 		break;
@@ -119,25 +119,25 @@ void CBoss::Release(void)
 void CBoss::Set_Init_Boss_Parts()
 {
 
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(0));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(1));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(2));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(3));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(4));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(5));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(6));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(0, 0));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(1, 1));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(2, 2));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(3, 3));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(4, 4));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(5, 5));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Posin>::CreatePosin(6, 6));
 
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(0));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(1));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(2));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(3));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(4));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(5));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(6));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(7));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(8));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(9));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(10));
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(11));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(0, 7));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(1, 8));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(2, 9));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(3, 10));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(4, 11));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(5, 12));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(6, 13));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(7, 14));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(8, 15));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(9, 16));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(10, 17));
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSSPART, CAbstractFactory<CBoss_Gun>::CreateGun(11, 18));
 
 }

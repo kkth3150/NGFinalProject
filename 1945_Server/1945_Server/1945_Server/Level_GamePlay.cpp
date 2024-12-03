@@ -92,6 +92,16 @@ int CLevel_GamePlay::Update()
             m_bBossGen = true;
             cout << "================보스 생성===================" << endl;
             CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
+            RecvQueue_data BossGenData;
+            BossGenData.event = R_BOSS_GEN;
+            R_BossGenPacket BossGenPacket;
+            BossGenPacket.isGen = true;
+
+            memcpy(BossGenData.data, &BossGenPacket, sizeof(R_BossGenPacket));
+            for (int i = 0; i < CLIENT_END; ++i) {
+                CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(BossGenData);
+            }
+
         }
     }
     else if (m_bBossGen && !m_bBossDead) {
@@ -104,7 +114,13 @@ int CLevel_GamePlay::Update()
     }
     else if (m_bBossGen && m_bBossDead) {
         if (Timer + END_Time < GetTickCount64()) {
-            CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAME_END);
+            for (int i = 0; i < CLIENT_END; ++i) {
+                RecvQueue_data Temp;
+                Temp.event = R_LEVEL_CHANGE;
+                Temp.data[0] = static_cast<uint8_t>(LEVEL_GAME_END);
+                CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(Temp);
+            }
+
         }
     }
     else {

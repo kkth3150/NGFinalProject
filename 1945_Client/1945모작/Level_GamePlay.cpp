@@ -65,13 +65,13 @@ int CLevel_GamePlay::Update()
 {
 	
 
-	if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
-		if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
-			m_bBossGen = true;
-			CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
-		}
-	}
-	else if (m_bBossGen && !m_bBossDead) {
+	//if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
+	//	if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
+	//		m_bBossGen = true;
+	//		CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
+	//	}
+	//}
+	if (m_bBossGen && !m_bBossDead) {
 		if (CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)) {
 			m_bBossDead = true;
 			Timer = GetTickCount64();
@@ -133,6 +133,32 @@ int CLevel_GamePlay::Update()
 			}
 
 		}
+			break;
+		case R_BOSS_GEN:
+		{
+			m_bBossGen = true;
+			CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
+
+		}
+		break;
+
+		case R_BOSS_PART_DEAD:
+		{
+			int ID = (int)data.data[0];
+			list<CGameObject*>* pEnemyList = CObject_Manager::Get_Instance()->Get_List(OBJ_BOSSPART);
+			if (!pEnemyList->empty()) {
+				for (auto& Src : *pEnemyList) {
+					if (Src->Get_OBJID() == ID) {
+						Src->Set_Dead();
+					}
+				}
+			}
+
+		}
+		break;
+		case R_LEVEL_CHANGE:
+			CServer_Connection::Get_Instance()->Clear_Recv_Queue();
+			CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAME_END);
 			break;
 		default:
 			break;

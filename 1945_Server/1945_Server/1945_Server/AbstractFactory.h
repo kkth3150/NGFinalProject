@@ -91,22 +91,22 @@ public:
 		return pGameObject;
 	}
 
-	static CGameObject* CreatePosin(int iPos)
+	static CGameObject* CreatePosin(int iPos, int ID)
 	{
 		CGameObject* pGameObject = new T;
 		dynamic_cast<CBoss_Posin*>(pGameObject)->Set_PosinPos(iPos);
 		pGameObject->Initialize();
-
+		pGameObject->Set_OBJID(ID);
 
 		return pGameObject;
 	}
 
-	static CGameObject* CreateGun(int iNum)
+	static CGameObject* CreateGun(int iNum, int ID)
 	{
 		CGameObject* pGameObject = new T;
 		dynamic_cast<CBoss_Gun*>(pGameObject)->Set_Gun_Index(iNum);
 		pGameObject->Initialize();
-
+		pGameObject->Set_OBJID(ID);
 
 		return pGameObject;
 	}
