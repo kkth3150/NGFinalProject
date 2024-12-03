@@ -17,6 +17,16 @@ public:
 
 	void SetLife();
 
+	void SetFrameKey(int key) {
+
+		m_iFrameKey = key;
+	}
+
+	int GetFrameKey() {
+		return m_iFrameKey;
+	}
+
+
 	void PlayerUP();
 	void PlayerDOWN();
 	void PlayerLEFT();
@@ -30,6 +40,7 @@ private:
 
 	int						m_iLife;
 	int						m_iScore;
+	int						m_iFrameKey;
 
 	bool					m_bNODie;
 };

@@ -46,21 +46,43 @@ int CPlayer::Update()
 {
 	++m_iScore;
 	Key_Input();
+	
+	prevX = m_tInfo.fX;
+
 	__super::Update_Rect();
-
-
 	if (m_bDead) {
 		CObject_Manager::Get_Instance()->Add_Object(OBJ_EXPLOSION, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
 		return OBJ_DEAD;
 	}
 	return OBJ_NOEVENT;
+
+	//플레이어 좌표 설정
 }
 
 void CPlayer::Late_Update()
 {
 
 
+	if (!m_bMyPlayer) {
+
+		if (m_tInfo.fX < prevX) {
+			if (m_iFrameCnt > 0)
+				m_iFrameCnt--;
+		}
+		else if (m_tInfo.fX > prevX) { 
+			if (m_iFrameCnt < 6)
+				m_iFrameCnt++;
+		}
+		else { 
+			if (m_iFrameCnt < 3)
+				m_iFrameCnt++;
+			else if (m_iFrameCnt > 3)
+				m_iFrameCnt--;
+		}
+	}
+
 	__super::Move_Frame();
+	
 }
 
 void CPlayer::Render(HDC hDC)
@@ -69,7 +91,6 @@ void CPlayer::Render(HDC hDC)
 
 	//Rectangle(hDC, m_tInfo.fX - m_tInfo.fCX / 2, m_tInfo.fY - m_tInfo.fCY / 2, m_tInfo.fX + m_tInfo.fCX / 2, m_tInfo.fY + m_tInfo.fCY / 2);
 	//피격 범위용 Rect => 조절 필요
-	if (m_bMyPlayer) {
 		GdiTransparentBlt(hDC,
 			(int)m_tInfo.fX - m_tInfo.fCX / 2,	//복사 받을 X 위치
 			(int)m_tInfo.fY - m_tInfo.fCY / 2,	//복사 받을 Y 위치
@@ -81,7 +102,7 @@ void CPlayer::Render(HDC hDC)
 			m_tInfo.fCX,						//복사할 이미지의 가로 사이즈 
 			m_tInfo.fCY,						//복사할 이미지의 세로 사이즈
 			RGB(255, 255, 255));
-	}
+
 }
 
 void CPlayer::Release(void)
@@ -102,7 +123,7 @@ void CPlayer::Key_Input()
 
 			SendQueue_data KetInputData;
 			KetInputData.event = S_MY_PLAYER_MOVE;
-			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY};
+			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY,m_iFrameCnt };
 			memcpy(KetInputData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
 			CServer_Connection::Get_Instance()->Push_SendQueue(KetInputData);
 
@@ -119,7 +140,7 @@ void CPlayer::Key_Input()
 
 			SendQueue_data KetInputData;
 			KetInputData.event = S_MY_PLAYER_MOVE;
-			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY };
+			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY,m_iFrameCnt };
 
 			memcpy(KetInputData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
 			CServer_Connection::Get_Instance()->Push_SendQueue(KetInputData);
@@ -142,7 +163,7 @@ void CPlayer::Key_Input()
 
 			SendQueue_data PlayerMoveData;
 			PlayerMoveData.event = S_MY_PLAYER_MOVE;
-			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY };
+			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY,m_iFrameCnt };
 
 			memcpy(PlayerMoveData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
 			CServer_Connection::Get_Instance()->Push_SendQueue(PlayerMoveData);
@@ -158,7 +179,7 @@ void CPlayer::Key_Input()
 
 			SendQueue_data PlayerMoveData;
 			PlayerMoveData.event = S_MY_PLAYER_MOVE;
-			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY };
+			S_MyPlayer_MovePacket Temp = { m_tInfo.fX ,m_tInfo.fY,m_iFrameCnt };
 
 			memcpy(PlayerMoveData.data, &Temp, sizeof(S_MyPlayer_MovePacket));
 			CServer_Connection::Get_Instance()->Push_SendQueue(PlayerMoveData);
@@ -169,6 +190,7 @@ void CPlayer::Key_Input()
 			m_bNODie = true;
 		}
 	}
+
 
 	if (GetTickCount64() - m_dwShotCount > m_dwShotDelay) {
 		Shot();

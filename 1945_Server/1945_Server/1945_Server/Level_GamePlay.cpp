@@ -42,8 +42,7 @@ int CLevel_GamePlay::Update()
     cout << "Y : " << Player_C1->Get_Info().fY << "\t\t\t\t" << "Y : " << Player_C2->Get_Info().fY << endl << endl << endl;
 
     cout << "积己等 阁胶磐 : " << i_MonsterCnt << " 付府 " << endl;
-
- 
+    int ikey[2];
     for (int i = 0; i < CLIENT_END; ++i) {
 
         SendQueue_data data;
@@ -64,12 +63,16 @@ int CLevel_GamePlay::Update()
                 
                 float fx = *reinterpret_cast<float*>(&data.data[0]);
                 float fy = *reinterpret_cast<float*>(&data.data[4]);
-
+                ikey[i] = *reinterpret_cast<int*>(&data.data[8]);
                 if (i == CLIENT_1) {
                     Player_C1->Set_Pos(fx, fy);
+                    Player_C1->SetFrameKey(ikey[0]);
+                   
                 }
                 else if (i == CLIENT_2) {
                     Player_C2->Set_Pos(fx, fy);
+                    Player_C2->SetFrameKey(ikey[1]);
+                   
                 }
 
 
@@ -85,7 +88,8 @@ int CLevel_GamePlay::Update()
     }
 
   
-   
+    cout << "Player1 FrameCnt : " << ikey[0] << endl;
+    cout << "Player2 FrameCnt : " << ikey[1] << endl;
 
     if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
         if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
@@ -180,7 +184,7 @@ void CLevel_GamePlay::Late_Update()
             R_Other_Player_MovePacket PlayerMoveData1;
             PlayerMoveData1.fx = Player_C2->Get_Info().fX;
             PlayerMoveData1.fy = Player_C2->Get_Info().fY;
- 
+            PlayerMoveData1.iFrameCnt = Player_C2->GetFrameKey();
             memcpy(PlayerMoveQueueData1.data, &PlayerMoveData1, sizeof(R_Other_Player_MovePacket));
 
             CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(PlayerMoveQueueData1);
@@ -193,7 +197,7 @@ void CLevel_GamePlay::Late_Update()
             R_Other_Player_MovePacket PlayerMoveData2;
             PlayerMoveData2.fx = Player_C1->Get_Info().fX;
             PlayerMoveData2.fy = Player_C1->Get_Info().fY;
-
+            PlayerMoveData2.iFrameCnt = Player_C2->GetFrameKey();
             memcpy(RecvQueueData2.data, &PlayerMoveData2, sizeof(R_Other_Player_MovePacket));
             CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(RecvQueueData2);
         }

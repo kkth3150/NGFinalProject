@@ -31,6 +31,8 @@ public:
 
 	CPlayer* My_Player;
 	CPlayer* Other_Player;
+
+	int OtherPlayerFrameKey;
 	
 };
 
