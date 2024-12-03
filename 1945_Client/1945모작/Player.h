@@ -35,6 +35,11 @@ public:
 		m_bMyPlayer = true;
 	};
 
+	void SetFrameKey(int key) {
+
+		m_iFrameCnt = key;
+	}
+
 private:
 
 	DWORD					m_dwShotDelay;

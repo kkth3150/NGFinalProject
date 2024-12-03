@@ -22,6 +22,14 @@ public:
 	void PlayerLEFT();
 	void PlayerRIGHT();
 
+	void SetFrameKey(int key) {
+		m_iFrameKey = key;
+	}
+
+	int GetFrameKey() {
+		return m_iFrameKey;
+	}
+
 private:
 
 	DWORD					m_dwShotDelay;
@@ -30,7 +38,7 @@ private:
 
 	int						m_iLife;
 	int						m_iScore;
-
+	int						m_iFrameKey;
 	bool					m_bNODie;
 };
 

@@ -35,7 +35,7 @@ void CLevel_GamePlay::Initialize()
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYER1, CAbstractFactory<CPlayer>::Create());
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYER2, CAbstractFactory<CPlayer>::Create());
 
-	dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1))->Set_My_Player();
+	//dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1))->Set_My_Player();
 	
 	CGameObject* pScoreUI = CAbstractFactory<CUI>::Create_UI(0.f, 0.f, 460.f, 46.f);
 	pScoreUI->Set_FrameKey(L"SCORE");
@@ -48,23 +48,27 @@ void CLevel_GamePlay::Initialize()
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pLifeUI);
 
 	Enemy_Count = GetTickCount64();
-	if (MyClientID == PLAYER_1) {
-		My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
-		My_Player->Set_My_Player();
-		Other_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
-	}
-	else if (MyClientID == PLAYER_2) {
+	//if (MyClientID == PLAYER_1) {
+	//	My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
+	//	My_Player->Set_My_Player();
+	//	Other_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
+	//}
+	//else if (MyClientID == PLAYER_2) {
 
-		My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
-		My_Player->Set_My_Player();
-		Other_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
-	}
+	//	My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
+	//	My_Player->Set_My_Player();
+	//	Other_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
+	//}
+
+	My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
+	My_Player->Set_My_Player();
+	Other_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
 }
 
 int CLevel_GamePlay::Update()
 {
 	
-
+	CObject_Manager::Get_Instance()->Update();
 	//if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
 	//	if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
 	//		m_bBossGen = true;
@@ -97,15 +101,16 @@ int CLevel_GamePlay::Update()
 
 			float fx = *reinterpret_cast<float*>(&data.data[0]);
 			float fy = *reinterpret_cast<float*>(&data.data[4]); 
+			int	key = *reinterpret_cast<float*>(&data.data[8]);
 			Other_Player->SetX(fx);
 			Other_Player->SetY(fy);
+			Other_Player->SetFrameKey(key);
 		}
 			break;
 		
 		case R_MONSTER_GEN: {
 			int ID = *reinterpret_cast<int*>(&data.data[0]);
 			float fx = *reinterpret_cast<float*>(&data.data[4]);
-			/*float fy = *reinterpret_cast<float*>(&data.data[8]);*/
 
 			if (ID == 0) {
 				CObject_Manager::Get_Instance()->Add_Object(OBJ_ENEMY, CAbstractFactory<CEnemy_2>::Create(fx, 0, i_MonsterCnt));
@@ -167,7 +172,7 @@ int CLevel_GamePlay::Update()
 	}
 
 	CServer_Connection::Get_Instance()->Unlock_RecvQueue();
-	CObject_Manager::Get_Instance()->Update();
+
 	return 0;
 }
 

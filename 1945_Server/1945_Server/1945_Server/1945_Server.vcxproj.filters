@@ -189,9 +189,6 @@
     <ClInclude Include="Client_Connection.h">
       <Filter>01.Client_Connection</Filter>
     </ClInclude>
-    <ClInclude Include="Player1.h">
-      <Filter>02.Object_Manager\GameObejcts\02-01 Player\Player1</Filter>
-    </ClInclude>
     <ClInclude Include="Player2.h">
       <Filter>02.Object_Manager\GameObejcts\02-01 Player\Player2</Filter>
     </ClInclude>
@@ -230,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="Collision_Manager.h">
       <Filter>04.Collision_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Player1.h">
+      <Filter>02.Object_Manager\GameObejcts\02-01 Player\Player1</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

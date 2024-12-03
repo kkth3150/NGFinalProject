@@ -148,6 +148,7 @@ struct S_MyPlayer_MovePacket {
 
 	float fx;
 	float fy;
+	int	iFrameCnt;
 };
 
 //
@@ -169,12 +170,14 @@ struct R_LevelChangePacket {
 	uint8_t Level;
 };
 
+
 struct R_Other_Player_MovePacket {
 
 	float fx;
 	float fy;
-
+	int	iFrameCnt;
 };
+
 
 struct R_MonsterInitPosPacket {
 
