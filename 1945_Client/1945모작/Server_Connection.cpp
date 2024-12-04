@@ -98,6 +98,14 @@ void CServer_Connection::SendThread()
         }
             break;
 
+        case S_PLAYER_DEAD: {
+            SendHeaderPacket headerPacket = { sizeof(S_MyPlayer_MovePacket),S_PLAYER_DEAD };
+            int retval = send(sock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+            S_MyPlayer_MovePacket packet;
+            memcpy(&packet, Temp.data, sizeof(S_MyPlayer_MovePacket));
+            retval = send(sock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+        }
+                      break;
         default:
             break;
         }

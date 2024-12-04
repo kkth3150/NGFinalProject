@@ -166,7 +166,27 @@ void CClient_Connection::SendThread()
             retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
 
         }
+
+        case R_OTHER_PLAYER_DEAD:
+        {
+
+            RecvHeaderPacket headerPacket = { sizeof(R_MonsterDeadPacket),R_OTHER_PLAYER_DEAD };
+            int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+            R_MonsterDeadPacket packet;
+            memcpy(&packet, Temp.data, sizeof(R_MonsterDeadPacket));
+            retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+        }
              break;
+
+        case R_GAME_OVER:
+        {
+            RecvHeaderPacket headerPacket = { sizeof(R_MonsterDeadPacket),R_GAME_OVER };
+            int retval = send(clientSock, reinterpret_cast<char*>(&headerPacket), sizeof(headerPacket), 0);
+            R_MonsterDeadPacket packet;
+            memcpy(&packet, Temp.data, sizeof(R_MonsterDeadPacket));
+            retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
+
+        }
         default:
             
             break;

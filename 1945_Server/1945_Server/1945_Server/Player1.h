@@ -32,6 +32,14 @@ public:
 	void PlayerLEFT();
 	void PlayerRIGHT();
 
+	void SetDie() {
+		m_bDie = true;
+	}
+	bool GetDie() {
+		return m_bDie;
+
+	}
+
 private:
 
 	DWORD					m_dwShotDelay;
@@ -43,5 +51,6 @@ private:
 	int						m_iFrameKey;
 
 	bool					m_bNODie;
+	bool					m_bDie;
 };
 

@@ -41,6 +41,11 @@ void CLevel_Manager::Level_Change(LEVEL_ID eID)
 		case LEVEL_GAMEPLAY:
 			m_pLevel = new CLevel_GamePlay;
 			break;
+
+		case LEVEL_GAME_OVER:
+			m_pLevel = new CLevel_GameOver;
+			break;
+
 		}
 
 		m_pLevel->Initialize();

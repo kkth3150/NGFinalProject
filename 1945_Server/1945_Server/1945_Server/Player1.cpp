@@ -23,21 +23,28 @@ void CPlayer1::Initialize()
 	m_dwShotCount = GetTickCount64();
 	m_dwShotDelay = 150;
 	m_iLife = 4;
+	m_bDie = false;
 }
 
 int CPlayer1::Update()
 {
-	if (GetTickCount64() - m_dwShotCount > m_dwShotDelay) {
-		Shot();
-		m_dwShotCount = GetTickCount64();
 
+	if (!m_bDie) {
+		if (GetTickCount64() - m_dwShotCount > m_dwShotDelay) {
+			Shot();
+			m_dwShotCount = GetTickCount64();
+
+		}
+		__super::Update_Rect();
+
+		if (m_bDead) {
+			return OBJ_DEAD;
+		}
+
+
+		return OBJ_NOEVENT;
 	}
-	__super::Update_Rect();
-
-	if (m_bDead) {
-		return OBJ_DEAD;
-	}
-
+	
 	return OBJ_NOEVENT;
 }
 

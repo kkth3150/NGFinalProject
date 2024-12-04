@@ -15,7 +15,7 @@ public:
 	static void Collision_Bomb_ITEM(list<CGameObject*> _Dst, list<CGameObject*> _Src);
 	static void Collision_MyBullet(list<CGameObject*> _Dst, list<CGameObject*> _Src);
 	static void Collision_MonsterBullet(list<CGameObject*> _Dst, list<CGameObject*> _Src);
-	
+	static void Collision_MonsterBulletOther(list<CGameObject*> _Dst, list<CGameObject*> _Src);
 	static void Collision_RectEx(list<CGameObject*> _Dst, list<CGameObject*> _Src);
 	static bool Check_Rect(CGameObject* pDst, CGameObject* pSrc, float* _pX, float* _pY);
 
