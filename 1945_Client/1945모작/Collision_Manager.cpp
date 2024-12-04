@@ -122,6 +122,25 @@ void CCollision_Manager::Collision_MonsterBullet(list<CGameObject*> _Dst, list<C
 
 }
 
+void CCollision_Manager::Collision_MonsterBulletOther(list<CGameObject*> _Dst, list<CGameObject*> _Src)
+{
+	RECT	rc{};
+
+	for (auto& Dst : _Dst)
+	{
+		for (auto& Src : _Src)
+		{
+			if (IntersectRect(&rc, Dst->Get_Rect(), Src->Get_Rect()))
+			{
+				Src->Set_Dead();
+			}
+		}
+	}
+
+}
+
+
+
 
 
 void CCollision_Manager::Collision_RectEx(list<CGameObject*> _Dst, list<CGameObject*> _Src)

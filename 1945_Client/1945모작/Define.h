@@ -17,10 +17,10 @@ enum PLAYER_BULLET { PB_NORMAL, PB_LSUB, PB_RSUB, PB_LSIDE, PB_RSIDE, PB_END };
 enum UISTATE { UI_ANIM, UI_NONANIM, UI_SCORE,UI_LIFE ,UI_END };
 enum ENEMY_BULLET { E1, E2R, E2L, E3 };
 
-enum LEVEL_ID : uint8_t { LEVEL_MENU, LEVEL_GAMEPLAY, LEVEL_GAME_END, LEVEL_END };
-enum SEND_EVENT_TYPE : uint8_t { S_INIT_DATA , S_PLAYER_CHOICE, S_START, S_MY_PLAYER_MOVE, S_EVENT_END };
+enum LEVEL_ID : uint8_t { LEVEL_MENU, LEVEL_GAMEPLAY, LEVEL_GAME_END,LEVEL_GAME_OVER ,LEVEL_END };
+enum SEND_EVENT_TYPE : uint8_t { S_INIT_DATA , S_PLAYER_CHOICE, S_START, S_MY_PLAYER_MOVE,S_PLAYER_DEAD, S_EVENT_END };
 enum RECEIVE_EVENT_TYPE : uint8_t {	R_MY_CLIENT_ID, R_PLAYER_CHOICE, R_LEVEL_CHANGE, R_OTHER_PLAYER_MOVE,
-	R_MONSTER_GEN, R_BOSS_GEN, R_OBJ_DEAD, R_BOSS_PART_DEAD,R_EVENT_END};
+	R_MONSTER_GEN, R_BOSS_GEN, R_OBJ_DEAD, R_BOSS_PART_DEAD,R_OTHER_PLAYER_DEAD,R_GAME_OVER,R_EVENT_END};
 enum PLAYERID {PLAYER_1,PLAYER_2,PLAYER_END};
 enum KEY_MOVE : uint8_t { MOVE_LEFT, MOVE_RIGHT, MOVE_UP, MOVE_DOWN, MOVE_END };
 
@@ -163,6 +163,10 @@ struct S_MyPlayer_MovePacket {
 	int	iFrameCnt;
 };
 
+struct S_MyPlayerDeadPacket {
+	bool isDead;
+};
+
 //
 //For Receive
 
@@ -204,12 +208,21 @@ struct R_BossGenPacket {
 
 };
 
+struct R_OtherPlayerDeadPacket {
+
+	bool isDead;
+
+};
+
 struct ReceiveDataResult {
 	RECEIVE_EVENT_TYPE eventType;
 	void* data;
 };
 
+struct R_GameOverPacket {
 
+	bool isOver;
+};
 
 struct RecvQueue_data {
 	RECEIVE_EVENT_TYPE event;

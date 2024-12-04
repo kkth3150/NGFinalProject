@@ -1,0 +1,38 @@
+#include "pch.h"
+#include "Level_GameOver.h"
+#include "Bmp_Manager.h"
+#include "Level_Manager.h"
+#include "Server_Connection.h"
+
+CLevel_GameOver::CLevel_GameOver()
+{
+}
+
+CLevel_GameOver::~CLevel_GameOver()
+{
+	Release();
+}
+
+void CLevel_GameOver::Initialize()
+{
+	CBmp_Manager::Get_Instance()->Insert_Bmp(L"../Image/Menu/GAME_END(600X900).bmp", L"GAME_END");
+}
+
+int CLevel_GameOver::Update()
+{
+	return 0;
+}
+
+void CLevel_GameOver::Late_Update()
+{
+}
+
+void CLevel_GameOver::Render(HDC hDC)
+{
+	HDC	hMemDC = CBmp_Manager::Get_Instance()->Find_Img(L"GAME_END");
+	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
+}
+
+void CLevel_GameOver::Release(void)
+{
+}

@@ -148,6 +148,7 @@
     <ClInclude Include="Explosion_Object.h" />
     <ClInclude Include="Finger.h" />
     <ClInclude Include="Key_Manager.h" />
+    <ClInclude Include="Level_GameOver.h" />
     <ClInclude Include="Level_GamePlay.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="framework.h" />
@@ -183,6 +184,7 @@
     <ClCompile Include="Explosion_Object.cpp" />
     <ClCompile Include="Finger.cpp" />
     <ClCompile Include="Key_Manager.cpp" />
+    <ClCompile Include="Level_GameOver.cpp" />
     <ClCompile Include="Level_GamePlay.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Level.cpp" />

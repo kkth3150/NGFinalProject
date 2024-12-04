@@ -30,6 +30,13 @@ public:
 		return m_iFrameKey;
 	}
 
+	void SetDie() {
+		m_bDie = true;
+	}
+	bool GetDie() {
+		return m_bDie;
+
+	}
 private:
 
 	DWORD					m_dwShotDelay;
@@ -40,5 +47,6 @@ private:
 	int						m_iScore;
 	int						m_iFrameKey;
 	bool					m_bNODie;
+	bool					m_bDie;
 };
 

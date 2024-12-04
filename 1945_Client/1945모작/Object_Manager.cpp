@@ -70,7 +70,7 @@ void CObject_Manager::Late_Update(void)
 		CCollision_Manager::Collision_MyBullet(m_ObjectList[OBJ_PLAYERBULLET], m_ObjectList[OBJ_BOSSPART]);
 	}
 	CCollision_Manager::Collision_MonsterBullet(m_ObjectList[OBJ_PLAYER1],m_ObjectList[OBJ_BULLET_ENEMY]);
-	CCollision_Manager::Collision_MonsterBullet(m_ObjectList[OBJ_PLAYER2], m_ObjectList[OBJ_BULLET_ENEMY]);
+	CCollision_Manager::Collision_MonsterBulletOther(m_ObjectList[OBJ_PLAYER2], m_ObjectList[OBJ_BULLET_ENEMY]);
 }
 
 void CObject_Manager::Render(HDC hDC)

@@ -30,6 +30,8 @@ private:
 
 	int i_MonsterCnt = 0;
 
+	bool m_bGameOver = false;
+
 public:
 	DWORD                   Enemy_Count;
 	DWORD					Timer;

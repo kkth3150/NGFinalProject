@@ -94,6 +94,9 @@
     <Filter Include="03.Object_Manager\GameObjects\03-12.Finger">
       <UniqueIdentifier>{ea52659c-0da2-4364-8899-f44c597350b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04.Level_Manager\Levels\04-03 Level_GameOver">
+      <UniqueIdentifier>{d00b41a9-4dd4-436c-bac5-80ac14749f38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -201,6 +204,9 @@
     <ClInclude Include="Finger.h">
       <Filter>03.Object_Manager\GameObjects\03-12.Finger</Filter>
     </ClInclude>
+    <ClInclude Include="Level_GameOver.h">
+      <Filter>04.Level_Manager\Levels\04-03 Level_GameOver</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1945모작.cpp">
@@ -289,6 +295,9 @@
     </ClCompile>
     <ClCompile Include="Finger.cpp">
       <Filter>03.Object_Manager\GameObjects\03-12.Finger</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_GameOver.cpp">
+      <Filter>04.Level_Manager\Levels\04-03 Level_GameOver</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

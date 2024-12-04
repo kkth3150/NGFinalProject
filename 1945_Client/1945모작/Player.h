@@ -40,6 +40,11 @@ public:
 		m_iFrameCnt = key;
 	}
 
+	void SetDie() {
+		m_bDie = true;
+
+	}
+
 private:
 
 	DWORD					m_dwShotDelay;
@@ -66,5 +71,8 @@ private:
 	float prevX;  // ÀÌÀü X ÁÂÇ¥ ÀúÀå
 	float prevY; // ÀÌÀü Y ÁÂÇ¥ ÀúÀå
 	int   time;
+
+	bool					m_bSendDeadDataOnce;
+	bool					m_bDie;
 };
 

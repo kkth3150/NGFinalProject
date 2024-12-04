@@ -35,7 +35,6 @@ void CLevel_GamePlay::Initialize()
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYER1, CAbstractFactory<CPlayer>::Create());
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_PLAYER2, CAbstractFactory<CPlayer>::Create());
 
-	//dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1))->Set_My_Player();
 	
 	CGameObject* pScoreUI = CAbstractFactory<CUI>::Create_UI(0.f, 0.f, 460.f, 46.f);
 	pScoreUI->Set_FrameKey(L"SCORE");
@@ -48,17 +47,6 @@ void CLevel_GamePlay::Initialize()
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pLifeUI);
 
 	Enemy_Count = GetTickCount64();
-	//if (MyClientID == PLAYER_1) {
-	//	My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
-	//	My_Player->Set_My_Player();
-	//	Other_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
-	//}
-	//else if (MyClientID == PLAYER_2) {
-
-	//	My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_2));
-	//	My_Player->Set_My_Player();
-	//	Other_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
-	//}
 
 	My_Player = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1));
 	My_Player->Set_My_Player();
@@ -69,12 +57,7 @@ int CLevel_GamePlay::Update()
 {
 	
 	CObject_Manager::Get_Instance()->Update();
-	//if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
-	//	if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
-	//		m_bBossGen = true;
-	//		CObject_Manager::Get_Instance()->Add_Object(OBJ_BOSS, CAbstractFactory<CBoss>::Create());
-	//	}
-	//}
+
 	if (m_bBossGen && !m_bBossDead) {
 		if (CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)) {
 			m_bBossDead = true;
@@ -104,7 +87,6 @@ int CLevel_GamePlay::Update()
 			int	key = *reinterpret_cast<float*>(&data.data[8]);
 			Other_Player->SetX(fx);
 			Other_Player->SetY(fy);
-			//Other_Player->SetFrameKey(key);
 		}
 			break;
 		
@@ -161,10 +143,22 @@ int CLevel_GamePlay::Update()
 
 		}
 		break;
+		case R_OTHER_PLAYER_DEAD: {
+			Other_Player->SetDie();
+		}
+			break;
+
+		case R_GAME_OVER: {
+			CServer_Connection::Get_Instance()->Clear_Recv_Queue();
+			CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAME_OVER);
+
+		}
 		case R_LEVEL_CHANGE:
 			CServer_Connection::Get_Instance()->Clear_Recv_Queue();
 			CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAME_END);
 			break;
+
+
 		default:
 			break;
 		}

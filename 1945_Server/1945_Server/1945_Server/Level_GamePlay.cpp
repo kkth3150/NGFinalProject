@@ -37,11 +37,61 @@ int CLevel_GamePlay::Update()
 {
     system("cls");
     cout << "게임플레이 레벨" << endl;
+   
     cout << "player1 좌표 " << "\t\t\t" << "Player2 좌표" << endl;
-    cout << "X : " << Player_C1->Get_Info().fX << "\t\t\t\t" << "X : " << Player_C2->Get_Info().fX << endl;
-    cout << "Y : " << Player_C1->Get_Info().fY << "\t\t\t\t" << "Y : " << Player_C2->Get_Info().fY << endl << endl << endl;
+    
+    if (Player_C1->GetDie()) {
+        cout << "Player1 사망";
+    }
+    else {
+        cout << "X : " << Player_C1->Get_Info().fX;
 
-    cout << "생성된 몬스터 : " << i_MonsterCnt << " 마리 " << endl;
+    }
+
+    if (Player_C2->GetDie()) {
+        cout << "\t\t\t\t"<< "Player2 사망" << endl;
+    }
+    else {
+        cout << "\t\t\t\t" << "X : " << Player_C2->Get_Info().fX << endl;
+
+    }
+
+
+
+    if (Player_C1->GetDie()) {
+        cout << "Player1 사망";
+    }
+    else {
+        cout << "Y : " << Player_C1->Get_Info().fY;
+
+    }
+
+    if (Player_C2->GetDie()) {
+        cout << "\t\t\t\t" << "Player2 사망" << endl;
+    }
+    else {
+        cout << "\t\t\t\t" << "X : " << Player_C2->Get_Info().fX << endl;
+
+    }
+   cout << endl << endl << endl;
+
+   cout << "생성된 몬스터 : " << i_MonsterCnt << " 마리 " << endl;
+
+   if ((Player_C1->GetDie()) && (Player_C2->GetDie()) && (!m_bGameOver)) {
+
+       m_bGameOver = true;
+
+       RecvQueue_data GameOverData;
+       GameOverData.event = R_GAME_OVER;
+       R_GameOverPacket GameOverPacket;
+       GameOverPacket.isOver = true;
+       memcpy(GameOverData.data, &GameOverPacket, sizeof(R_GameOverPacket));
+       for (int i = 0; i < CLIENT_END; ++i) {
+           CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(GameOverData);
+       }
+   }
+
+
     int ikey[2];
     for (int i = 0; i < CLIENT_END; ++i) {
 
@@ -78,6 +128,27 @@ int CLevel_GamePlay::Update()
 
             }
             break;
+            case S_PLAYER_DEAD: {
+
+                if (i == CLIENT_1) {
+                    Player_C1->SetDie();
+
+                    RecvQueue_data Temp;
+                    Temp.event = R_OTHER_PLAYER_DEAD;
+                    Temp.data[0] = static_cast<uint8_t>(i);
+                    CClient_Connection::Get_Instance(CLIENT_2)->Push_RecvQueue(Temp);
+                }
+                else if (i == CLIENT_2) {
+
+                    Player_C2->SetDie();
+                    RecvQueue_data Temp;
+                    Temp.event = R_OTHER_PLAYER_DEAD;
+                    Temp.data[0] = static_cast<uint8_t>(i);
+                    CClient_Connection::Get_Instance(CLIENT_1)->Push_RecvQueue(Temp);
+                }
+
+            }
+                              break;
             default:
                 break;
 
@@ -87,9 +158,7 @@ int CLevel_GamePlay::Update()
         CClient_Connection::Get_Instance((CLIENT_ID)i)->Unlock_SendQueue();
     }
 
-  
-    cout << "Player1 FrameCnt : " << ikey[0] << endl;
-    cout << "Player2 FrameCnt : " << ikey[1] << endl;
+ 
 
     if (m_iMap_Update > MAP_SizeY - WINCY - 1200 && !m_bBossGen) {
         if (CObject_Manager::Get_Instance()->List_Empty(OBJ_ENEMY)) {
@@ -177,7 +246,7 @@ void CLevel_GamePlay::Late_Update()
       
     for (int i = 0; i < CLIENT_END; ++i) {
 
-        if (i == CLIENT_1) {
+        if (i == CLIENT_1&& !Player_C1->GetDie()) {
             RecvQueue_data PlayerMoveQueueData1;
             PlayerMoveQueueData1.event = R_OTHER_PLAYER_MOVE;
 
@@ -190,7 +259,7 @@ void CLevel_GamePlay::Late_Update()
             CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(PlayerMoveQueueData1);
         }
        
-        if (i == CLIENT_2) {
+        if (i == CLIENT_2&&!Player_C2->GetDie()) {
             RecvQueue_data RecvQueueData2;
             RecvQueueData2.event = R_OTHER_PLAYER_MOVE;
 

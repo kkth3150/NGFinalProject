@@ -24,6 +24,7 @@ void CPlayer2::Initialize()
 	m_dwShotCount = GetTickCount64();
 	m_dwShotDelay = 150;
 	m_iLife = 4;
+	m_bDie = false;
 }
 
 int CPlayer2::Update()
