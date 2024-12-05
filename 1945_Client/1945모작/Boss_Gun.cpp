@@ -35,8 +35,10 @@ void CBoss_Gun::Initialize()
 
 int CBoss_Gun::Update()
 {
-	m_fBossPosX = CObject_Manager::Get_Instance()->Get_List(OBJ_BOSS)->front()->Get_Info().fX;
-	m_fBossPosY = CObject_Manager::Get_Instance()->Get_List(OBJ_BOSS)->front()->Get_Info().fY;
+	if (!CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSS)) {
+		m_fBossPosX = CObject_Manager::Get_Instance()->Get_List(OBJ_BOSS)->front()->Get_Info().fX;
+		m_fBossPosY = CObject_Manager::Get_Instance()->Get_List(OBJ_BOSS)->front()->Get_Info().fY;
+	}
 
 	switch (m_iGun_Num) {
 	case 0:

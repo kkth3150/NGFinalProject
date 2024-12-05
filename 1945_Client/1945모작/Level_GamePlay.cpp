@@ -198,6 +198,7 @@ void CLevel_GamePlay::Release(void)
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYER1);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYER2);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_UI);
+	CObject_Manager::Get_Instance()->DeleteID(OBJ_BOSSPART);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_BOSS);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_EXPLOSION);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYERBULLET);
