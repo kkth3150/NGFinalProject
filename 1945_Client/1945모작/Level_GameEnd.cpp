@@ -25,13 +25,11 @@ void CLevel_GameEnd::Initialize()
 	pScoreUI_P1->Set_FrameKey(L"SCORE");
 	dynamic_cast<CUI*>(pScoreUI_P1)->Set_State(UI_END_SCORE);
 	dynamic_cast<CUI*>(pScoreUI_P1)->Set_ScoreUI(P1_SCORE);
+	dynamic_cast<CUI*>(pScoreUI_P1)->SetP1();
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pScoreUI_P1);
 
-	CGameObject* pScoreUI_P2= CAbstractFactory<CUI>::Create_UI(190.f, 650.f, 460.f, 46.f);
-	pScoreUI_P2->Set_FrameKey(L"SCORE");
-	dynamic_cast<CUI*>(pScoreUI_P2)->Set_State(UI_END_SCORE);
-	dynamic_cast<CUI*>(pScoreUI_P1)->Set_ScoreUI(P2_SCORE);
-	CObject_Manager::Get_Instance()->Add_Object(OBJ_UI, pScoreUI_P2);
+	
+
 }
 
 int CLevel_GameEnd::Update()

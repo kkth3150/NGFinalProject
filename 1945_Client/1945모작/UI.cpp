@@ -245,12 +245,12 @@ void CUI::Render_ScoreImage(HDC hDC, HDC hMemDC)
 
 void CUI::Render_End_ScoreImage(HDC hDC, HDC hMemDC)
 {
-	if (m_bP1) {
+	
 		//일의자리
 		GdiTransparentBlt(
 			hDC,
-			350,
-			380,
+			370,
+			450,
 			47,
 			47,
 			hMemDC,
@@ -262,8 +262,8 @@ void CUI::Render_End_ScoreImage(HDC hDC, HDC hMemDC)
 		//십의자리
 		GdiTransparentBlt(
 			hDC,
-			310,
-			380,
+			330,
+			450,
 			47,
 			47,
 			hMemDC,
@@ -275,8 +275,8 @@ void CUI::Render_End_ScoreImage(HDC hDC, HDC hMemDC)
 		//백의자리
 		GdiTransparentBlt(
 			hDC,
-			270,
-			380,
+			290,
+			450,
 			47,
 			47,
 			hMemDC,
@@ -288,8 +288,8 @@ void CUI::Render_End_ScoreImage(HDC hDC, HDC hMemDC)
 		//천의자리
 		GdiTransparentBlt(
 			hDC,
-			230,
-			380,
+			250,
+			450,
 			47,
 			47,
 			hMemDC,
@@ -301,8 +301,8 @@ void CUI::Render_End_ScoreImage(HDC hDC, HDC hMemDC)
 		//만의자리
 		GdiTransparentBlt(
 			hDC,
-			190,
-			380,
+			210,
+			450,
 			47,
 			47,
 			hMemDC,
@@ -310,73 +310,8 @@ void CUI::Render_End_ScoreImage(HDC hDC, HDC hMemDC)
 			(m_iScore / 10000) * 47,
 			46,
 			46, RGB(255, 255, 255));
-	}
-	else {
-
-		GdiTransparentBlt(
-			hDC,
-			350,
-			650,
-			47,
-			47,
-			hMemDC,
-			0,
-			(m_iScore % 10) * 47,
-			46,
-			46, RGB(255, 255, 255));
-
-		//십의자리
-		GdiTransparentBlt(
-			hDC,
-			310,
-			650,
-			47,
-			47,
-			hMemDC,
-			0,
-			(m_iScore % 100 / 10) * 47,
-			46,
-			46, RGB(255, 255, 255));
-
-		//백의자리
-		GdiTransparentBlt(
-			hDC,
-			270,
-			650,
-			47,
-			47,
-			hMemDC,
-			0,
-			((m_iScore % 1000) / 100) * 47,
-			46,
-			46, RGB(255, 255, 255));
-
-		//천의자리
-		GdiTransparentBlt(
-			hDC,
-			230,
-			650,
-			47,
-			47,
-			hMemDC,
-			0,
-			((m_iScore % 10000) / 1000) * 47,
-			46,
-			46, RGB(255, 255, 255));
-
-		//만의자리
-		GdiTransparentBlt(
-			hDC,
-			190,
-			650,
-			47,
-			47,
-			hMemDC,
-			0,
-			(m_iScore / 10000) * 47,
-			46,
-			46, RGB(255, 255, 255));
-	}
+	
+	
 
 }
 
