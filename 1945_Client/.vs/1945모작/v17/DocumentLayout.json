@@ -3,44 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\1945\uBAA8\uC791.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\1945\uBAA8\uC791.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Enemy_Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Enemy_2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameEnd.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_GameEnd.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameOver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_GameOver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Enemy_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameEnd.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_GameEnd.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameEnd.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_GameEnd.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\AbstractFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\AbstractFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Server_Connection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -51,24 +55,55 @@
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Server_Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Explosion_Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Explosion_Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\1945\uBAA8\uC791.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\1945\uBAA8\uC791.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\MainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\MainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Object_Manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameOver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_GameOver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.39.33519\\INCLUDE\\XUTILITY||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Object_Manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Posin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Boss_Posin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player_Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Player_Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Server_Connection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\AbstractFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\AbstractFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level_Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Explosion_Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Explosion_Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Collision_Manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -83,16 +118,8 @@
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\pch.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Object_Manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Collision_Manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Collision_Manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Object_Manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_Manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -115,20 +142,12 @@
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Explosion_Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Explosion_Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Posin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Boss_Posin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Server_Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Gun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -142,24 +161,8 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\list||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Posin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Boss_Posin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Boss_Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Enemy_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Enemy_Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|solutionrelative:1945\uBAA8\uC791\\Enemy_2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBDFC6E6-71CD-4C5F-9DA4-99586697050F}|1945\uBAA8\uC791\\1945\uBAA8\uC791.vcxproj|C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -173,102 +176,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UI.h",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.h",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\UI.h",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.h",
-              "RelativeToolTip": "1945\uBAA8\uC791\\UI.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-05T00:54:44.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UI.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\UI.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\UI.cpp",
-              "ViewState": "AQIAAK8AAAAAAAAAAAAAAAYBAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "Enemy_Bullet.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_Bullet.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Enemy_Bullet.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_Bullet.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Enemy_Bullet.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAUwA8AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T00:53:58.526Z",
+              "WhenOpened": "2024-11-28T02:09:06.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Level_GamePlay.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GamePlay.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_GamePlay.cpp",
               "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GamePlay.cpp",
               "RelativeToolTip": "1945\uBAA8\uC791\\Level_GamePlay.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAADoAAAABAAAA",
+              "ViewState": "AQIAAI8AAAAAAAAAAAAmwFgAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-28T02:05:28.183Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Level_GameOver.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameOver.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_GameOver.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameOver.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Level_GameOver.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "UI.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\UI.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\UI.cpp",
+              "ViewState": "AQIAABYBAAAAAAAAAAAQwFcBAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T11:29:26.612Z",
+              "WhenOpened": "2024-12-05T00:53:58.526Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Level_GameEnd.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameEnd.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_GameEnd.cpp",
               "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameEnd.cpp",
               "RelativeToolTip": "1945\uBAA8\uC791\\Level_GameEnd.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAiwBAAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-02T15:00:00.282Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Define.h",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Define.h",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Define.h",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Define.h",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Define.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-28T02:47:29.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AbstractFactory.h",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\AbstractFactory.h",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\AbstractFactory.h",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\AbstractFactory.h",
-              "RelativeToolTip": "1945\uBAA8\uC791\\AbstractFactory.h",
-              "ViewState": "AQIAACsAAAAAAAAAAAApwEEAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-02T14:17:14.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "GameObject.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\GameObject.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\GameObject.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\GameObject.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\GameObject.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-28T02:49:24.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Level_GameEnd.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameEnd.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_GameEnd.h",
@@ -281,20 +258,150 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Enemy_1.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_1.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Enemy_1.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_1.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Enemy_1.cpp",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-28T02:08:26.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Enemy_2.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_2.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Enemy_2.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_2.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Enemy_2.cpp",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-28T02:08:57.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UI.h",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.h",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\UI.h",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\UI.h",
+              "RelativeToolTip": "1945\uBAA8\uC791\\UI.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-05T00:54:44.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Server_Connection.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Server_Connection.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Server_Connection.cpp",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAI0AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-28T02:53:46.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Define.h",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Define.h",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Define.h",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Define.h",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Define.h",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAAwIsAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-28T02:47:29.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Player.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Player.cpp",
+              "ViewState": "AQIAAIIAAAAAAAAAAAAAwJcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-28T02:49:40.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player.h",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Player.h",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player.h",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Player.h",
+              "ViewState": "AQIAABkAAAAAAAAAAAAlwCkAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T03:25:45.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Server_Connection.h",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.h",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Server_Connection.h",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.h",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Server_Connection.h",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAwDoAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-02T14:51:01.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "1945\uBAA8\uC791.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\1945\uBAA8\uC791.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\1945\uBAA8\uC791.cpp",
               "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\1945\uBAA8\uC791.cpp",
               "RelativeToolTip": "1945\uBAA8\uC791\\1945\uBAA8\uC791.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAaAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAvwBoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-03T03:24:50.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
+              "Title": "Level_GameOver.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameOver.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_GameOver.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameOver.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Level_GameOver.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-04T11:29:26.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MainGame.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\MainGame.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\MainGame.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\MainGame.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\MainGame.cpp",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAwC0AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-02T14:03:52.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Level_GamePlay.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GamePlay.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_GamePlay.h",
@@ -307,59 +414,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Player.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Player.cpp",
-              "ViewState": "AQIAAI0AAAAAAAAAAAAAAEMAAAAMAAAA",
+              "DocumentIndex": 16,
+              "Title": "Object_Manager.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Object_Manager.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Object_Manager.cpp",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAmwFEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T02:49:40.456Z",
+              "WhenOpened": "2024-11-28T02:50:30.132Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player.h",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Player.h",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player.h",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Player.h",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB0AAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-03T03:25:45.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Level_Menu.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_Menu.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_Menu.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_Menu.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Level_Menu.cpp",
-              "ViewState": "AQIAAIQAAAAAAAAAAAAAAJ0AAAASAAAA",
+              "DocumentIndex": 21,
+              "Title": "Boss_Posin.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Posin.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Boss_Posin.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Posin.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Boss_Posin.cpp",
+              "ViewState": "AQIAAMkAAAAAAAAAAAAAAOMAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T00:52:24.95Z",
+              "WhenOpened": "2024-12-02T14:27:19.209Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Explosion_Object.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Explosion_Object.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Explosion_Object.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Explosion_Object.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Explosion_Object.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T02:49:36.883Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "Player_Bullet.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Player_Bullet.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Player_Bullet.cpp",
@@ -372,32 +453,69 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MainGame.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\MainGame.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\MainGame.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\MainGame.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\MainGame.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-02T14:03:52.301Z",
+              "DocumentIndex": 19,
+              "Title": "xutility",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\xutility",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\xutility",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\xutility",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\xutility",
+              "ViewState": "AQIAAPcEAAAAAAAAAAAvwBAFAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-05T01:28:20.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "Object_Manager.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Object_Manager.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Object_Manager.cpp",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEcAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T02:50:30.132Z"
+              "Title": "Object_Manager.h",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.h",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Object_Manager.h",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.h",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Object_Manager.h",
+              "ViewState": "AQIAAAkAAAAAAAAAAAApwBsAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-04T12:27:56.813Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
+              "Title": "AbstractFactory.h",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\AbstractFactory.h",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\AbstractFactory.h",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\AbstractFactory.h",
+              "RelativeToolTip": "1945\uBAA8\uC791\\AbstractFactory.h",
+              "ViewState": "AQIAACsAAAAAAAAAAAApwEEAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-02T14:17:14.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Level_Menu.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_Menu.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_Menu.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_Menu.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Level_Menu.cpp",
+              "ViewState": "AQIAAIQAAAAAAAAAAAAAAJ0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-05T00:52:24.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Explosion_Object.cpp",
+              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Explosion_Object.cpp",
+              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Explosion_Object.cpp",
+              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Explosion_Object.cpp",
+              "RelativeToolTip": "1945\uBAA8\uC791\\Explosion_Object.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-28T02:49:36.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "pch.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\pch.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\pch.cpp",
@@ -409,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "Level_Manager.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_Manager.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_Manager.h",
@@ -421,19 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Server_Connection.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Server_Connection.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Server_Connection.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T02:53:46.73Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "Collision_Manager.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Collision_Manager.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Collision_Manager.cpp",
@@ -445,19 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Object_Manager.h",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.h",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Object_Manager.h",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Object_Manager.h",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Object_Manager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-04T12:27:56.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 29,
               "Title": "Collision_Manager.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Collision_Manager.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Collision_Manager.h",
@@ -469,7 +563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 27,
               "Title": "Enemy_Bullet.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_Bullet.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Enemy_Bullet.h",
@@ -481,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 32,
               "Title": "Level_GameOver.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_GameOver.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_GameOver.h",
@@ -493,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "Level.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level.h",
@@ -505,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "Level.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level.cpp",
@@ -517,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 36,
               "Title": "Boss_Posin.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Posin.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Boss_Posin.h",
@@ -529,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 35,
               "Title": "Explosion_Object.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Explosion_Object.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Explosion_Object.h",
@@ -541,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 30,
               "Title": "Level_Manager.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Level_Manager.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Level_Manager.cpp",
@@ -553,31 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "GameObject.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\GameObject.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\GameObject.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\GameObject.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\GameObject.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T02:49:24.344Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Server_Connection.h",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.h",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Server_Connection.h",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Server_Connection.h",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Server_Connection.h",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-02T14:51:01.096Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 37,
               "Title": "Boss_Gun.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Gun.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Boss_Gun.cpp",
@@ -589,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 39,
               "Title": "list",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\list",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\list",
@@ -601,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 38,
               "Title": "Boss.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Boss.cpp",
@@ -613,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "Boss_Bullet.cpp",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Bullet.cpp",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Boss_Bullet.cpp",
@@ -625,55 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Boss_Posin.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Posin.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Boss_Posin.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Boss_Posin.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Boss_Posin.cpp",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-02T14:27:19.209Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Enemy_1.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_1.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Enemy_1.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_1.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Enemy_1.cpp",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T02:08:26.225Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Enemy_Bullet.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_Bullet.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Enemy_Bullet.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_Bullet.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Enemy_Bullet.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T02:09:06.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Enemy_2.cpp",
-              "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_2.cpp",
-              "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Enemy_2.cpp",
-              "ToolTip": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_2.cpp",
-              "RelativeToolTip": "1945\uBAA8\uC791\\Enemy_2.cpp",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-28T02:08:57.95Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Enemy_1.h",
               "DocumentMoniker": "C:\\Users\\kkth3\\OneDrive\\\uBB38\uC11C\\GitHub\\NGFinalProject\\1945_Client\\1945\uBAA8\uC791\\Enemy_1.h",
               "RelativeDocumentMoniker": "1945\uBAA8\uC791\\Enemy_1.h",

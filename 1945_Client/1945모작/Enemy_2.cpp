@@ -73,10 +73,6 @@ int CEnemy_2::Update()
 
 void CEnemy_2::Late_Update()
 {
-
-	if (m_bDead) {
-		CObject_Manager::Get_Instance()->Add_Object(OBJ_EXPLOSION, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
-	}
 	__super::Move_Frame();
 }
 

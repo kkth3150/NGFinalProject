@@ -18,10 +18,13 @@ public:
 	void Set_ScoreUI(int iScore) {
 		m_iScore = iScore;
 	}
-	void Render_ScoreImage(HDC hDC, HDC hMemDC);
 	void Render_End_ScoreImage(HDC hDC, HDC hMemDC);
+	void Render_ScoreImage(HDC hDC, HDC hMemDC);
 	void Render_LifeImage(HDC hDC, HDC hMemDC);
+	void SetP1() { m_bP1 = true; }
+	
 	inline void Set_Choice(const int& Player) { m_Choice = Player; }
+
 
 
 private:
@@ -29,6 +32,8 @@ private:
 	int			m_iScore;
 	int			m_iLife;
 	int			m_Choice;
+
+	bool		m_bP1 = false;
 
 	UISTATE		m_eUIState;
 	DWORD		m_dwtime;

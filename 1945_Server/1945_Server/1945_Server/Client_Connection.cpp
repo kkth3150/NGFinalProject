@@ -166,7 +166,7 @@ void CClient_Connection::SendThread()
             retval = send(clientSock, reinterpret_cast<char*>(&packet), sizeof(packet), 0);
 
         }
-
+                             break;
         case R_OTHER_PLAYER_DEAD:
         {
 
