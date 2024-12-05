@@ -1,2 +1,111 @@
-﻿  Client_Connection.cpp
+﻿  pch.cpp
+  Boss.cpp
+  Boss_Bullet.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Boss.cpp(4,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  Boss_Gun.cpp
+  (소스 파일 '/Boss.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Boss_Gun.cpp(23,28): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Boss_Gun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Boss_Gun.cpp(136,29): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Boss_Gun.cpp'을(를) 컴파일하는 중)
+  
+  Boss_Posin.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Boss_Posin.cpp(24,28): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Boss_Posin.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Boss_Posin.cpp(161,29): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Boss_Posin.cpp'을(를) 컴파일하는 중)
+  
+  Client_Connection.cpp
+  Collision_Manager.cpp
+  Define.h
+  Finger.cpp
+  Finger2.cpp
+  GameObject.cpp
+  Level.cpp
+  Level_GamePlay.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Level_GamePlay.cpp(184,35): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Level_GamePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Level_GamePlay.cpp(205,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Level_GamePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Level_GamePlay.cpp(221,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Level_GamePlay.cpp'을(를) 컴파일하는 중)
+  
+  Level_Manager.cpp
+  Level_Menu.cpp
+  Monster_1.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Monster_1.cpp(22,32): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Monster_1.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Monster_1.cpp(48,33): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Monster_1.cpp'을(를) 컴파일하는 중)
+  
+  Monster_2.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Monster_2.cpp(22,32): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Monster_2.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Monster_2.cpp(46,33): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Monster_2.cpp'을(를) 컴파일하는 중)
+  
+  Monster_Bullet.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Monster_Bullet.cpp(48,19): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Monster_Bullet.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Monster_Bullet.cpp(54,19): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Monster_Bullet.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Monster_Bullet.cpp(61,19): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Monster_Bullet.cpp'을(를) 컴파일하는 중)
+  
+  Object_Manager.cpp
+  Player1.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Player1.cpp(23,32): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Player1.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Player1.cpp(35,34): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Player1.cpp'을(를) 컴파일하는 중)
+  
+  Player2.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Player2.cpp(24,32): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Player2.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Player2.cpp(34,33): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Player2.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Object_Manager.h(33,1): warning C4715: 'CObject_Manager::Get_List': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Object_Manager.h(28,1): warning C4715: 'CObject_Manager::Get_Player': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Object_Manager.h(33,1): warning C4715: 'CObject_Manager::Get_List': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Object_Manager.h(28,1): warning C4715: 'CObject_Manager::Get_Player': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Object_Manager.h(33,1): warning C4715: 'CObject_Manager::Get_List': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Object_Manager.h(33,1): warning C4715: 'CObject_Manager::Get_List': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  컴파일하고 있습니다...
+  Player_Bullet.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Player_Bullet.cpp(63,19): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Player_Bullet.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Player_Bullet.cpp(69,19): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Player_Bullet.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Player_Bullet.cpp(76,19): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Player_Bullet.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Player_Bullet.cpp(82,19): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Player_Bullet.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\Player_Bullet.cpp(88,19): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Player_Bullet.cpp'을(를) 컴파일하는 중)
+  
+  ServerFramework.cpp
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(25,20): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/ServerFramework.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\1945_Server\ServerFramework.cpp(72,25): warning C4244: '초기화 중': 'LONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/ServerFramework.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...
   1945_Server.vcxproj -> C:\Users\kkth3\OneDrive\문서\GitHub\NGFinalProject\1945_Server\1945_Server\x64\Debug\1945_Server.exe

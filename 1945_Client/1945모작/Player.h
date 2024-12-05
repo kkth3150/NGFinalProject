@@ -28,7 +28,6 @@ public:
 	int		Get_Life() { return m_iLife; };
 
 	void	Set_Life();
-	//void	Move_Player_Frame();
 
 	void	Set_My_Player() {
 

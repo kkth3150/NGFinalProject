@@ -43,6 +43,9 @@ void CUI::Late_Update()
 	case UI_SCORE:
 		m_iScore = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1))->Get_Score();
 		break;
+	case UI_END_SCORE:
+
+		break;
 
 	case UI_LIFE:
 		m_iLife = dynamic_cast<CPlayer*>(CObject_Manager::Get_Instance()->Get_Player(PLAYER_1))->Get_Life();
@@ -143,6 +146,10 @@ void CUI::Render(HDC hDC)
 		break;
 
 	case UI_SCORE:
+		Render_ScoreImage(hDC, hMemDC);
+		break;
+
+	case UI_END_SCORE:
 		Render_ScoreImage(hDC, hMemDC);
 		break;
 
@@ -252,3 +259,4 @@ void CUI::Render_LifeImage(HDC hDC, HDC hMemDC)
 
 
 }
+
