@@ -67,13 +67,14 @@ int CPlayer::Update()
 	if (!m_bDie) {
 		++m_iScore;
 		Key_Input();
-		prevX = m_tInfo.fX;
-		__super::Update_Rect();
+		
 		if (m_bDead) {
 			CObject_Manager::Get_Instance()->Add_Object(OBJ_EXPLOSION, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
 			return OBJ_DEAD;
 		}
 	}
+		prevX = m_tInfo.fX;
+	__super::Update_Rect();
 
 	return OBJ_NOEVENT;
 
@@ -259,4 +260,10 @@ void CPlayer::Set_Life()
 	CObject_Manager::Get_Instance()->Add_Object(OBJ_EXPLOSION, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
 	if (m_iLife > 0)
 		--m_iLife;
+}
+
+void CPlayer::AddBomb()
+{
+	CObject_Manager::Get_Instance()->Add_Object(OBJ_EXPLOSION, CAbstractFactory<CExplosion_Object>::Create(m_tInfo.fX, m_tInfo.fY));
+
 }

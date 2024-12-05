@@ -156,6 +156,7 @@ int CLevel_GamePlay::Update()
 			CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAME_OVER);
 
 		}
+						break;
 		case R_LEVEL_CHANGE:
 
 

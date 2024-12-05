@@ -44,6 +44,8 @@ public:
 
 	}
 
+	void AddBomb();
+
 private:
 
 	DWORD					m_dwShotDelay;

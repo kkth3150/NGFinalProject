@@ -132,6 +132,7 @@ void CCollision_Manager::Collision_MonsterBulletOther(list<CGameObject*> _Dst, l
 		{
 			if (IntersectRect(&rc, Dst->Get_Rect(), Src->Get_Rect()))
 			{
+				dynamic_cast<CPlayer*>(Dst)->AddBomb();
 				Src->Set_Dead();
 			}
 		}
