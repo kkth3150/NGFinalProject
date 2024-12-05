@@ -178,7 +178,7 @@ int CLevel_GamePlay::Update()
         }
     }
     else if (m_bBossGen && !m_bBossDead) {
- 
+
         if (CObject_Manager::Get_Instance()->List_Empty(OBJ_BOSSPART)) {
             m_bBossDead = true;
             Timer = GetTickCount64();
@@ -195,6 +195,8 @@ int CLevel_GamePlay::Update()
             }
 
         }
+        system("cls");
+        cout << "===============게임 클리어================";
     }
     else {
         ++m_iMap_Update;

@@ -158,15 +158,9 @@ int CLevel_GamePlay::Update()
 		}
 		case R_LEVEL_CHANGE:
 
-			if (MyClientID == PLAYER_1) {
-				P1_SCORE = My_Player->Get_Score();
-				P2_SCORE = Other_Player->Get_Score();
-			}
-			else {
-				P2_SCORE = My_Player->Get_Score();
-				P1_SCORE = Other_Player->Get_Score();
 
-			}
+			P1_SCORE = My_Player->Get_Score();
+
 			CServer_Connection::Get_Instance()->Clear_Recv_Queue();
 			CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAME_END);
 			break;
