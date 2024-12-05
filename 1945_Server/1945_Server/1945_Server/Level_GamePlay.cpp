@@ -148,7 +148,7 @@ int CLevel_GamePlay::Update()
                 }
 
             }
-                              break;
+                      break;
             default:
                 break;
 
