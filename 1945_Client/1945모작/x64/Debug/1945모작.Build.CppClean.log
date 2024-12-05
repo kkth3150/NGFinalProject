@@ -2,11 +2,12 @@ c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\vc143.pdb
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\vc143.idb
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\pch.obj
-c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\level_gameplay.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\level_gameend.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\level.obj
-c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\key_manager.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\gameobject.obj
+c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\level_gameplay.obj
+c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\level_gameover.obj
+c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\key_manager.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\finger.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\explosion_object.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\errormsg.obj
@@ -14,8 +15,8 @@ c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\enemy_2.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\enemy_1.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\collision_manager.obj
-c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\button.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\boss_posin.obj
+c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\button.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\boss_gun.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\boss_bullet.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\boss.obj
@@ -30,7 +31,6 @@ c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\maingame.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\level_menu.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\level_manager.obj
-c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\level_gameover.obj
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\x64\debug\1945모작.exe
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\x64\debug\1945모작.pdb
 c:\users\kkth3\onedrive\문서\github\ngfinalproject\1945_client\1945모작\x64\debug\1945모작.res

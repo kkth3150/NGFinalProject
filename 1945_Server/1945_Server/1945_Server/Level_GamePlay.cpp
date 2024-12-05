@@ -248,7 +248,7 @@ void CLevel_GamePlay::Late_Update()
       
     for (int i = 0; i < CLIENT_END; ++i) {
 
-        if (i == CLIENT_1&& !Player_C1->GetDie()) {
+        if (i == CLIENT_1) {
             RecvQueue_data PlayerMoveQueueData1;
             PlayerMoveQueueData1.event = R_OTHER_PLAYER_MOVE;
 
@@ -261,7 +261,7 @@ void CLevel_GamePlay::Late_Update()
             CClient_Connection::Get_Instance((CLIENT_ID)i)->Push_RecvQueue(PlayerMoveQueueData1);
         }
        
-        if (i == CLIENT_2&&!Player_C2->GetDie()) {
+        if (i == CLIENT_2) {
             RecvQueue_data RecvQueueData2;
             RecvQueueData2.event = R_OTHER_PLAYER_MOVE;
 
