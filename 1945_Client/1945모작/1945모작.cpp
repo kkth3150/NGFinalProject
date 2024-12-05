@@ -5,6 +5,8 @@
 #include "1945모작.h"
 #include "MainGame.h"
 int MyClientID = 3;
+int P1_SCORE = 0;
+int P2_SCORE = 0;
 #define MAX_LOADSTRING 100
 
 // 전역 변수:

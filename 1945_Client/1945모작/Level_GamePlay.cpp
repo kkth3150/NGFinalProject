@@ -149,6 +149,16 @@ int CLevel_GamePlay::Update()
 			break;
 
 		case R_GAME_OVER: {
+			
+			if (MyClientID == PLAYER_1) {
+				P1_SCORE = My_Player->Get_Score();
+				P2_SCORE = Other_Player->Get_Score();
+			}
+			else {
+				P2_SCORE = My_Player->Get_Score();
+				P1_SCORE = Other_Player->Get_Score();
+
+			}
 			CServer_Connection::Get_Instance()->Clear_Recv_Queue();
 			CLevel_Manager::Get_Instance()->Level_Change(LEVEL_GAME_OVER);
 
@@ -189,6 +199,7 @@ void CLevel_GamePlay::Release(void)
 {
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYER1);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYER2);
+	CObject_Manager::Get_Instance()->DeleteID(OBJ_BOSS);
 	CObject_Manager::Get_Instance()->DeleteID(OBJ_PLAYERBULLET);
-
+	CObject_Manager::Get_Instance()->DeleteID(OBJ_BULLET_ENEMY);
 }

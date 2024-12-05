@@ -19,6 +19,7 @@ public:
 		m_iScore = iScore;
 	}
 	void Render_ScoreImage(HDC hDC, HDC hMemDC);
+	void Render_End_ScoreImage(HDC hDC, HDC hMemDC);
 	void Render_LifeImage(HDC hDC, HDC hMemDC);
 	inline void Set_Choice(const int& Player) { m_Choice = Player; }
 
@@ -27,7 +28,7 @@ private:
 	int			m_iDrawID;
 	int			m_iScore;
 	int			m_iLife;
-	int		m_Choice;
+	int			m_Choice;
 
 	UISTATE		m_eUIState;
 	DWORD		m_dwtime;
